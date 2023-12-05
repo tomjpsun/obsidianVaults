@@ -159,7 +159,7 @@ Dashboard 對於不同的機臺，會根據資料庫，找出附屬關係，並�
 
 所以 Dashboard 流程是：根據 HMI local 設定，提取本機 HMI 的 configure data，建立監控機臺的樹狀結構，呈現在畫面上，然後定時（每2秒）讀取 production data，根據 production data 來更新畫面，反應機臺上、下架的狀態。
 # 性能和優化：
-採用 NextJS 框架，
+採用 NextJS 框架，將渲染部分拆成可以在 框架的 Server 執行，就產生靜態頁面
 # 安全性和可靠性**：
     
     - 數據安全和隱私保護。

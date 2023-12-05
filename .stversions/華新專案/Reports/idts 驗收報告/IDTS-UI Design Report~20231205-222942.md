@@ -120,7 +120,7 @@ _以客戶術語描述，給線段的周轉軸是 “滿上空下”_
 ![[idts_modules.png]]
 
 其中 Core Services 模組與 DB Services 模組透過 API 提供顯示數據給 WebUI， 這兩個模組是基於 NodeJS 架構。
-# 功能性描述：
+# 功能描述：
 ## 存取 HMI 參數
 每臺 HMI 上線時，首先透過 Database 存取上次的參數，如果Database 沒有參數，例如首次執行時，則採用預設值。
 ## Dashboard 
@@ -149,22 +149,17 @@ Dashboard 對於不同的機臺，會根據資料庫，找出附屬關係，並�
 
 ### Dashboard 流程
 
-Dashboard 會做兩件事情：
-
-1. 當 Dashboard 開始時，經由 **useEffect()** 的作用，會呼叫 **parseHMIConfig()**：
+當 Dashboard 開始時，經由 **useEffect()** 的作用，會呼叫 **parseHMIConfig()**：
 
 ![[parseHMIConfig.png]]
 
-2. buildDisplayData: 之後也是 **useEffect()** 的作用，每兩秒更新 **buildDisplayData()**，就是向 Database Services 取得 production data 並更新到畫面：
+之後也是 **useEffect()** 的作用，每兩秒更新 **buildDisplayData()**，就是向 Database Services 取得 production data 並更新到畫面：
 
 ![[buildDisplayData.png]]
 
+所以 Dashboard 流程是：根據 HMI local 設定，提取本機 HMI 的 configure data，建立監控機臺的樹狀結構，呈現在畫面上，然後定時（每2秒）讀取 production data，根據 production data 來更新畫面，反應機臺上、下架的狀態。
 # 性能和優化：
-    
-    - 數據加載和處理的效率。
-    - 響應式設計和跨平台兼容性。
-    - 性能優化措施（如緩存、數據壓縮）。
-    - 
+採用 NextJS 框架，
 # 安全性和可靠性**：
     
     - 數據安全和隱私保護。
