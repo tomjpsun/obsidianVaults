@@ -157,6 +157,7 @@ Dashboard 對於不同的機臺，會根據資料庫，找出附屬關係，並�
 
 ![[buildDisplayData.png]]
 
+所以 Dashboard 流程是：根據 HMI local 設定，提取本機 HMI 的 configure data，建立監控機臺的樹狀結構，呈現在畫面上，然後定時（每2秒）讀取 production data，根據 production data 來更新畫面，反應機臺上、下架的狀態。
 # 性能和優化：
     
     - 數據加載和處理的效率。

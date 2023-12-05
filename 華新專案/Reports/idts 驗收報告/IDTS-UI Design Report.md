@@ -120,7 +120,7 @@ _以客戶術語描述，給線段的周轉軸是 “滿上空下”_
 ![[idts_modules.png]]
 
 其中 Core Services 模組與 DB Services 模組透過 API 提供顯示數據給 WebUI， 這兩個模組是基於 NodeJS 架構。
-# 功能性描述：
+# 功能描述：
 ## 存取 HMI 參數
 每臺 HMI 上線時，首先透過 Database 存取上次的參數，如果Database 沒有參數，例如首次執行時，則採用預設值。
 ## Dashboard 
