@@ -159,12 +159,10 @@ Dashboard 對於不同的機臺，會根據資料庫，找出附屬關係，並�
 
 所以 Dashboard 流程是：根據 HMI local 設定，提取本機 HMI 的 configure data，建立監控機臺的樹狀結構，呈現在畫面上，然後定時（每2秒）讀取 production data，根據 production data 來更新畫面，反應機臺上、下架的狀態。
 # 性能和優化：
-採用 NextJS 框架，將渲染部分拆成可以在 框架的 Server 執行，就產生靜態頁面
+採用 NextJS 框架，將渲染部分拆成可以在框架的 Server 執行，就預先 render 頁面，再送到框架的 FrontEnd 執行，其他就等到 FrontEnd 進行 DOM tree rendering，所以效能可以事先優化。
 # 安全性和可靠性**：
     
-    - 數據安全和隱私保護。
-    - 系統的穩定性和錯誤處理。
-    - 用戶認證和授權機制。
+由 SWR library 提供 fetch 行爲，根據 fetch 的結果有三種可能：1 正在 Loading 資料，2 取得資料，3 有錯誤。那我們的 component 可以根據這三種結果來呈現頁面：
 # 測試和質量保證**：
     
     - 測試策略和框架。
