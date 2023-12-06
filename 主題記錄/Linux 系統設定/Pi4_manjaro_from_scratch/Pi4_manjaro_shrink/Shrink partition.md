@@ -1,1 +1,0 @@
-![[Pi Shrink Partition Size.odt]]
