@@ -19,7 +19,6 @@ const Readline = require('@serialport/parser-readline');
 
 // 配置串行埠
 const port = new SerialPort('COM3', { baudRate: 9600 });
-
 // 讀取數據
 const parser = port.pipe(new Readline({ delimiter: '\r\n' }));
 parser.on('data', console.log);
