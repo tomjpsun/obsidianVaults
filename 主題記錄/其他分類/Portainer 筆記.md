@@ -34,7 +34,7 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 現成的 docker compose yml 可從 GitHub 專案取得，例如：
 [handson-ml2](git@github.com:ageron/handson-ml2.git)
 
-我們使用該專案的 docker/docker-compose.yml 來實驗：
+我們使用該專案的 `docker/docker-compose.yml` 來實驗：
 ![[螢幕快照 2023-12-12 15-58-25.png]]
 
 首先 Live connect local portainer， 畫面就到 Dashboard：
@@ -43,7 +43,7 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 選 Stack 後
 ![[螢幕快照 2023-12-12 16-02-27.png]]
 
- 選 Add Stack：
+ 選 Add Stack， 填 Name (我們用 `handson-ml2-volume` )
 ![[螢幕快照 2023-12-12 16-03-09.png]]
 
 在 Web editor裏面填入 compose-docker.yml 的內容， 就是 copy past /docker/compose-docker.yml
