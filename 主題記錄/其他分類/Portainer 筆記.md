@@ -48,9 +48,11 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 ![[螢幕快照 2023-12-12 16-03-09.png]]
 
 在 Web editor裏面填入 compose-docker.yml 的內容， 就是 copy past /docker/compose-docker.yml
-來這裏
+來這裏：
 
+![[螢幕快照 2023-12-12 16-05-59.png]]
 
+修改一下
 ## 後記
 
 1. 還沒有研究如何在 portainer 直接啓動 docker。
