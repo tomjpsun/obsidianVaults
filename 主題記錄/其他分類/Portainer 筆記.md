@@ -14,20 +14,24 @@ docker: Got permission denied while trying to connect to the Docker daemon socke
 sudo usermod -aG docker tom
 ```
 
-Run up 指令, 依照
+### 啓動 Portianer
+依照
 https://ivonblog.com/posts/portainer-installation/
+
 ```bash
 docker volume create portainer_data
-
-docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 ```
 
+``` bash
+docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
 
 然後 browser 開 http://localhost:9000
 或是 secure http  https://localhost:9443
 
-
 ## 依照 docker-compose.yml 啓動 container
+
+
 
 ## 後記
 
