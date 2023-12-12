@@ -62,10 +62,14 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 
 ![[螢幕快照 2023-12-12 16-25-45.png]]
 
+點選它，可以看到詳細資訊：
+![[螢幕快照 2023-12-12 16-29-31.png]]
+
+其中 Logs 可以找到 token ， 開 browser port 8888 連過來，需要輸入 token，成功。
+
 ## 後記
 
-1. 還沒有研究如何在 portainer 直接啓動 docker。
-2. 在左側選單裏面有 App Template 可以直接安裝啓動 rabbitMQ, MariaDB ...(令人驚豔)。
+在左側選單裏面有 App Template 可以直接安裝啓動 rabbitMQ, MariaDB ...(令人驚豔)。
 
 
 
