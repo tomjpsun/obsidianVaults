@@ -34,11 +34,10 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 現成的 docker compose yml 可從 GitHub 專案取得，例如：
 [handson-ml2](git@github.com:ageron/handson-ml2.git)
 
-我們使用它的 docker/docker-compose.yml 來實驗
-
+我們使用該專案的 docker/docker-compose.yml 來實驗：
 ![[螢幕快照 2023-12-12 15-58-25.png]]
 
-，首先 Live connect local portainer， 畫面就到 Dashboard
+首先 Live connect local portainer， 畫面就到 Dashboard：
 ![[螢幕快照 2023-12-12 16-00-11.png]]
 
 選 Stack 後
@@ -49,10 +48,11 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 
 在 Web editor裏面填入 compose-docker.yml 的內容， 就是 copy past /docker/compose-docker.yml
 來這裏：
-
 ![[螢幕快照 2023-12-12 16-05-59.png]]
 
-修改一下
+修改一下 volumes，我希望它一開始就看到 source root，把 /home/tom/work/handson-ml2 填在冒號 (:) 前面.:
+![[螢幕快照 2023-12-12 16-10-35.png]]
+
 ## 後記
 
 1. 還沒有研究如何在 portainer 直接啓動 docker。
