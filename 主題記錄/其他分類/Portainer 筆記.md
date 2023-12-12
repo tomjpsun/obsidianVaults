@@ -31,6 +31,10 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 
 ## 依照 docker-compose.yml 啓動 container
 
+現成的 docker compose yml 可從 GitHub 專案取得，例如：
+[handson-ml2](git@github.com:ageron/handson-ml2.git)
+我們使用它的 docker/docker-compose.yml 來實驗:
+
 
 
 ## 後記
