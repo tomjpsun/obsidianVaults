@@ -28,7 +28,7 @@ Electron 提供了 IpcRenderer 與 IpcMain 方便工程師實作 IPC
 之後用 event.reply 回傳  
 說人話 : 你將小貓帶回家後 , 你請媽媽幫忙照顧你的小貓 , 由她幫忙餵食
 
-![](https://i.imgur.com/hTnFHi4.png)
+![[Pasted image 20231213154023.png]]
 
 ```javascript
 // main.js - 在主處理序裡。
@@ -50,7 +50,7 @@ ipcRenderer.send('take-cat-home-message', '帶小貓回家')
 - 等待回應  
     你一直在盯著小貓怕她肚子餓 , 這中間你不做任何事情
 
-![](https://i.imgur.com/2E7ONWb.png)
+![[2E7ONWb.png]]
 
 ```javascript
 // main.js - 在主處理序裡。
@@ -69,7 +69,7 @@ console.log(ipcRenderer.sendSync('take-cat-home-message', '帶小貓回家')) //
 - 通知回應  
     你打掃家裡，小貓肚子餓會 "喵喵叫"
 
-![](https://i.imgur.com/i8nNnBR.png)
+![[i8nNnBR.png]]
 
 ```javascript
 // main.js - 在主處理序裡。
@@ -88,7 +88,7 @@ ipcRenderer.invoke('take-cat-home-handle', '帶小貓回家')
 
 上方 3 種方式都是由 畫面端開始 , 如果要由 主處理序 開始觸發消息要如何做 ?
 
-![](https://i.imgur.com/RnmBjcM.png)
+![[RnmBjcM.png]]
 
 ```javascript
 // main.js - 在主處理序裡。
