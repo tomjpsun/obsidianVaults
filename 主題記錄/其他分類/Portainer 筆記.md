@@ -28,6 +28,7 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 
 然後 browser 開 http://localhost:9000
 或是 secure http  https://localhost:9443
+目前 admin 密碼是  admin20021223
 
 ## 依照 docker-compose.yml 啓動 container
 
