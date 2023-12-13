@@ -35,35 +35,35 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 [handson-ml2](git@github.com:ageron/handson-ml2.git)
 
 我們使用該專案的 `docker/docker-compose.yml` 來實驗：
-![[螢幕快照 2023-12-12 15-58-25.png]]
+![[portainer_live_connect.png]]
 
 首先 Live connect local portainer， 畫面就到 Dashboard：
-![[螢幕快照 2023-12-12 16-00-11.png]]
+![[portainer_dashboard.png]]
 
 選 Stack 後
-![[螢幕快照 2023-12-12 16-02-27.png]]
+![[portainer_add_stack.png]]
 
  選 Add Stack， 填 Name (我們用 `handson-ml2-volume` )
-![[螢幕快照 2023-12-12 16-15-03 1.png]]
+![[portainer_create_stack.png]]
 
 在 Web editor裏面填入 compose-docker.yml 的內容， 就是 copy past /docker/compose-docker.yml
 來這裏：
-![[螢幕快照 2023-12-12 16-05-59.png]]
+![[portainer_edit_yml.png]]
 
 修改一下 volumes，我希望它一開始就看到 source root，把 `/home/tom/work/PyCharm/handson-ml2` 填在冒號 (:) 前面.:
-![[螢幕快照 2023-12-12 16-10-35.png]]
+
+![[portainer-edit-volume.png]]
 
 到最下面 deploy the stack：
-![[螢幕快照 2023-12-12 16-17-53.png]]
+![[portainer_deploy_stack.png]]
 
 
 這裏要 download image 一些時間，如果事先 download 好就很快。
 左邊選單選 container 頁面，已經看到 我們的 container 啓動了。
-
-![[螢幕快照 2023-12-12 16-25-45.png]]
+![[portainer_start_container.png]]
 
 點選它，可以看到詳細資訊：
-![[螢幕快照 2023-12-12 16-29-31.png]]
+![[portainer_container_log.png]]
 
 其中 Logs 可以找到 token ， 開 browser port 8888 連過來，需要輸入 token，成功。
 
