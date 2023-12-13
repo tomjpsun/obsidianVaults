@@ -69,8 +69,14 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 其中 Logs 可以找到 token ， 開 browser port 8888 連過來，需要輸入 token，成功。
 
 ## 後記
++ 結束 portainer:
+```bash
+docker stop portainer
+```
 
-在左側選單裏面有 App Template 可以直接安裝啓動 rabbitMQ, MariaDB ...(令人驚豔)。
++ Portainer 佔用 port 8000, 9000 其中 8000 會跟 Electron 衝到
+
++ 在左側選單裏面有 App Template 可以直接安裝啓動 rabbitMQ, MariaDB ...(令人驚豔)。
 
 
 
