@@ -3,13 +3,13 @@
 
 ## 系統組成
 由以下幾個模組組成：
-#### Programmer 模組：
+#### MCU 模組：
 負責控制燒錄流程，包括接收 GUI 的 Profile 指令、燒錄、回報燒錄結果等。
-MCU : Altery 型號  AT32F403AVGT7
+Altery 型號  AT32F403AVGT7
 
-Programmer 硬體示意圖：
+硬體示意圖：
 ![[DM9051A-OTP-Programmer-Controller.png]]
-Programmer 軟體示意圖：
+軟體示意圖：
 ![[軟體示意圖-1.png]]
 
 ![[軟體示意圖-2.png]]
@@ -27,6 +27,7 @@ Programmer 軟體示意圖：
 燒錄裝置可以接收來自 GUI 的 Profile 指令。Profile 指令包括燒錄的內容、燒錄的起始地址、燒錄的數量等。
 ### 回報燒錄結果
 燒錄裝置在燒錄每個 IC 完成後，會向 GUI 回報燒錄結果。燒錄結果包括燒錄的地址、燒錄的狀態等。User 也可以回看記錄。
+
 
 # 傳輸界面
 ## MCU 模組
