@@ -42,6 +42,9 @@ SPI 速度規格 Max：50 Mbit/s depends on DM9051A
 MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 界面支援 Baud Rate 115200
 
+### Programmer Protocol With HMI
+
+
 
 # 系統測試
 GUI 提供界面，以驗證下列功能：
