@@ -6,6 +6,10 @@
 #### MCU 模組：
 負責控制燒錄流程，包括接收 GUI 的 Profile 指令、燒錄、回報燒錄結果等。
 Altery 型號  AT32F403AVGT7
+
+硬體示意圖：
+
+
 #### SOCKET 模組：
 由 MCU 控制，界面爲 SPI，負責將燒錄內容輸出到 8051A Embedded Memory(One Time Programmed Device => OTP)
 #### USB Serial 模組：
