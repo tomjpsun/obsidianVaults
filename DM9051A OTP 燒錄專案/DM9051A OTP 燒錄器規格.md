@@ -44,6 +44,8 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 ### Programmer Protocol With HMI
 
+定義：
+
 
 
 # 系統測試
