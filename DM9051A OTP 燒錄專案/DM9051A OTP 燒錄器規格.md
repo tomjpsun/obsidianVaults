@@ -10,6 +10,8 @@ Altery 型號  AT32F403AVGT7
 硬體示意圖：
 ![[DM9051A-OTP-Programmer-Controller.png]]
 
+
+![[Pasted image 20231215152648.png]]
 #### SOCKET 模組：
 由 MCU 控制，界面爲 SPI，負責將燒錄內容輸出到 8051A Embedded Memory(One Time Programmed Device => OTP)
 #### USB Serial 模組：
