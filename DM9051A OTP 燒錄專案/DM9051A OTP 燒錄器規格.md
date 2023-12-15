@@ -9,6 +9,7 @@ Altery 型號  AT32F403AVGT7
 
 硬體示意圖：
 ![[DM9051A-OTP-Programmer-Controller.png]]
+軟體示意圖：
 
 
 
