@@ -28,7 +28,6 @@ Altery 型號  AT32F403AVGT7
 ### 回報燒錄結果
 燒錄裝置在燒錄每個 IC 完成後，會向 GUI 回報燒錄結果。燒錄結果包括燒錄的地址、燒錄的狀態等。User 也可以回看記錄。
 
-
 # 傳輸界面
 ## MCU 模組
 支持 SPI 通信。
@@ -57,3 +56,4 @@ GUI 提供界面，以驗證下列功能：
 
 
 # 附錄 A：8051A OTP GUI 
+![[DM 9051A OTP Programmer GUI Spec.pdf]]
