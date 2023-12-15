@@ -3,13 +3,13 @@
 
 ## 系統組成
 由以下幾個模組組成：
-#### MCU 模組：
+#### Programmer 模組：
 負責控制燒錄流程，包括接收 GUI 的 Profile 指令、燒錄、回報燒錄結果等。
-Altery 型號  AT32F403AVGT7
+MCU : Altery 型號  AT32F403AVGT7
 
-硬體示意圖：
+Programmer 硬體示意圖：
 ![[DM9051A-OTP-Programmer-Controller.png]]
-軟體示意圖：
+Programmer 軟體示意圖：
 ![[軟體示意圖-1.png]]
 
 ![[軟體示意圖-2.png]]
