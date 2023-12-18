@@ -60,10 +60,10 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 |意義|值|Size|備註|
 |---|---|---|---|
-|Profile Write|55H|1|See HMI OP Data Format|
+|Profile Write|55H|1|Write Profile Data Format|
 |Response OP|A5H|1||
 
-### HMI OP Data Format
+### Write Profile Data Format
 |意義|值|Size|備註|
 |---|---|---|---|
 |Length Low||1||
