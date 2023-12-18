@@ -1,3 +1,7 @@
+|Version|修改日期|備註|
+|---|---|---|
+|1.0|2023-12-18||
+
 
 # 燒錄裝置架構規格
 
@@ -54,7 +58,7 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 |Stop Frame|ETX|03H|1||
 |CRC Low|||1|From STX~ETX exclude STX|
 |CRC High|||1|From STX~ETX exclude STX|
-|意義|代號|值|Size|備註|
+
 
 ### OP Table
 
@@ -66,12 +70,12 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 ### Write Profile Data Format
 |意義|值|Size|備註|
 |---|---|---|---|
-|Offset ||1|Programmer 開始 Program 的位置，目前只有支援從 0 開始|
-|Data Length ||1|目前僅支援值爲 18 (9051 Profile Length)|
-|Data  ||||
+|Offset |0|1|Programmer 開始 Program 的位置，目前只有支援從 0 開始|
+|Data Length |18|1|目前僅支援值爲 18 (9051 Profile Length)|
+|Data  |||9051 profile content|
 
 `ps` Size =  1, 如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應
-# 系統測試
+# 系統測試（下階段）
 GUI 提供界面，以驗證下列功能：
 ## 驗證燒錄硬體設備
 + 驗證燒錄裝置的 SPI 接口和 RS-232 接口能夠正常工作
@@ -82,6 +86,7 @@ GUI 提供界面，以驗證下列功能：
 # 系統擴展（下階段）
 燒錄裝置的改進方向包括：
 支持量產使用
+支援客製化 Programmer
 
 
 
