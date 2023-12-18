@@ -47,12 +47,12 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 |意義|代號|值|Size|備註|
 |---|---|---|---|---|
 |Start Frame|STX|02H|1||
-|Length Hi|||1|From STX~ETX exclude STX|
-|Length Lo|||1|From STX~ETX exclude STX|
+|Length Low|||1|From STX~ETX exclude STX|
+|Length High|||1|From STX~ETX exclude STX|
 |CMD|OP|See OP Table|1||
-|Data|||Max 2048||
+|Data|DATA|See OP Table||MAX 2048|
 |Stop Frame|ETX|03H|1||
-|CRC Lo |||1|From STX~ETX exclude STX|
+|CRC Low|||1|From STX~ETX exclude STX|
 |CRC High|||1|From STX~ETX exclude STX|
 |意義|代號|值|Size|備註|
 
