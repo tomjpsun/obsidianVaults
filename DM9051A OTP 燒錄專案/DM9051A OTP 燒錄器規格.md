@@ -60,8 +60,18 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 |意義|值|Size|備註|
 |---|---|---|---|
-|HMI OP|55H|1||
+|Profile Write|55H|1|See HMI OP Data Format|
 |Response OP|A5H|1||
+
+### HMI OP Data Format
+|意義|值|Size|備註|
+|---|---|---|---|
+|Length Low||1||
+|Length High ||1||
+|Reg.Offset  ||1||
+|Length High ||1||
+|Length High ||1||
+
 
 # 系統測試
 GUI 提供界面，以驗證下列功能：
