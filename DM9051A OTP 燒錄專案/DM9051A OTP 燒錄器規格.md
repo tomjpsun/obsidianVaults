@@ -87,5 +87,4 @@ GUI 提供界面，以驗證下列功能：
 # 附錄 A：8051A OTP GUI 
 
 
-![[DM 9051A OTP Programmer GUI Spec.jpg]]
 
