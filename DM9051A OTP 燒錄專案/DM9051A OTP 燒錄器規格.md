@@ -44,10 +44,11 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 ### Programmer Protocol With HMI
 
-|意義|位置|代號|軸系大小|軸面|流水號|
-|---|---|---|---|---|---|---|
-|Start Frame|||1|2345|6|789|
-|意義|位置|代號|軸系大小|軸面|流水號|
+|意義|代號|Size|備註|
+|---|---|---|---|---|
+|Start Frame|02H|1|||
+|Stop Frame|03H|1|||
+|意義|代號|Size|備註|
 
 
 # 系統測試
