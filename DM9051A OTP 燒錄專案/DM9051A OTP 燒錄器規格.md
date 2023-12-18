@@ -66,8 +66,7 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 ### Write Profile Data Format
 |意義|值|Size|備註|
 |---|---|---|---|
-|Reg.Offset  ||1||
-|Length High ||1||
+|Length Low ||1||
 |Length High ||1||
 
 
