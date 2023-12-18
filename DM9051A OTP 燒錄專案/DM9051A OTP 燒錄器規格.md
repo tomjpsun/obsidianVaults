@@ -49,7 +49,7 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 |Start Frame|02H|1|||
 |Length Hi||1|||
 |Length Lo||1|||
-|CMD|55H|1|||
+|Send|55H|1|||
 |Response|AAH|1|||
 |Stop Frame|03H|1|||
 |意義|代號|Size|備註|
