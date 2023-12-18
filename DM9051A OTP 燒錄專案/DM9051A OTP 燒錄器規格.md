@@ -66,8 +66,9 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 ### Write Profile Data Format
 |意義|值|Size|備註|
 |---|---|---|---|
-|Length Low ||1||
-|Length High ||1||
+|Offset ||1|目前僅支援值爲 0 (從頭寫）|
+|Data Length ||1|目前僅支援值爲 18 (9051 Profile Length)|
+|Data  ||||
 
 
 # 系統測試
