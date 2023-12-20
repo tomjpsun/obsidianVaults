@@ -84,6 +84,11 @@ Size =  1 （8 Bits）, 用於目前 Data 長度最多 255 個 Bytes 的情況�
 |Data Length |1|1|目前僅回傳 Response OP Code|
 |Error Code |Table: Short Response OP Code|1||
 
+### Loop Test
+|意義|值|Size|備註|
+|---|---|---|---|
+|Data Length |32|1||
+|Error Code |Table: Short Response OP Code|1||
 
 `[Note]` 
 Size =  1 （Byte）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應 
