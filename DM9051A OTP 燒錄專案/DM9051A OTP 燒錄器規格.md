@@ -51,21 +51,21 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 |意義|代號|值|Size|備註|
 |---|---|---|---|---|
 |Start Frame|STX|02H|1||
-|Length Low|||1|From STX~ETX exclude STX|
-|Length High|||1|From STX~ETX exclude STX|
+|Length Low|LENL||1|From STX~ETX exclude STX|
+|Length High|LENH||1|From STX~ETX exclude STX|
 |CMD|OP|See OP Table|1||
 |Data|DATA|See OP Table||MAX 2048|
 |Stop Frame|ETX|03H|1||
-|CRC Low|||1|From STX~ETX exclude STX|
-|CRC High|||1|From STX~ETX exclude STX|
+|CRC Low|CRCL||1|From STX~ETX exclude STX|
+|CRC High|CRCH||1|From STX~ETX exclude STX|
 
 ### OP Table
 
-|意義|值|Size|備註|
-|---|---|---|---|
-|Profile Write|55H|1|Short Table:Profile Write Data Format|
-|Response OP|A5H|1|Short Table:Response OP Format|
-|CRC Error|A6H|1||
+|意義|值|Size|Direction|備註|
+|---|---|---|---|---|
+|Profile Write|55H|1|Host To Device|DATA following the Profile Write Data Format|
+|Response OP|A5H|1|Device To Host|Response OP Format|
+|CRC Error|A6H|1|Device To Host|
 
 ### Short Profile Write Data Format
 |意義|值|Size|備註|
