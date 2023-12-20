@@ -63,17 +63,25 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 |意義|值|Size|備註|
 |---|---|---|---|
-|Profile Write|55H|1|Write Profile Data Format|
-|Response OP|A5H|1||
+|Profile Write|55H|1|Table:Profile Write Data Format|
+|Response OP|A5H|1|Table:Response OP Format|
 
-### Write Profile Data Format
+### Profile Write Data Format
 |意義|值|Size|備註|
 |---|---|---|---|
 |Data Length |18|1|目前僅支援值爲 18 (9051 Profile Length)|
 |Offset |0|1|Programmer 開始 Program 的位置，目前只有支援從 0 開始|
 |Data  |||9051 profile content|
 
-`ps` Size =  1, 如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應
+### Response OP Format
+|意義|值|Size|備註|
+|---|---|---|---|
+|Data Length |18|1|目前僅支援值爲 18 (9051 Profile Length)|
+|Offset |0|1|Programmer 開始 Program 的位置，目前只有支援從 0 開始|
+|Data  |||9051 profile content|
+
+`ps` 
+Size =  1, 如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應 
 # 系統測試（下階段）
 GUI 提供界面，以驗證下列功能：
 ## 驗證燒錄硬體設備
