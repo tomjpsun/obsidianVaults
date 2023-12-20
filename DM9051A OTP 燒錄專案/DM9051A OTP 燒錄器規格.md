@@ -1,6 +1,7 @@
 |Version|修改日期|備註|
 |---|---|---|
 |1.0|2023-12-18||
+|1.1|2023-12-20|增定 Short Response OP Code|
 
 
 # 燒錄裝置架構規格
@@ -77,9 +78,9 @@ Size =  1 （8 Bits）, 用於目前 Data 長度最多 255 個 Bytes 的情況�
 ### Short Response OP Format
 |意義|值|Size|備註|
 |---|---|---|---|
-|Data Length |2|1|目前僅回傳 Error Code|
-|Error Code |Table: Response OP Code|1||
-|Auxiliary Code |Table: Response OP Code|1||
+|Data Length |1|1|目前僅回傳 Response OP Code|
+|Error Code |Table: Short Response OP Code|1||
+
 
 `[Note]` 
 Size =  1 （Byte）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應 
