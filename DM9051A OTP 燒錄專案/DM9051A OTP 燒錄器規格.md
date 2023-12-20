@@ -63,8 +63,8 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 |意義|值|Size|Direction|備註|
 |---|---|---|---|---|
-|Loop Test Send|50H|1|Host To Device|Loop Test Format|
-|Loop Test Response|51H|1|Device To Host|Loop Test Format|
+|Loop Test Send|50H|1|Host To Device|Format: Loop Test |
+|Loop Test Response|51H|1|Device To Host|Format: Loop Test|
 |Profile Write|55H|1|Host To Device|Format:Short Profile Write Data |
 |Response OP|A5H|1|Device To Host|Format:Short Response OP |
 
@@ -88,13 +88,13 @@ Size =  1 （8 Bits）, 用於目前 Data 長度最多 255 個 Bytes 的情況�
 |意義|值|Size|備註|
 |---|---|---|---|
 |Data Length |31|1||
-|Data | |31|5AH, 00|
+|Data | |31|Response 回覆 Host 的 Data|
 
 `[Note]` 
 Size =  1 （Byte）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應 
 `[Note]` 
 燒錄功能以穩定優先，採取 Synchronous 的命令，一個動作做完再做下一個，因此**不支援** Asynchronouse 的命令模式，也不需要在 Response 回應 Command ID
-### Short Response OP Codes
+### Table: Short Response OP Codes
 |意義|值|Size|備註|
 |---|---|---|
 |OK |01H|1||
