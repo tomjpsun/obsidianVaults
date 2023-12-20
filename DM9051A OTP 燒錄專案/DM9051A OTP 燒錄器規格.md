@@ -86,9 +86,11 @@ Size =  1 （Byte）, 用於目前 Data 長度最多 255 個 Bytes 的情況，�
 燒錄功能以穩定優先，採取 Synchronous 的命令，一個動作做完再做下一個，因此**不支援** Asynchronouse 的命令模式，也不需要在 Response 回應 Command ID
 ### Short Response OP Codes
 |意義|值|Size|備註|
-|---|---|---|---|
-|OK |1|1|目前僅回傳 Error Code|
-|Error Code |Table: Response OP Code|1||
+|---|---|---|
+|OK |01H|1||
+|Socket Error |80H|1|
+|CRC Error |81H|1|
+
 # 系統測試（下階段）
 GUI 提供界面，以驗證下列功能：
 ## 驗證燒錄硬體設備
