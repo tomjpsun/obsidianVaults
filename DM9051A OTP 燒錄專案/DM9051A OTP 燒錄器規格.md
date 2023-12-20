@@ -63,25 +63,27 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 |意義|值|Size|備註|
 |---|---|---|---|
-|Profile Write|55H|1|Table:Profile Write Data Format|
-|Response OP|A5H|1|Table:Response OP Format|
+|Profile Write|55H|1|Short Table:Profile Write Data Format|
+|Response OP|A5H|1|Short Table:Response OP Format|
 
-### Profile Write Data Format
+### Short Profile Write Data Format
 |意義|值|Size|備註|
 |---|---|---|---|
 |Data Length |18|1|目前僅支援值爲 18 (9051 Profile Length)|
 |Offset |0|1|Programmer 開始 Program 的位置，目前只有支援從 0 開始|
 |Data  |||9051 profile content|
 
-### Response OP Format
+`[Note]` 
+Size =  1 （8 Bits）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 Bits（即 255 Bytes）的需求，則新增 OP Code 來對應 
+### Short Response OP Format
 |意義|值|Size|備註|
 |---|---|---|---|
-|Data Length |18|1|目前僅支援值爲 18 (9051 Profile Length)|
-|Offset |0|1|Programmer 開始 Program 的位置，目前只有支援從 0 開始|
+|Data Length |1|1|目前僅支援值爲 18 (9051 Profile Length)|
+|Error Code |Table: Response OP Code|1|Programmer 開始 Program 的位置，目前只有支援從 0 開始|
 |Data  |||9051 profile content|
 
-`ps` 
-Size =  1, 如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應 
+`[Note]` 
+Size =  1 （Byte）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應 
 # 系統測試（下階段）
 GUI 提供界面，以驗證下列功能：
 ## 驗證燒錄硬體設備
