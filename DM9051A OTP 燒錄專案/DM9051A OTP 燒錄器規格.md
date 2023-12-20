@@ -46,7 +46,7 @@ SPI 速度規格 Max：50 Mbit/s depends on DM9051A
 MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 界面支援 Baud Rate 115200
 
-### Programmer Protocol With HMI
+### Programmer Protocol With HMI Format
 
 |意義|代號|值|Size|備註|
 |---|---|---|---|---|
@@ -65,6 +65,7 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 |---|---|---|---|
 |Profile Write|55H|1|Short Table:Profile Write Data Format|
 |Response OP|A5H|1|Short Table:Response OP Format|
+|CRC Error|A6H|1||
 
 ### Short Profile Write Data Format
 |意義|值|Size|備註|
