@@ -63,9 +63,10 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 |意義|值|Size|Direction|備註|
 |---|---|---|---|---|
-|Loop Test|50H|1|Host To Device|Short Table:Profile Write Data Format|
-|Profile Write|55H|1|Host To Device|Short Table:Profile Write Data Format|
-|Response OP|A5H|1|Device To Host|Short Table:Response OP Format|
+|Loop Test Send|50H|1|Host To Device|Table:Loop Test|
+|Loop Test Response|51H|1|Device To Host|Table:Loop Test|
+|Profile Write|55H|1|Host To Device|Table:Short Profile Write Data Format|
+|Response OP|A5H|1|Device To Host|Table:Short Response OP Format|
 
 
 ### Short Profile Write Data Format
