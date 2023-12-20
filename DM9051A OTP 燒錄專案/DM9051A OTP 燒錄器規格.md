@@ -46,7 +46,7 @@ SPI 速度規格 Max：50 Mbit/s depends on DM9051A
 MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 界面支援 Baud Rate 115200
 
-### Programmer Protocol With HMI
+### Format:Programmer Protocol With HMI
 
 |意義|代號|值|Size|備註|
 |---|---|---|---|---|
@@ -59,17 +59,17 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 |CRC Low|||1|From STX~ETX exclude STX|
 |CRC High|||1|From STX~ETX exclude STX|
 
-### OP Table
+### Table: OP Table
 
 |意義|值|Size|Direction|備註|
 |---|---|---|---|---|
-|Loop Test Send|50H|1|Host To Device|Table:Loop Test|
-|Loop Test Response|51H|1|Device To Host|Table:Loop Test|
-|Profile Write|55H|1|Host To Device|Table:Short Profile Write Data Format|
-|Response OP|A5H|1|Device To Host|Table:Short Response OP Format|
+|Loop Test Send|50H|1|Host To Device|Loop Test Format|
+|Loop Test Response|51H|1|Device To Host|Loop Test Format|
+|Profile Write|55H|1|Host To Device|Format:Short Profile Write Data |
+|Response OP|A5H|1|Device To Host|Format:Short Response OP |
 
 
-### Short Profile Write Data Format
+### Format: Short Profile Write Data
 |意義|值|Size|備註|
 |---|---|---|---|
 |Data Length |18|1|目前僅支援值爲 18 (9051 Profile Length)|
@@ -78,17 +78,17 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 
 `[Note]` 
 Size =  1 （8 Bits）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 Bits（即 255 Bytes）的需求，則新增 OP Code 來對應 
-### Short Response OP Format
+### Format: Short Response OP 
 |意義|值|Size|備註|
 |---|---|---|---|
 |Data Length |1|1|目前僅回傳 Response OP Code|
 |Error Code |Table: Short Response OP Code|1||
 
-### Loop Test
+### Format: Loop Test 
 |意義|值|Size|備註|
 |---|---|---|---|
-|Data Length |32|1||
-|Error Code |Table: Short Response OP Code|1||
+|Data Length |31|1||
+|Data | |31|5AH, 00|
 
 `[Note]` 
 Size =  1 （Byte）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應 
