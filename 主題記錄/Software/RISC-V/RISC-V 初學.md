@@ -51,7 +51,7 @@ Xilinx 提供了多種 FPGA（現場可編程門陣列）產品，適用於不�
 
 
 
-### Altera FPGA 系列
+# Altera FPGA 系列
 
 1. **Cyclone 系列**
     
