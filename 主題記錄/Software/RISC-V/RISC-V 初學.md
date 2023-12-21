@@ -18,7 +18,11 @@ ChatGPT
     - 連接線和配件：根據開發板可能需要 USB 線，電源線等。
 - **軟件**:
     
-    - **開發環境**：如 Xilinx Vivado, Altera Quartus 等。
+    - **開發環境**：如 
+	
+	
+	
+	, Altera Quartus 等。
     - **RISC-V 工具鏈**：包括編譯器和其他工具，用於編譯 RISC-V 程序。
     - **模擬器**（可選）：如 ModelSim，用於在硬件上燒錄之前模擬和測試設計。
 
