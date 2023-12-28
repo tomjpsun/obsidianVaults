@@ -1,4 +1,4 @@
-# Install By Debian Package
+ Install By Debian Package
 
 目前沒有整合好，需要一些手動部分。
 首先
@@ -51,7 +51,4 @@ Qt version 明確選好後，應該可以解決 *沒有 Kits 可以選擇* 的�
 # Install By Qt Official Site : Installer
 首先取得 Qt Installer: [[Qt Downloads]]
 
-|  |  |  |
-| ---- | ---- | ---- |
-|  |  |  |
-|  |  |  |
+
