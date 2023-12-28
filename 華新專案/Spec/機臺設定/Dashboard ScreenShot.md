@@ -1,1 +1,0 @@
-![[華新專案/Spec/機臺設定/IDTS-UI-dashboard-sketch-231024.odp]]
