@@ -2,7 +2,9 @@ int writeRegisters(int nSlave, int nRegister, QByteArray aryData);
 nRegister 是 1-based .
 
 例如要寫 VendorID (offset = 8)
-writeRegisters(2, 9, byteDaata);
+writeRegisters(2, 8+1+BASE_MEMORY_ADDRESS , byteDaata);
+
+**參考 spec**
 
 | Name | Word | Offset/Byte | Description |
 | ---- | ---- | ---- | ---- |
