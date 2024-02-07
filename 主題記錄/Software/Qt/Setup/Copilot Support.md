@@ -4,8 +4,7 @@
 ![[螢幕快照 2024-01-08 15-55-42.png]]
 
 
-
-點選 Copilot 設定 Sign in 資訊，node 直接找到 *nodejs* 安裝的路徑，agent 需要從 https://github.com/github/copilot.vim.git 下載 **copilot.vim** ，然後指定它下面的 *dist* 路徑
+點選 Copilot 設定 Sign in 資訊，**Node.js path** 需要找到 *Node.js* 安裝的路徑，**Path to agent** 需要從 https://github.com/github/copilot.vim.git 下載 **copilot.vim** 專案，然後指定它下面的 *dist* 路徑：
 
 ![[螢幕快照 2024-01-09 10-29-06.png]]
 
