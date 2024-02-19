@@ -3,7 +3,8 @@
 .pro 檔案：
 
 ```
-QT       += core gui charts
+QT       += core gui
+QT       += charts
 ```
 
 #### 加入 headers、宣告變數
