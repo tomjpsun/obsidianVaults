@@ -7,7 +7,7 @@ pkgfile [file]
 ========== add admin user ==========
 sudo useradd -m admin
 sudo passwd admin
-# 45101524
+//45101524
 
 # add to wheel group for sudo
 sudo usermod --append --groups wheel admin
@@ -94,7 +94,7 @@ cat << EOF > ./temperature_measurement.sh
 #!/bin/bash
 # Script: my-pi-temp.sh
 # Purpose: Display the ARM CPU and GPU  temperature of Raspberry Pi 2/3
-# Author: Vivek Gite <www.cyberciti.biz> under GPL v2.x+
+Author: Vivek Gite <www.cyberciti.biz> under GPL v2.x+
 # -------------------------------------------------------
 thermal=$(</sys/class/thermal/thermal_zone0/temp)
 cpu_utilization=$(mpstat | awk '$12 ~ /[0-9.]+/ { print 100 - $13"%" }')
