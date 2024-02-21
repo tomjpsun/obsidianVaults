@@ -1,4 +1,7 @@
-解決辦法：在 server 端，用工具 `firewall-config` 將 `samba` & `samba-client` 打開
+#### 解決辦法
+在 server 端，確定 `sudo smbpasswd -a tom` 將連線的 user 加入， 這範例的 user 是 tom。
+
+已經有跑 service `firewalld`，用工具 `firewall-config` 將 `samba` & `samba-client` 打開
 
 ![[螢幕快照 2024-02-21 13-46-48.png]]
 
