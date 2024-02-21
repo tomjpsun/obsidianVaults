@@ -22,3 +22,5 @@
 原來是 AnyDesk 需要 Xorg 的環境，目前許多 Linux distribution 採用 wayland 並不支援，導致回報的問題並不是真正原因 。
 
 ![[螢幕快照 2024-02-21 09-01-57.png]]
+
+重新登入，採用 Xorg 環境即可解決。
