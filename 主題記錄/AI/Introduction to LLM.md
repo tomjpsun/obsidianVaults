@@ -5,3 +5,4 @@ https://labs.botsnova.com/2023/11/26/%E9%97%9C%E6%96%BC-andrej-karpathy-%E7%9A%8
 
 _State of GPT_
 https://www.youtube.com/watch?v=bZQun8Y4L2A
+
