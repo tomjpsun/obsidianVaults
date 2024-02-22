@@ -50,3 +50,6 @@ NLP的關鍵任務包括：
 持續學習：NLP和深度學習領域正在迅速發展。通過在線課程、研討會、工作坊和會議保持知識更新。
 
 學習變換器架構是一個循序漸進的過程，需要時間和實踐來深化理解。不要害怕犯錯，實踐中的錯誤是學習的重要部分。隨著時間的推移，你將對變換器架構及其在NLP中的應用有更深的理解和掌握。
+
+參考資料
+1. [李謦伊  Transformer — Attention Is All You Need ](https://medium.com/ching-i/transformer-attention-is-all-you-need-c7967f38af14)
