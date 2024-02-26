@@ -1,19 +1,24 @@
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-
-
 # 定義
 下列定義都是以 JSON format 存檔，方便使用者改寫。 
 ## Settings：
-程式初始需要讀的設定，包括 Source Template，current profile x 4， 程式版號、Template 版號。
-## Template & Profile x 4
-當按下 **New Programmer** 後，從 Template copy 一份 Profile， UI 出現填寫欄位，讓 user 填寫內容：
+
+程式初始需要讀的設定，第一次自行 create。
+欄位如下：
+
+| Field                | Example Value  | Initial Value                         |
+| -------------------- | -------------- | ------------------------------------- |
+| Source Template File | ./DM9051A.tmpl | ~/DM9051A.tmpl (create if not exist ) |
+| Profile 1            | my_1.json      | profile_1.json                        |
+| Profile 2            | test_2.json    | profile_2.json                        |
+| Profile 3<br>        | ex3.json       | profile_3.json                        |
+| Profile 4            | 4.json         | profile_4.json                        |
+| Profile Path         | ~/Profile      | get from QFileDialog                  |
+| Template Version     | 1.0.0          | 1.0.0                                 |
+| App Version          | 1.0.0          | 1.0.0                                 |
+| Log Path             | ~/Log          | ~/Log                                 |
+
+## Template
+當按下 **New Programmer** 後，從 Template 複製 一份 Profile， UI 出現填寫欄位，讓 user 填寫內容：
 ### 出廠設定：
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 ### run time 設定的初始值：
@@ -24,4 +29,14 @@ Source Template 檔案名稱、目前燒錄的 MAC Address，Profile 產生日�
 >[!MD5]
 Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 
+
+| Field                | Example           | Initial Value                      |     |
+| -------------------- | ----------------- | ---------------------------------- | --- |
+| Begin MAC Address    | AA:BB:CC:DD:EE:00 | 00:00:00:00:00:00                  |     |
+| End MAC Address      | AA:BB:CC:DD:EE:FF | 00:00:00:00:00:00                  |     |
+| PID                  | 9051              | 9051                               |     |
+| VID                  | 0A46              | 0A46                               |     |
+| Template Version     | 1.0.0             | 1.0.0                              |     |
+| Programmer Device ID | DM_PROG_01        | DM_PROG                            |     |
+| Source Template File |                   | Settings[`"Source Template File"`] |     |
 
