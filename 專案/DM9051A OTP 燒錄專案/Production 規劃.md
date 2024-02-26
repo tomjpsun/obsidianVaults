@@ -7,3 +7,7 @@ graph TD;
     C-->D;
 ```
 
+# 程式順序
++ 讀 settings
+	+ Settings 
+	+ 
