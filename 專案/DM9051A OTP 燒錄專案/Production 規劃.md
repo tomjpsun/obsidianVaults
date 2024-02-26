@@ -44,10 +44,15 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 ## Profile
 當 User 按下 New Programmer 之後，經過 Wizard 詢問 User 後，新增一個 Tab 顯示新的 Profile 內容。
 Wizard 根據 Template 內容對新增的 Profile 初始化，並且額外新增 Runtime Values
-### run time 設定的初始值：
+### Run time 設定的初始值：
 在 Profile 產生的時候，給予初始值，有：
 Source Template 檔案名稱、目前燒錄的 MAC Address，Profile 產生日期。
 另外產生 Profile 的時候，要求使用者選擇 COM Port 並保存在 Profile 內。
 
 >[!Note]
->
+
+除了 Template 的欄位之外，Runtime 欄位如下
+
+| Field | Example | Initial Value |
+| ----- | ------- | ------------- |
+|       |         |               |
