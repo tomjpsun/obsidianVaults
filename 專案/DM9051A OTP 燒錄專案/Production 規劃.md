@@ -42,8 +42,8 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 
 
 ## Profile
-當 User 按下 New Programmer 之後，經過 Wizard 詢問 User 後，新增一個 Tab 顯示新的 Profile 內容。
-Wizard 根據 Template 內容對新增的 Profile 初始化，並且額外新增 Runtime Values
+
+當 User 按下 New Programmer 之後，經過 Wizard 詢問 User 後，Wizard 根據 Template 內容對新增的 Profile 初始化，UI 新增一個 Tab 顯示其內容。
 ### Run time 設定的初始值：
 在 Profile 產生的時候，給予初始值，有：
 Source Template 檔案名稱、目前燒錄的 MAC Address，Profile 產生日期。
