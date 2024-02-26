@@ -26,10 +26,6 @@
 Source Template 檔案名稱、目前燒錄的 MAC Address，Profile 產生日期。
 另外產生 Profile 的時候，要求使用者選擇 COM Port 並保存在 Profile 內。
 
->[!MD5]
-Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
-
-
 | Field                | Example           | Initial Value                      |     |
 | -------------------- | ----------------- | ---------------------------------- | --- |
 | Begin MAC Address    | AA:BB:CC:DD:EE:00 | 00:00:00:00:00:00                  |     |
@@ -40,3 +36,9 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 | Programmer Device ID | DM_PROG_01        | DM_PROG                            |     |
 | Source Template File |                   | Settings[`"Source Template File"`] |     |
 
+>[!備註]
+>Programmer Device ID 先留位置，以後再從 API 讀取
+>Source Template File 從 Setting 讀取
+
+>[!MD5]
+Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
