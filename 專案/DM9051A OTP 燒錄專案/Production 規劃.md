@@ -70,3 +70,8 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 >[!Note]
 >Log File 每次 run 的時候，用當時時間產生一個，檔案名稱格式爲 {year}\_{month}{day}\_{hour}{min}{sec}\_{COM}.log
 
+# 流程
+
+flowchart TD
+Start --> Stop
+
