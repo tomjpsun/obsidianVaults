@@ -21,8 +21,8 @@
 | Profile Path         | ~/my_folder/profiles/              | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
 | Template Version     | 1.0.0                              | 1.0.0                                                            |
 | App Version          | 1.0.0                              | 1.0.0                                                            |
-| Log Path             | ~/my_folder/log/                   | ${HOME}/programmer/log/                                          |
-| Report Path          | ~/my_folder/report/                | ${HOME}/programmer/report/                                       |
+| Log Path             | ~/my_folder/logs/                  | ${HOME}/programmer/logs/                                         |
+| Report Path          | ~/my_folder/reports/               | ${HOME}/programmer/reports/                                      |
 
 ## Template
 當按下 **New Programmer** 後，從 Template 複製 一份 Profile， UI 出現填寫欄位，讓 user 填寫內容：
