@@ -34,7 +34,7 @@ NLP的關鍵任務包括：
 學習Python：確保你熟悉Python，因為大多數深度學習和NLP項目都使用Python進行開發。基本的機器學習和深度學習知識：熟悉神經網絡、反向傳播、損失函數等基本概念。NLP基礎：理解NLP的基本任務和挑戰，例如**分詞**、**詞性標注**、**命名實體識別**等。
 
 2. 深入理解變換器架構
-閱讀原始論文：《Attention is All You Need》是變換器架構的里程碑論文。閱讀和理解這篇論文是學習變換器的關鍵步驟。
+閱讀原始論文：Attention is All You Need(參考資料 3) 是變換器架構的里程碑論文。閱讀和理解這篇論文是學習變換器的關鍵步驟。
 學習自注意力機制：自注意力是變換器架構的核心。理解它是如何工作的，以及它如何使模型能夠捕捉長距離依賴。
 
 3. 實踐和實驗
@@ -52,4 +52,7 @@ NLP的關鍵任務包括：
 學習變換器架構是一個循序漸進的過程，需要時間和實踐來深化理解。不要害怕犯錯，實踐中的錯誤是學習的重要部分。隨著時間的推移，你將對變換器架構及其在NLP中的應用有更深的理解和掌握。
 
 參考資料
-1. [Transformer — Attention Is All You Need ](https://medium.com/ching-i/transformer-attention-is-all-you-need-c7967f38af14)
+1. [Medium 文章：Transformer — Attention Is All You Need ](https://medium.com/ching-i/transformer-attention-is-all-you-need-c7967f38af14)
+2. [很好的 Transfomer 介紹](https://www.youtube.com/watch?v=bCz4OMemCcA)
+3. [Transformer 論文解說](https://www.youtube.com/watch?v=nzqlFIcCSWQ&t=516s)
+4. 
