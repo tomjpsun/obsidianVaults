@@ -85,9 +85,9 @@ Wizard 步騶:
 ###### 頁面 3
 + 從 template 取得 profile 初始值，給 user 修改，修改後更新上面的 profile 內容
 + 
->[!todo] 如果 Wizard cancel 則 disconnect programmer
+>[!Failure] 如果 Wizard cancel 則 disconnect programmer
 
-
+>[!Success] 如果都完成就在 MainWindow 新增頁面
 
 
 
