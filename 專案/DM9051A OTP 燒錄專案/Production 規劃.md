@@ -71,17 +71,21 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 >Log File 每次 run 的時候，用當時時間產生一個，檔案名稱格式爲 {year}\_{month}{day}\_{hour}{min}{sec}\_{COM}.log
 
 # 流程
-```mermaid
-stateDiagram-v2
-        [*] --> Still
-        Still --> [*]
-        Still --> Moving
-        Moving --> Still
-        Moving --> Crash
-        Crash --> [*]
 
-```
-
+MainWindow ->讀取 App Settings
+新增 Programmer -> Wizard 
+Wizard 步騶:
+###### 頁面 1
++ connect programmer ，讀取 programmer ID，
++ connect 成功才有下一步
+###### 頁面 2
++ 取得 user 放 template 位置，並將 default template 放在該位置
++ 取得 user 放 profile 位置，並將 profile 放在該位置
++ 成功寫入 file 才有下一步
+###### 頁面 3
++ 從 template 取得 profile 初始值，給 user 修改，修改後更新上面的 profile 內容
++ 
+>[!todo] 如果 Wizard cancel 則 disconnect programmer
 
 
 
