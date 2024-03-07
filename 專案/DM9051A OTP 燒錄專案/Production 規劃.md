@@ -84,12 +84,13 @@ Wizard 步騶:
 + 成功寫入 file 才有下一步
 ###### 頁面 3
 + 從 template 取得 profile 初始值，給 user 修改，修改後更新上面的 profile 內容
-+ 
+
 >[!Info] 
 >如果 Wizard cancel 則 disconnect programmer
 >如果都完成就在 MainWindow 新增頁面
 
-
+>[!Warning] 
+>每一個頁面每秒向燒錄器讀取 status ，如果超過 3 次沒有回應，就跳出斷線的 dialog 然後移除本頁面
 
 
 
