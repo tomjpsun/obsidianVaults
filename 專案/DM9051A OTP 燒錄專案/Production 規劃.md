@@ -72,10 +72,13 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 
 # 流程
 ```mermaid
-flowchart TD
-Start --> Stop
-id1[(Database)]
-id[I am a square]
+stateDiagram-v2
+        [*] --> Still
+        Still --> [*]
+        Still --> Moving
+        Moving --> Still
+        Moving --> Crash
+        Crash --> [*]
 
 ```
 
