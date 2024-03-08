@@ -96,5 +96,18 @@ Wizard 步騶:
 
 ![[螢幕快照 2024-03-07 16-08-02.png]]
 # 流程設計
-## 需求
-+ 要能夠監控
+## App Start
+App start 時，讀取 **settings**（初始從 resource 來）， 進入 `configure settings` Wizard，從 template 取得初始值，提供 user 修改 幾個 paths：
++ source template path
++ profile path
++ log path
++ report path
+結束後存入 **settings** 。
+App 有 `configure settings` button ，讀取 settings 的值，讓 user 重新 configure。
+結果存回 **settings**
+App 畫面 4 個 Tabs，初始沒有 connect to Programmer，之後自動 connect
+各自有各自的 profile
+## Tab 頁面
+提供 `configure profile` button ，進入 `configure profile` Wizard 提供 user 修改 ：
+
+
