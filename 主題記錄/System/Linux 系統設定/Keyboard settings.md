@@ -1,3 +1,8 @@
+---
+tags:
+  - keyboard
+  - keymap
+---
 # 前言
 在安裝 Debian 12 後，發現開 console 的時候，keyboard mapping 不正確，原本 `|` 打出來變成 `~`，原本 `~` 符號打出來變成 `¬`
 # How?
