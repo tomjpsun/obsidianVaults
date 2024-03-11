@@ -97,7 +97,7 @@ Wizard 步騶:
 ![[螢幕快照 2024-03-07 16-08-02.png]]
 # 流程設計
 ## App Start
-App start 時，讀取 **settings**（初始從 resource 來）， 進入 `configure settings` Wizard，從 template 取得初始值，提供 user 修改 幾個 paths：
+App start 時，讀取 **settings**（初始從 resource 來）， 進入 `configure settings wizard`，從 template 取得初始值，提供 user 修改 幾個 paths：
 + source template path
 + profile path
 + log path
