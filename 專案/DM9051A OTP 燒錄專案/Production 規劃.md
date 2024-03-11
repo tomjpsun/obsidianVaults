@@ -15,10 +15,10 @@
 | Field                | Example Value                      | Initial Value                                                    |
 | -------------------- | ---------------------------------- | ---------------------------------------------------------------- |
 | Source Template File | ~/my_folder/templates/DM9051A.tmpl | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |
-| Profile 1            | my_1.json                          | profile_1.json                                                   |
-| Profile 2            | test_2.json                        | profile_2.json                                                   |
-| Profile 3<br>        | ex3.json                           | profile_3.json                                                   |
-| Profile 4            | 4.json                             | profile_4.json                                                   |
+| Profile\[1]          | my_1.json                          | profile_1.json                                                   |
+| Profile\[2]          | test_2.json                        | profile_2.json                                                   |
+| Profile\[3]<br>      | ex3.json                           | profile_3.json                                                   |
+| Profile\[4]          | 4.json                             | profile_4.json                                                   |
 | Profile Path         | ~/my_folder/profiles/              | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
 | Template Version     | 1.0.0                              | 1.0.0                                                            |
 | App Version          | 1.0.0                              | 1.0.0                                                            |
@@ -31,21 +31,23 @@
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 
 
-| Field                | Example           | Initial Value                      |     |
-| -------------------- | ----------------- | ---------------------------------- | --- |
-| Begin MAC Address    | AA:BB:CC:DD:EE:00 | 00:00:00:00:00:00                  |     |
-| End MAC Address      | AA:BB:CC:DD:EE:FF | 00:00:00:00:00:00                  |     |
-| PID                  | 9051              | 9051                               |     |
-| VID                  | 0A46              | 0A46                               |     |
-| Template Version     | 1.0.0             | 1.0.0                              |     |
-| Source Template File |                   | Settings[`"Source Template File"`] |     |
-| ManuFacturer         | DAVICOM           | DAVICOM                            |     |
-| StopOnFailure        | Y                 | Y                                  |     |
-| SkipFailedMAC        | N                 | N                                  |     |
+| Field                 | Example           | Initial Value                      |     |
+| --------------------- | ----------------- | ---------------------------------- | --- |
+| Begin MAC Address     | AA:BB:CC:DD:EE:00 | 00:00:00:00:00:00                  |     |
+| End MAC Address       | AA:BB:CC:DD:EE:FF | 00:00:00:00:00:00                  |     |
+| PID                   | 9051              | 9051                               |     |
+| VID                   | 0A46              | 0A46                               |     |
+| Template Version      | 1.0.0             | 1.0.0                              |     |
+| Source Template File  |                   | Settings[`"Source Template File"`] |     |
+| ManuFacturer          | DAVICOM           | DAVICOM                            |     |
+| StopOnFailure         | Y                 | Y                                  |     |
+| SkipFailedMAC         | N                 | N                                  |     |
+| Refresh Interval\(ms) | 1000              | 1000                               |     |
 
 >[!備註]
 >Source Template File 從 Setting 讀取
 >Report Path：產生 Report 時存放的檔案Path
+>Refresh Interval 以 millisec 爲單位，不提供使用者調整
 
 >[!MD5]
 Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
@@ -66,35 +68,13 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 | Profile Number(one start) | 1                         | 1                                |
 | COM Port                  | com 5                     | NULL                             |
 | Log File                  | 2024_0226_160530_com5.log | 依照 create time 初始化               |
+| Refresh Interval\(ms)     | 1000                      | 1000                             |
 
 
 >[!Note]
 >Log File 每次 run 的時候，用當時時間產生一個，檔案名稱格式爲 {year}\_{month}{day}\_{hour}{min}{sec}\_{COM}.log
+>Refresh Interval 以 millisec 爲單位，不提供使用者調整
 
-# 流程
-
-MainWindow ->讀取 App Settings
-新增 Programmer -> Wizard 
-Wizard 步騶:
-###### 頁面 1
-+ connect programmer ，讀取 programmer ID，
-+ connect 成功才有下一步
-###### 頁面 2
-+ 取得 user 放 template 位置，並將 default template 放在該位置
-+ 取得 user 放 profile 位置，並將 profile 放在該位置
-+ 成功寫入 file 才有下一步
-###### 頁面 3
-+ 從 template 取得 profile 初始值，給 user 修改，修改後更新上面的 profile 內容
-
->[!Info] 
->如果 Wizard cancel 則 disconnect programmer
->如果都完成就在 MainWindow 新增頁面
-
->[!Warning] 
->每一個頁面每秒向燒錄器讀取 status ，如果超過 3 次沒有回應，就跳出斷線的 dialog 然後移除本頁面
-
-
-![[螢幕快照 2024-03-07 16-08-02.png]]
 # 流程設計
 ## App Start
 App start 時，讀取 **settings**（初始從 resource 來）， 進入 `configure settings wizard`，從 template 取得初始值，提供 user 修改 幾個 paths：
@@ -105,10 +85,48 @@ App start 時，讀取 **settings**（初始從 resource 來）， 進入 `confi
 結束後存入 **settings** 。
 App 有 `configure settings` button ，讀取 settings 的值，讓 user 重新 configure。
 結果存回 **settings**
-在 `configure settings` 的過程，關於每個 `profile`  設定，呼叫 `configure profile wizard` 
-App 畫面 4 個 Tabs，初始沒有 connect to Programmer，之後自動 connect
+
+App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 各自有各自的 profile
-## Tab 頁面
-提供 `configure profile` button ，進入 `configure profile` Wizard 提供 user 修改 ：
+
+>[!Note] 在 `configure settings` 的過程，關於每個 `profile`  設定，不進行設定，
+以後每個 tab 裏面提供按鈕呼叫 `configure profile wizard` 
+
+>[!Info] 
+>第一階段提供一個 tab，第二階段提供 4 個 tabs
+## Tab i 頁面 （ i 是頁面 index 從 0 開始)
+
+### Tab i Wizard
+
+提供 `configure profile` button ，進入 `configure profile wizard` 提供 user 修改 ：
++ 讀取 settings.profile[i] 的檔案內容，給 user 修改
++ 結果存回 settings.profile[i] 的檔案
++ wizard 頁面提供下列設定：
+	+ Start MAC Addr
+	+ End MAC Addr
+	+ PID
+	+ VID
+	+ Stop on error （討論：每次都會打開蓋子，是否需要這個設定？）
+	
+### Tab i 
+
+顯示下列內容：
++ Start MAC Addr
++ End Mac Addr
++ Current Mac Addr
++ 用 icon 分別表示 蓋子打開、關閉
++ a `configure profile` button
++ polling state 依照 refresh_interval\(ms)
++ Tab color for state : Table 1
+
+| State | Color  |     |
+| ----- | ------ | --- |
+| 正在燒錄  | Orange |     |
+| 燒錄成功  | Green  |     |
+| 燒錄失敗  | Red    |     |
+**Table 1**
+
+
+
 
 
