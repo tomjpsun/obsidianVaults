@@ -105,6 +105,7 @@ App start 時，讀取 **settings**（初始從 resource 來）， 進入 `confi
 結束後存入 **settings** 。
 App 有 `configure settings` button ，讀取 settings 的值，讓 user 重新 configure。
 結果存回 **settings**
+在 `configure settings` 的過程，關於每個 `profile`  設定，呼叫 `configure profile wizard` 
 App 畫面 4 個 Tabs，初始沒有 connect to Programmer，之後自動 connect
 各自有各自的 profile
 ## Tab 頁面
