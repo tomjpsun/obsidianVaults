@@ -12,20 +12,20 @@
 程式初始需要讀的設定，第一次自行 create。
 欄位如下：
 
-| Field                          | Example Value          | Initial Value                                                    |
-| ------------------------------ | ---------------------- | ---------------------------------------------------------------- |
-| Template Path                  | ~/my_folder/templates/ | ${HOME}/programmer/templates                                     |
-| Source Template File           | DM9051A.tmpl           | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |
-| Profile\[1]                    | my_1.json              | profile_1.json                                                   |
-| Profile\[2]                    | test_2.json            | profile_2.json                                                   |
-| Profile\[3]<br>                | ex3.json               | profile_3.json                                                   |
-| Profile\[4]                    | 4.json                 | profile_4.json                                                   |
-| Profile Path                   | ~/my_folder/profiles/  | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
-| Template Version               | 1.0.0                  | 1.0.0                                                            |
-| App Version                    | 1.0.0                  | 1.0.0                                                            |
-| Log Path                       | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |
-| Report Path                    | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |
-| Refresh Interval\ default (ms) | 1000                   | 1000                                                             |
+| Field                         | Example Value          | Initial Value                                                    |
+| ----------------------------- | ---------------------- | ---------------------------------------------------------------- |
+| Template Path                 | ~/my_folder/templates/ | ${HOME}/programmer/templates                                     |
+| Source Template File          | DM9051A.tmpl           | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |
+| Profile\[1]                   | my_1.json              | profile_1.json                                                   |
+| Profile\[2]                   | test_2.json            | profile_2.json                                                   |
+| Profile\[3]<br>               | ex3.json               | profile_3.json                                                   |
+| Profile\[4]                   | 4.json                 | profile_4.json                                                   |
+| Profile Path                  | ~/my_folder/profiles/  | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
+| Template Version              | 1.0.0                  | 1.0.0                                                            |
+| App Version                   | 1.0.0                  | 1.0.0                                                            |
+| Log Path                      | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |
+| Report Path                   | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |
+| Refresh Interval default (ms) | 1000                   | 1000                                                             |
 
 ## Template
 當按下 **New Programmer** 後，從 Template 複製 一份 Profile， UI 出現填寫欄位，讓 user 填寫內容：
@@ -33,18 +33,19 @@
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 
 
-| Field                           | Example                            | Initial Value                      |     |
-| ------------------------------- | ---------------------------------- | ---------------------------------- | --- |
-| Begin MAC Address               | AA:BB:CC:DD:EE:00                  | 00:00:00:00:00:00                  |     |
-| End MAC Address                 | AA:BB:CC:DD:EE:FF                  | 00:00:00:00:00:00                  |     |
-| PID                             | 9051                               | 9051                               |     |
-| VID                             | 0A46                               | 0A46                               |     |
-| Template Version                | 1.0.0                              | 1.0.0                              |     |
-| Source Template File            | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`] |     |
-| ManuFacturer                    | DAVICOM                            | DAVICOM                            |     |
-| StopOnFailure                   | Y                                  | Y                                  |     |
-| SkipFailedMAC                   | N                                  | N                                  |     |
-| Refresh Interval\(ms), optional | 1000                               | 1000                               |     |
+| Field                            | Example                            | Initial Value                           |     |
+| -------------------------------- | ---------------------------------- | --------------------------------------- | --- |
+| Begin MAC Address                | AA:BB:CC:DD:EE:00                  | 00:00:00:00:00:00                       |     |
+| End MAC Address                  | AA:BB:CC:DD:EE:FF                  | 00:00:00:00:00:00                       |     |
+| PID                              | 9051                               | 9051                                    |     |
+| VID                              | 0A46                               | 0A46                                    |     |
+| Template Version                 | 1.0.0                              | 1.0.0                                   |     |
+| Source Template File<sup>*</sup> | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`]      |     |
+| ManuFacturer                     | DAVICOM                            | DAVICOM                                 |     |
+| StopOnFailure                    | Y                                  | Y                                       |     |
+| SkipFailedMAC                    | N                                  | N                                       |     |
+| Refresh Interval\(ms), optional  | 1000                               | Settings\[`"Refresh Interval Default"`] |     |
+|                                  |                                    |                                         |     |
 
 >[!備註]
 >Source Template File 從 Setting 讀取
