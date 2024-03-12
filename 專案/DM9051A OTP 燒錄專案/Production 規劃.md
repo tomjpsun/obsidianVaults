@@ -12,18 +12,19 @@
 程式初始需要讀的設定，第一次自行 create。
 欄位如下：
 
-| Field                | Example Value                      | Initial Value                                                    |
-| -------------------- | ---------------------------------- | ---------------------------------------------------------------- |
-| Source Template File | ~/my_folder/templates/DM9051A.tmpl | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |
-| Profile\[1]          | my_1.json                          | profile_1.json                                                   |
-| Profile\[2]          | test_2.json                        | profile_2.json                                                   |
-| Profile\[3]<br>      | ex3.json                           | profile_3.json                                                   |
-| Profile\[4]          | 4.json                             | profile_4.json                                                   |
-| Profile Path         | ~/my_folder/profiles/              | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
-| Template Version     | 1.0.0                              | 1.0.0                                                            |
-| App Version          | 1.0.0                              | 1.0.0                                                            |
-| Log Path             | ~/my_folder/logs/                  | ${HOME}/programmer/logs/                                         |
-| Report Path          | ~/my_folder/reports/               | ${HOME}/programmer/reports/                                      |
+| Field                          | Example Value                      | Initial Value                                                    |
+| ------------------------------ | ---------------------------------- | ---------------------------------------------------------------- |
+| Source Template File           | ~/my_folder/templates/DM9051A.tmpl | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |
+| Profile\[1]                    | my_1.json                          | profile_1.json                                                   |
+| Profile\[2]                    | test_2.json                        | profile_2.json                                                   |
+| Profile\[3]<br>                | ex3.json                           | profile_3.json                                                   |
+| Profile\[4]                    | 4.json                             | profile_4.json                                                   |
+| Profile Path                   | ~/my_folder/profiles/              | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
+| Template Version               | 1.0.0                              | 1.0.0                                                            |
+| App Version                    | 1.0.0                              | 1.0.0                                                            |
+| Log Path                       | ~/my_folder/logs/                  | ${HOME}/programmer/logs/                                         |
+| Report Path                    | ~/my_folder/reports/               | ${HOME}/programmer/reports/                                      |
+| Refresh Interval\ default (ms) | 1000                               | 1000                                                             |
 
 ## Template
 當按下 **New Programmer** 後，從 Template 複製 一份 Profile， UI 出現填寫欄位，讓 user 填寫內容：
@@ -31,18 +32,18 @@
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 
 
-| Field                 | Example                            | Initial Value                      |     |
-| --------------------- | ---------------------------------- | ---------------------------------- | --- |
-| Begin MAC Address     | AA:BB:CC:DD:EE:00                  | 00:00:00:00:00:00                  |     |
-| End MAC Address       | AA:BB:CC:DD:EE:FF                  | 00:00:00:00:00:00                  |     |
-| PID                   | 9051                               | 9051                               |     |
-| VID                   | 0A46                               | 0A46                               |     |
-| Template Version      | 1.0.0                              | 1.0.0                              |     |
-| Source Template File  | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`] |     |
-| ManuFacturer          | DAVICOM                            | DAVICOM                            |     |
-| StopOnFailure         | Y                                  | Y                                  |     |
-| SkipFailedMAC         | N                                  | N                                  |     |
-| Refresh Interval\(ms) | 1000                               | 1000                               |     |
+| Field                           | Example                            | Initial Value                      |     |
+| ------------------------------- | ---------------------------------- | ---------------------------------- | --- |
+| Begin MAC Address               | AA:BB:CC:DD:EE:00                  | 00:00:00:00:00:00                  |     |
+| End MAC Address                 | AA:BB:CC:DD:EE:FF                  | 00:00:00:00:00:00                  |     |
+| PID                             | 9051                               | 9051                               |     |
+| VID                             | 0A46                               | 0A46                               |     |
+| Template Version                | 1.0.0                              | 1.0.0                              |     |
+| Source Template File            | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`] |     |
+| ManuFacturer                    | DAVICOM                            | DAVICOM                            |     |
+| StopOnFailure                   | Y                                  | Y                                  |     |
+| SkipFailedMAC                   | N                                  | N                                  |     |
+| Refresh Interval\(ms), optional | 1000                               | 1000                               |     |
 
 >[!備註]
 >Source Template File 從 Setting 讀取
@@ -62,18 +63,20 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 
 在 Profile 產生的時候，給予初始值，除了 Template 的欄位之外，Runtime 欄位如下：
 
-| Field                     | Example                   | Initial Value                    |
-| ------------------------- | ------------------------- | -------------------------------- |
-| Current MAC Address       | AA:BB:CC:DD:EE:00         | copy from `Begin MAC Address`    |
-| Profile Number(one start) | 1                         | index of profile                 |
-| COM Port                  | com 5                     | NULL                             |
-| Log File                  | 2024_0226_160530_com5.log | 依照 create time 初始化, 檔名參考下面的 Note |
-| Refresh Interval\(ms)     | 1000                      | 1000                             |
+| Field                          | Example                   | Initial Value                    |
+| ------------------------------ | ------------------------- | -------------------------------- |
+| Current MAC Address            | AA:BB:CC:DD:EE:00         | copy from `Begin MAC Address`    |
+| Profile Number(one start)      | 1                         | index of profile                 |
+| COM Port                       | com 5                     | NULL                             |
+| Log File                       | 2024_0226_160530_com5.log | 依照 create time 初始化, 檔名參考下面的 Note |
+| Refresh Interval\(ms).optional | 1000                      | 1000                             |
+| Overwrite Non-Empty EEPROM     | N                         | N                                |
 
 
 >[!Note]
 >Log File 每次 run 的時候，用當時時間產生一個，檔案名稱格式爲 {year}\_{month}{day}\_{hour}{min}{sec}\_{COM}.log, 例如 2024_0312_103053_COM5.log。
 >Refresh Interval 以 millisec 爲單位，不提供使用者調整。
+>Overwrite Non-Empty EEPROM 如果發生，則跳出 window 詢問
 
 # 流程設計
 ## App Start
@@ -106,34 +109,41 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 	+ End MAC Addr
 	+ PID
 	+ VID
-	+ Stop on error （討論：每次都會打開蓋子，是否需要這個設定？）
+	+ Stop on error （發生錯誤是否自動 restart）
+	
 	
 ### Tab i 
 
 顯示下列內容：
++ Device ID
++ Programmer 是否正常
 + Start MAC Addr
 + End Mac Addr
 + Current Mac Addr
-+ 本頁面已經成功的燒錄次數
-+ 還有多少可用 MAC
++ Current Connected COM port
++ 已燒錄 MAC 數量
++ 爲燒錄 MAC 數量
 + 可用 MAC 佔全部百分比 
 + 用 icon 分別表示 蓋子打開、關閉
 + configure 裏面的 Stop on error 
 + a `configure profile` button
++ button start ： 手動繼續 after error
 + polling state 依照 refresh_interval\(ms)
 
 下面列出 3 種 states：
 
-| State | Color on Tab |     |
-| ----- | ------------ | --- |
-| 正在燒錄  | Orange       |     |
-| 停止燒錄  | Green        |     |
+| State     | Color on Tab |     |
+| --------- | ------------ | --- |
+| 自動燒錄流程運行中 | Green        |     |
+| 沒有運行燒錄流程  | Red          |     |
+|           |              |     |
+|           |              |     |
 **Table 1**  
 
 | Result | Color Mark |     |
 | ------ | ---------- | --- |
-| 燒錄成功   | Green V    |     |
-| 燒錄失敗   | Red     X  |     |
+| 燒錄驗證成功 | Green V    |     |
+| 燒錄驗證失敗 | Red     X  |     |
 **Table 2**
 
 | Result | Text or Icon |     |
@@ -142,3 +152,7 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 | 蓋子關閉   | Close        |     |
 **Table 3**
 
+>[!Note] 每一顆燒錄必須經過 讀、寫、讀 三個 command
+## Programmer Status
++ 蓋子曾經打開
++ 蓋子目前狀態
