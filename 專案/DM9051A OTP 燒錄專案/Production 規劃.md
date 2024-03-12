@@ -152,7 +152,12 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 | 蓋子關閉   | Close        |     |
 **Table 3**
 
->[!Note] 每一顆燒錄必須經過 讀、寫、讀 三個 command
+>[!Warning] 每一次燒錄必須經過 讀、寫、讀 三個 command，
+>第一個 command 讀，要檢查 MAC Address 是否爲 Empty？若是 Empty，才能繼續，否則用 Dialog 警告 user 該 Chip 曾經燒錄過，確認後才繼續。
+>第二個 command 寫，先 reset **曾經打開蓋子** 的 flag，然後再燒錄內容
+>第三個 command 讀，然後核對與寫入的內容是否相同
+>
+
 ## Programmer Status
 + 蓋子曾經打開
 + 蓋子目前狀態
