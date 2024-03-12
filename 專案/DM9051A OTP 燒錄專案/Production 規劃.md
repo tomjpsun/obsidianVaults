@@ -1,9 +1,9 @@
 
-| 本文件版本 | comment               |     |
-| ----- | --------------------- | --- |
-| 0.1.0 | 初稿                    |     |
-| 0.1.1 | Review 2024/02/27     |     |
-| 0.1.2 | 2024/3/8 新增流程章節，初稿待討論 |     |
+| 本文件版本 | comment                             |     |
+| ----- | ----------------------------------- | --- |
+| 0.1.0 | 初稿                                  |     |
+| 0.1.1 | Review 2024/02/27                   |     |
+| 0.1.2 | 2024/3/12 新增流程章節，修改 Settings ，初稿待討論 |     |
 
 # 定義
 下列定義都是以 JSON format 存檔，方便使用者改寫。 
@@ -31,18 +31,18 @@
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 
 
-| Field                 | Example           | Initial Value                      |     |
-| --------------------- | ----------------- | ---------------------------------- | --- |
-| Begin MAC Address     | AA:BB:CC:DD:EE:00 | 00:00:00:00:00:00                  |     |
-| End MAC Address       | AA:BB:CC:DD:EE:FF | 00:00:00:00:00:00                  |     |
-| PID                   | 9051              | 9051                               |     |
-| VID                   | 0A46              | 0A46                               |     |
-| Template Version      | 1.0.0             | 1.0.0                              |     |
-| Source Template File  |                   | Settings[`"Source Template File"`] |     |
-| ManuFacturer          | DAVICOM           | DAVICOM                            |     |
-| StopOnFailure         | Y                 | Y                                  |     |
-| SkipFailedMAC         | N                 | N                                  |     |
-| Refresh Interval\(ms) | 1000              | 1000                               |     |
+| Field                 | Example                            | Initial Value                      |     |
+| --------------------- | ---------------------------------- | ---------------------------------- | --- |
+| Begin MAC Address     | AA:BB:CC:DD:EE:00                  | 00:00:00:00:00:00                  |     |
+| End MAC Address       | AA:BB:CC:DD:EE:FF                  | 00:00:00:00:00:00                  |     |
+| PID                   | 9051                               | 9051                               |     |
+| VID                   | 0A46                               | 0A46                               |     |
+| Template Version      | 1.0.0                              | 1.0.0                              |     |
+| Source Template File  | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`] |     |
+| ManuFacturer          | DAVICOM                            | DAVICOM                            |     |
+| StopOnFailure         | Y                                  | Y                                  |     |
+| SkipFailedMAC         | N                                  | N                                  |     |
+| Refresh Interval\(ms) | 1000                               | 1000                               |     |
 
 >[!備註]
 >Source Template File 從 Setting 讀取
@@ -64,16 +64,16 @@ Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 
 | Field                     | Example                   | Initial Value                    |
 | ------------------------- | ------------------------- | -------------------------------- |
-| Current MAC Address       | AA:BB:CC:DD:EE:00         | Settings [`"Begin Mac Address"`] |
-| Profile Number(one start) | 1                         | 1                                |
+| Current MAC Address       | AA:BB:CC:DD:EE:00         | copy from `Begin MAC Address`    |
+| Profile Number(one start) | 1                         | index of profile                 |
 | COM Port                  | com 5                     | NULL                             |
-| Log File                  | 2024_0226_160530_com5.log | 依照 create time 初始化               |
+| Log File                  | 2024_0226_160530_com5.log | 依照 create time 初始化, 檔名參考下面的 Note |
 | Refresh Interval\(ms)     | 1000                      | 1000                             |
 
 
 >[!Note]
->Log File 每次 run 的時候，用當時時間產生一個，檔案名稱格式爲 {year}\_{month}{day}\_{hour}{min}{sec}\_{COM}.log
->Refresh Interval 以 millisec 爲單位，不提供使用者調整
+>Log File 每次 run 的時候，用當時時間產生一個，檔案名稱格式爲 {year}\_{month}{day}\_{hour}{min}{sec}\_{COM}.log, 例如 2024_0312_103053_COM5.log。
+>Refresh Interval 以 millisec 爲單位，不提供使用者調整。
 
 # 流程設計
 ## App Start
