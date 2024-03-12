@@ -12,19 +12,20 @@
 程式初始需要讀的設定，第一次自行 create。
 欄位如下：
 
-| Field                          | Example Value                      | Initial Value                                                    |
-| ------------------------------ | ---------------------------------- | ---------------------------------------------------------------- |
-| Source Template File           | ~/my_folder/templates/DM9051A.tmpl | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |
-| Profile\[1]                    | my_1.json                          | profile_1.json                                                   |
-| Profile\[2]                    | test_2.json                        | profile_2.json                                                   |
-| Profile\[3]<br>                | ex3.json                           | profile_3.json                                                   |
-| Profile\[4]                    | 4.json                             | profile_4.json                                                   |
-| Profile Path                   | ~/my_folder/profiles/              | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
-| Template Version               | 1.0.0                              | 1.0.0                                                            |
-| App Version                    | 1.0.0                              | 1.0.0                                                            |
-| Log Path                       | ~/my_folder/logs/                  | ${HOME}/programmer/logs/                                         |
-| Report Path                    | ~/my_folder/reports/               | ${HOME}/programmer/reports/                                      |
-| Refresh Interval\ default (ms) | 1000                               | 1000                                                             |
+| Field                          | Example Value          | Initial Value                                                    |
+| ------------------------------ | ---------------------- | ---------------------------------------------------------------- |
+| Template Path                  | ~/my_folder/templates/ | ${HOME}/programmer/templates                                     |
+| Source Template File           | DM9051A.tmpl           | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |
+| Profile\[1]                    | my_1.json              | profile_1.json                                                   |
+| Profile\[2]                    | test_2.json            | profile_2.json                                                   |
+| Profile\[3]<br>                | ex3.json               | profile_3.json                                                   |
+| Profile\[4]                    | 4.json                 | profile_4.json                                                   |
+| Profile Path                   | ~/my_folder/profiles/  | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
+| Template Version               | 1.0.0                  | 1.0.0                                                            |
+| App Version                    | 1.0.0                  | 1.0.0                                                            |
+| Log Path                       | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |
+| Report Path                    | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |
+| Refresh Interval\ default (ms) | 1000                   | 1000                                                             |
 
 ## Template
 當按下 **New Programmer** 後，從 Template 複製 一份 Profile， UI 出現填寫欄位，讓 user 填寫內容：
@@ -155,7 +156,7 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 >[!Warning] 每一次燒錄必須經過 讀、寫、讀 三個 command，
 >第一個 command 讀，要檢查 MAC Address 是否爲 Empty？若是 Empty，才能繼續，否則用 Dialog 警告 user 該 Chip 曾經燒錄過，確認後才繼續。
 >第二個 command 寫，先 reset **曾經打開蓋子** 的 flag，然後再燒錄內容
->第三個 command 讀，然後核對與寫入的內容是否相同
+>第三個 command 讀，核對與寫入的內容是否相同
 >
 
 ## Programmer Status
