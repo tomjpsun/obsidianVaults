@@ -114,19 +114,31 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 + Start MAC Addr
 + End Mac Addr
 + Current Mac Addr
++ 本頁面已經成功的燒錄次數
++ 還有多少可用 MAC
++ 可用 MAC 佔全部百分比 
 + 用 icon 分別表示 蓋子打開、關閉
++ configure 裏面的 Stop on error 
 + a `configure profile` button
 + polling state 依照 refresh_interval\(ms)
-+ Tab color for state : Table 1
 
-| State | Color  |     |
-| ----- | ------ | --- |
-| 正在燒錄  | Orange |     |
-| 燒錄成功  | Green  |     |
-| 燒錄失敗  | Red    |     |
-**Table 1**
+下面列出 3 種 states：
 
+| State | Color on Tab |     |
+| ----- | ------------ | --- |
+| 正在燒錄  | Orange       |     |
+| 停止燒錄  | Green        |     |
+**Table 1**  
 
+| Result | Color Mark |     |
+| ------ | ---------- | --- |
+| 燒錄成功   | Green V    |     |
+| 燒錄失敗   | Red     X  |     |
+**Table 2**
 
-
+| Result | Text or Icon |     |
+| ------ | ------------ | --- |
+| 蓋子打開   | Open         |     |
+| 蓋子關閉   | Close        |     |
+**Table 3**
 
