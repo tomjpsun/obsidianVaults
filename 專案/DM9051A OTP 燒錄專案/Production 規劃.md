@@ -33,25 +33,26 @@
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 
 
-| Field                                         | Example                            | Initial Value                           |     |
-| --------------------------------------------- | ---------------------------------- | --------------------------------------- | --- |
-| Begin MAC Address                             | AA:BB:CC:DD:EE:00                  | 00:00:00:00:00:00                       |     |
-| End MAC Address                               | AA:BB:CC:DD:EE:FF                  | 00:00:00:00:00:00                       |     |
-| PID                                           | 9051                               | 9051                                    |     |
-| VID                                           | 0A46                               | 0A46                                    |     |
-| Template Version                              | 1.0.0                              | 1.0.0                                   |     |
-| Source Template <br>File<sup>備註2</sup>        | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`]      |     |
-| ManuFacturer                                  | DAVICOM                            | DAVICOM                                 |     |
-| StopOnFailure                                 | Y                                  | Y                                       |     |
-| SkipFailedMAC                                 | N                                  | N                                       |     |
-| Refresh Interval\(ms), optional<sup>備註2</sup> | 1000                               | Settings\[`"Refresh Interval Default"`] |     |
+| Field                              | Example                            | Initial Value                           |     |
+| ---------------------------------- | ---------------------------------- | --------------------------------------- | --- |
+| Begin MAC Address                  | AA:BB:CC:DD:EE:00                  | 00:00:00:00:00:00                       |     |
+| End MAC Address                    | AA:BB:CC:DD:EE:FF                  | 00:00:00:00:00:00                       |     |
+| PID                                | 9051                               | 9051                                    |     |
+| VID                                | 0A46                               | 0A46                                    |     |
+| Template Version                   | 1.0.0                              | 1.0.0                                   |     |
+| Source Template<sup>`Note2`</sup>  | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`]      |     |
+| ManuFacturer                       | DAVICOM                            | DAVICOM                                 |     |
+| StopOnFailure                      | Y                                  | Y                                       |     |
+| SkipFailedMAC                      | N                                  | N                                       |     |
+| Refresh Interval<sup>`Note2`</sup> | 1000                               | Settings\[`"Refresh Interval Default"`] |     |
+|                                    |                                    |                                         |     |
 
->[!備註]
+>[!Note]
 >
 >Report Path：產生 Report 時存放的檔案Path
 >Refresh Interval 以 millisec 爲單位，不提供使用者調整
 
-> [!備註2]
+> [!Note2]
 > Source Template File 從 Settings 讀取
 > Refresh Interval 也是從 Settings 讀取
 > 從 Settings 讀到的欄位是動態附加上去，出廠的 Template 沒有這些欄位 
