@@ -132,24 +132,24 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 
 下面列出 3 種 states：
 
-| State     | Color on Tab |     |
-| --------- | ------------ | --- |
-| 自動燒錄流程運行中 | Green        |     |
-| 沒有運行燒錄流程  | Red          |     |
-|           |              |     |
-|           |              |     |
+| State     | Color on Tab |
+| --------- | ------------ |
+| 自動燒錄流程運行中 | Green        |
+| 沒有運行燒錄流程  | Red          |
+|           |              |
+|           |              |
 **Table 1**  
 
-| Result | Color Mark |     |
-| ------ | ---------- | --- |
-| 燒錄驗證成功 | Green V    |     |
-| 燒錄驗證失敗 | Red     X  |     |
+| Result | Color Mark |
+| ------ | ---------- |
+| 燒錄驗證成功 | Green V    |
+| 燒錄驗證失敗 | Red     X  |
 **Table 2**
 
-| Result | Text or Icon |     |
-| ------ | ------------ | --- |
-| 蓋子打開   | Open         |     |
-| 蓋子關閉   | Close        |     |
+| Result | Text or Icon |
+| ------ | ------------ |
+| 蓋子打開   | Open         |
+| 蓋子關閉   | Close        |
 **Table 3**
 
 >[!Warning] 每一次燒錄必須經過 讀、寫、讀 三個 command，
