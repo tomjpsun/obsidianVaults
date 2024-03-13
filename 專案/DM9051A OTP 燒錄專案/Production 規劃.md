@@ -33,18 +33,7 @@
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 
 
-| Field                              | Example                            | Initial Value                           |     |
-| ---------------------------------- | ---------------------------------- | --------------------------------------- | --- |
-| Begin MAC Address                  | AA:BB:CC:DD:EE:00                  | 00:00:00:00:00:00                       |     |
-| End MAC Address                    | AA:BB:CC:DD:EE:FF                  | 00:00:00:00:00:00                       |     |
-| PID                                | 9051                               | 9051                                    |     |
-| VID                                | 0A46                               | 0A46                                    |     |
-| Template Version                   | 1.0.0                              | 1.0.0                                   |     |
-| ManuFacturer                       | DAVICOM                            | DAVICOM                                 |     |
-| StopOnFailure                      | Y                                  | Y                                       |     |
-| SkipFailedMAC                      | N                                  | N                                       |     |
-| Refresh Interval<sup>`Note2`</sup> | 1000                               | Settings\[`"Refresh Interval Default"`] |     |
-|                                    |                                    |                                         |     |
+
 
 >[!Note]
 >
@@ -61,16 +50,17 @@ Copy from [Template 出廠設定](#Template)
 ### Run time：
 在 Profile 產生的時候，給予初始值，除了 Template 的欄位之外，Runtime 欄位如下：
 
-| Field                             | Example                            | Initial Value                      |
-| --------------------------------- | ---------------------------------- | ---------------------------------- |
-| Current MAC Address               | AA:BB:CC:DD:EE:00                  | copy from `Begin MAC Address`      |
-| Profile Number(one start)         | 1                                  | index of profile                   |
-| COM Port                          | com 5                              | NULL                               |
-| Log File                          | 2024_0226_160530_com5.log          | 依照 create time 初始化, 檔名參考下面的 Note   |
-| Overwrite Non-Empty EEPROM        | N                                  | N                                  |
-| Source Template<sup>`Note2`</sup> | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`] |
+| Field                                | Example                            | Initial Value                           |
+| ------------------------------------ | ---------------------------------- | --------------------------------------- |
+| Current MAC Address                  | AA:BB:CC:DD:EE:00                  | copy from `Begin MAC Address`           |
+| Profile Number(one start)            | 1                                  | index of profile                        |
+| COM Port                             | com 5                              | NULL                                    |
+| Log File<sup>**Note1**</sup>         | 2024_0226_160530_com5.log          | 依照 create time 初始化, 檔名參考下面的 Note        |
+| Overwrite Non-Empty EEPROM           | N                                  | N                                       |
+| Source Template<sup>**Note2**</sup>  | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`]      |
+| Refresh Interval<sup>**Note2**</sup> | 1000                               | Settings\[`"Refresh Interval Default"`] |
 
->[!Note]
+>[!Note1]
 >Log File 每次 run 的時候，用當時時間產生一個，檔案名稱格式爲 {year}\_{month}{day}\_{hour}{min}{sec}\_{COM}.log, 例如 2024_0312_103053_COM5.log。
 >Refresh Interval 以 millisec 爲單位，不提供使用者調整。
 >Overwrite Non-Empty EEPROM 如果發生，則跳出 window 詢問
