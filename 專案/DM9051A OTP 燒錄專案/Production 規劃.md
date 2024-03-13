@@ -28,7 +28,7 @@
 | Refresh Interval default (ms) | 1000                   | 1000                                                             |
 
 ## Template
-當按下 **New Programmer** 後，從 Template 複製 一份 Profile， UI 出現填寫欄位，讓 user 填寫內容：
+當按下 **New Programmer** 的時候，跳出 Wizard，Wizard 根據 Template 內容對新增的 Profile 初始化，並讓 user 填寫內容。Template 欄位如下表所示。
 ### 出廠設定：
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 
@@ -40,7 +40,6 @@
 | PID                                | 9051                               | 9051                                    |     |
 | VID                                | 0A46                               | 0A46                                    |     |
 | Template Version                   | 1.0.0                              | 1.0.0                                   |     |
-| Source Template<sup>`Note2`</sup>  | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`]      |     |
 | ManuFacturer                       | DAVICOM                            | DAVICOM                                 |     |
 | StopOnFailure                      | Y                                  | Y                                       |     |
 | SkipFailedMAC                      | N                                  | N                                       |     |
@@ -52,40 +51,34 @@
 >Report Path：產生 Report 時存放的檔案Path
 >Refresh Interval 以 millisec 爲單位，不提供使用者調整
 
-> [!Note2]
-> Source Template File 從 Settings 讀取
-> Refresh Interval 也是從 Settings 讀取
-> 從 Settings 讀到的欄位是動態附加上去，出廠的 Template 沒有這些欄位 
-
-
 >[!MD5]
 Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
 
-
 ## Profile
-
-當 User 按下 New Programmer 之後，經過 Wizard 詢問 User 後，Wizard 根據 Template 內容對新增的 Profile 初始化，UI 新增一個 Tab 顯示其內容。
-### Static 設定的初始值：
-參考[Template 出廠設定](#Template)
-### Run time 設定的初始值：
-
+當按下 **New Programmer** 的時候，由 Wizard 引導修改，產生 profile，內容大致可以分成 Static 與 Run time。
+### Static：
+Copy from [Template 出廠設定](#Template)
+### Run time：
 在 Profile 產生的時候，給予初始值，除了 Template 的欄位之外，Runtime 欄位如下：
 
-| Field                          | Example                   | Initial Value                    |
-| ------------------------------ | ------------------------- | -------------------------------- |
-| Current MAC Address            | AA:BB:CC:DD:EE:00         | copy from `Begin MAC Address`    |
-| Profile Number(one start)      | 1                         | index of profile                 |
-| COM Port                       | com 5                     | NULL                             |
-| Log File                       | 2024_0226_160530_com5.log | 依照 create time 初始化, 檔名參考下面的 Note |
-| Refresh Interval\(ms).optional | 1000                      | 1000                             |
-| Overwrite Non-Empty EEPROM     | N                         | N                                |
-
+| Field                             | Example                            | Initial Value                      |
+| --------------------------------- | ---------------------------------- | ---------------------------------- |
+| Current MAC Address               | AA:BB:CC:DD:EE:00                  | copy from `Begin MAC Address`      |
+| Profile Number(one start)         | 1                                  | index of profile                   |
+| COM Port                          | com 5                              | NULL                               |
+| Log File                          | 2024_0226_160530_com5.log          | 依照 create time 初始化, 檔名參考下面的 Note   |
+| Overwrite Non-Empty EEPROM        | N                                  | N                                  |
+| Source Template<sup>`Note2`</sup> | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`] |
 
 >[!Note]
 >Log File 每次 run 的時候，用當時時間產生一個，檔案名稱格式爲 {year}\_{month}{day}\_{hour}{min}{sec}\_{COM}.log, 例如 2024_0312_103053_COM5.log。
 >Refresh Interval 以 millisec 爲單位，不提供使用者調整。
 >Overwrite Non-Empty EEPROM 如果發生，則跳出 window 詢問
 
+> [!Note2]
+> Source Template File 從 Settings 讀取
+> Refresh Interval 也是從 Settings 讀取
+> 從 Settings 讀到的欄位是用 Template 產生 Profile 的時候，動態附加上去，出廠的 Template 沒有這些欄位 
 # 流程設計
 ## App Start
 App start 時，讀取 **settings**（初始從 resource 來）， 進入 `configure settings wizard`，從 template 取得初始值，提供 user 修改 幾個 paths：
