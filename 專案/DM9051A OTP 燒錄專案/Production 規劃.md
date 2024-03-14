@@ -26,6 +26,17 @@
 | Log Path                      | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |
 | Report Path                   | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |
 | Refresh Interval default (ms) | 1000                   | 1000                                                             |
+| FirstTimeFlag                 | True                   | True                                                             |
+
+
+> [!NOTE] FirstTimeFlag
+> 因爲程式第一次執行需要修改各種 Path，按系統不同而修改：
+> Windows 需要加上 prefix  ~/My Documents 
+> Linux 需要加上 prefix ~/Documents
+> 
+>修改後 FirstTimeFlag 將設爲 False
+
+
 
 ## Template
 當按下 **New Programmer** 的時候，跳出 Wizard，Wizard 根據 Template 內容對新增的 Profile 初始化，並讓 user 填寫內容。Template 欄位如下表所示。
