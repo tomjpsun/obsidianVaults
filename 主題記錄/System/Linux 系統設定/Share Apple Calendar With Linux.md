@@ -2,6 +2,7 @@
 tags:
   - 行事曆
   - calendar
+  - CalDAV
 ---
 Apple Calendar 支援 CalDAV protocol, 以下是設定方法，摘錄自
 https://ar.al/2018/08/05/using-icloud-calendars-on-gnu-linux/
@@ -15,14 +16,14 @@ sudo apt install evolution
 
 進入 App 專用密碼
 
-![[Assets/Screenshot from 2023-10-17 09-34-17.png]]
+![[attachments/Screenshot from 2023-10-17 09-34-17.png]]
 
 按 + 新增一個
-![[Assets/Screenshot from 2023-10-17 09-34-42.png]]
+![[attachments/Screenshot from 2023-10-17 09-34-42.png]]
 
 #### ！ 重要！ copy 這裏的密碼，離開後就看不到了！
 
-![[Assets/Screenshot from 2023-10-17 09-35-15.png]]
+![[attachments/Screenshot from 2023-10-17 09-35-15.png]]
 
 
 # Set up your calendar(s) in Evolution.
@@ -34,4 +35,4 @@ sudo apt install evolution
 4. User 填 Apple ID
 5. 按下 Find Calendars 後，在 Pop window 裏面填寫前面取得的 Apple 專用密碼
 6. 等一分鐘，會與 Apple iCloud sync 行事曆，完成
-]]![[Assets/Screenshot from 2023-10-17 09-32-39 1.png]]
+]]![[attachments/Screenshot from 2023-10-17 09-32-39 1.png]]
