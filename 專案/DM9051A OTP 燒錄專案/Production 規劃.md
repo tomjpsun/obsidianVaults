@@ -112,7 +112,7 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 	+ Stop on error （發生錯誤是否自動 restart）
 	
 	
-### Tab i 
+### Tab [ i ] 
 
 顯示下列內容：
 + Device ID
