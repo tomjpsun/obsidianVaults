@@ -172,3 +172,8 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 ## Programmer Status
 + 蓋子曾經打開
 + 蓋子目前狀態
+
+# Update Notes
+
+整合 Modbus 0319_1002 版本
+![[modbus_update_0319.png]]
