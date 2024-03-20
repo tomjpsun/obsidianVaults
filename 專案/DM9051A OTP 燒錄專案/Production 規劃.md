@@ -133,7 +133,7 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 + Current Mac Addr
 + Current Connected COM port
 + 已燒錄 MAC 數量
-+ 爲燒錄 MAC 數量
++ 未燒錄 MAC 數量
 + 可用 MAC 佔全部百分比 
 + 用 icon 分別表示 蓋子打開、關閉
 + configure 裏面的 Stop on error 
