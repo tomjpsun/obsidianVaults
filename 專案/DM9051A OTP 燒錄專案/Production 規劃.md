@@ -72,6 +72,7 @@ Copy from [Template 出廠設定](#Template)
 | Field                              | Example                            | Initial Value                           |
 | ---------------------------------- | ---------------------------------- | --------------------------------------- |
 | Current MAC Address                | AA:BB:CC:DD:EE:00                  | copy from `Begin MAC Address`           |
+| Effective MAC Address              | AA:BB:CC:DD:EE:01                  | 00:00:00:00:00:00                       |
 | Profile Number(one start)          | 1                                  | index of profile                        |
 | COM Port                           | com 5                              | NULL                                    |
 | Log File                           | 2024_0226_160530_com5.log          | 依照 create time 初始化, 檔名參考下面的 Note        |
