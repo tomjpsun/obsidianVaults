@@ -1,0 +1,77 @@
+---
+tags:
+  - IC
+  - design
+  - chip
+---
+晶片人必追的8個科技新聞網」
+
+半導體與晶片科技日新月異
+
+跟大家分享8個推薦的半導體新聞網站
+
+一起學習互相交流，感謝！！
+
+󠀠
+
+▌DigiTimes
+
+簡介：台灣最優質的晶片與科技媒體，台灣人私心推一下！
+
+網址：[https://www.digitimes.com.tw/](https://www.digitimes.com.tw/?fbclid=IwAR2vU3nAQhxpWEKw3ynYcZEznn0ys9itc9__8fIiwmav6Sd76qarU-t_sEY_aem_ATQrZ1j9tIXX8altbSkLWZextUkDUUo5aYlxFDtodmgCWcZtPBGjJFDOmq6fq6lLii3cUameLQIDXj6i0_VPBn1s)
+
+󠀠
+
+▌Techinsights
+
+簡介：優質的半導體媒體之一，也會逆向工程來拆解科技
+
+網址：[https://www.techinsights.com/](https://www.techinsights.com/?fbclid=IwAR1RRB17zrekqjpYj2vgx2I_e-buY99APhjmp0eMbRtcCX-xzOpaUtKh_ic_aem_ATSh3WUQFDT9rlK77YFZcQIwbCHCATFFN0c4a36eRKQs5166FDvLwHJe270MMlB6Zf3kzLhBaZ1CI-N7NcnJIUpq)
+
+󠀠
+
+▌EE Times
+
+簡介：最最老牌的半導體科技媒體
+
+網址：[https://www.eetimes.com/](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.eetimes.com%2F%3Ffbclid%3DIwAR0gIpQNbPvPGP9iACdkGBV3EHPMME43DWOpEUFxUOf979FdqfFVyxFnpb8_aem_ATSbqPNVjxH5xqBNtAOkZu4P-VDrTl9mDmnKHMUakCGKwC2RM_RHaIG7YVC6UNm2F_iorvTveNygAPLGGrAGL3ev&h=AT1BtjOb7xGYFvowI-j-jSI4PFbMyOUZGnQPNjto5DpjQTAFJY_asKamf2MyPBnj87RZsW8lJewxXGXNTbV7HQYQpo7OB-69ztMWgHhx3xijIWXOarYhbS0R9w11&__tn__=-UK-R&c[0]=AT0y1FV4eIQYh0CRZMdLMY3866C8_8Lxi_DO53YIjH2cQR4IAAKecXyvxewYf7dwz3VZa5MdpNUipx31XZ7TJX7_1M5Wl44mUr7T20FY2WftgS2BAbZw1KiT_GwCvCEQTzq9CcsWPI9r_AfhxX5muWZB0LT1IBK0dJnRdMiEgKvhCItI88_67Z1mra_1M5SC9Ps2LWl6DkPzJxTcOK6diIXWnMnj0CvP5dedVgwXpAC9kPw8fsOjzRdBuQ)
+
+󠀠
+
+▌EENews Europe
+
+簡介：歐洲最優質的半導體科技媒體
+
+網址：[https://www.eenewseurope.com/en/](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.eenewseurope.com%2Fen%2F%3Ffbclid%3DIwAR1S5BwKmuOGAdmEX4pETAiyVRQop__il4kpz0VptSvr4zWKxBiyyXETP8Y_aem_ATSGHzCGxMPbk1HX8Artl54PJPej_bogN-qAkXNu0vh-8vjTPlUw09JT-7ENHxlktsXr7Kf8kSN1ffeNaToJbjZT&h=AT2BrAYjaWNgsHXm4P8uam4wCnnhoM-wWHrxEOnMpYdhzgMn7H43iUsI3Adxu8ZK1pkn-a4BhQZJ_Op_kLvYd2mHRb4GGHdEmJm_Zo8z_5azqGyglhSyOBg2gjwU&__tn__=-UK-R&c[0]=AT0y1FV4eIQYh0CRZMdLMY3866C8_8Lxi_DO53YIjH2cQR4IAAKecXyvxewYf7dwz3VZa5MdpNUipx31XZ7TJX7_1M5Wl44mUr7T20FY2WftgS2BAbZw1KiT_GwCvCEQTzq9CcsWPI9r_AfhxX5muWZB0LT1IBK0dJnRdMiEgKvhCItI88_67Z1mra_1M5SC9Ps2LWl6DkPzJxTcOK6diIXWnMnj0CvP5dedVgwXpAC9kPw8fsOjzRdBuQ)
+
+󠀠
+
+▌Semiconductor Engineering
+
+簡介：最受歡迎的半導體科技媒體之一
+
+網址：[https://semiengineering.com/](https://l.facebook.com/l.php?u=https%3A%2F%2Fsemiengineering.com%2F%3Ffbclid%3DIwAR0WAmjOV9vysbio_reOKU4Ir7pb1uKG-VXdn9OqFOoZ6Q3yU8Wy5XjOdzo_aem_ATS9Q2_WOmHkPIS2IhvdKOyDfsr1NTVigBMULuQirjTW9WUWqDL8C_-yRZYETWH_MAQ1QQ4-vk7EIqGqR9VmAEzu&h=AT0KykJLKvqIvrs9oZN5oDCUKR1q_DsW9NOSu47tPlbt8AB9pHp2R2p5BvmMhNCo09T5fttRJKccjLT-sB0WSAgtYR65uHAJtDh1lbWyCjY-3ZIGC1fKsSzZvssG&__tn__=-UK-R&c[0]=AT0y1FV4eIQYh0CRZMdLMY3866C8_8Lxi_DO53YIjH2cQR4IAAKecXyvxewYf7dwz3VZa5MdpNUipx31XZ7TJX7_1M5Wl44mUr7T20FY2WftgS2BAbZw1KiT_GwCvCEQTzq9CcsWPI9r_AfhxX5muWZB0LT1IBK0dJnRdMiEgKvhCItI88_67Z1mra_1M5SC9Ps2LWl6DkPzJxTcOK6diIXWnMnj0CvP5dedVgwXpAC9kPw8fsOjzRdBuQ)
+
+󠀠
+
+▌SemiWiki
+
+簡介：半導體領域的維基百科
+
+網址：[https://semiwiki.com/](https://l.facebook.com/l.php?u=https%3A%2F%2Fsemiwiki.com%2F%3Ffbclid%3DIwAR3HhJAq4Bh_X5Odccc46tfE2Cj6tCQXGZl39AzU2IiTF4Qa4Jhp022fCsA_aem_ATTLyYA6pjEvzehnVr2VJ5pT4C9ZUgWTKaBTqKuqb_t_8Fp6HhEMW0qgEodNFEuuyI0J5QTzyJ9MYPIj8Yd9RhIe&h=AT3BNR1exZkBS6VnoSLePGAoSYInZDR7adZrE2F7IOiXV6L6s0Ziaoo7o1cLHgCPiNkuShtlH6-TMawhSngYUASy9SCODVYexgqZ_cNxTftxN-Bj-mZM3UQDcImn&__tn__=-UK-R&c[0]=AT0y1FV4eIQYh0CRZMdLMY3866C8_8Lxi_DO53YIjH2cQR4IAAKecXyvxewYf7dwz3VZa5MdpNUipx31XZ7TJX7_1M5Wl44mUr7T20FY2WftgS2BAbZw1KiT_GwCvCEQTzq9CcsWPI9r_AfhxX5muWZB0LT1IBK0dJnRdMiEgKvhCItI88_67Z1mra_1M5SC9Ps2LWl6DkPzJxTcOK6diIXWnMnj0CvP5dedVgwXpAC9kPw8fsOjzRdBuQ)
+
+󠀠
+
+▌Design & Reuse
+
+簡介：最優質的半導體科技媒體之一，還能在上面買IP
+
+網址：[https://www.design-reuse.com/](https://www.design-reuse.com/?fbclid=IwAR37G2j5zo6s1fKTuwNiXsTQElx-qQYjxt7A8rSxRJgtubHX7d8tr_EZZC8_aem_ATR9V-MlZl1qYlu2S6RWwrCZcJwo0XWW_HymaUxRDlU85pLBzgxTq0AaKH58o3tFfMZdNBGjlMRl2SjTqGcxYClp)
+
+󠀠
+
+▌Semiconductor Today
+
+簡介：來自英國的老牌半導體媒體
+
+網址：[https://semiconductor-today.com/](https://l.facebook.com/l.php?u=https%3A%2F%2Fsemiconductor-today.com%2F%3Ffbclid%3DIwAR3lDP5Phs-S0mHvhtFTLBxv4W4TQmzYlXfFmY6CZE278gsJjERexo0TvAg_aem_ATRk7WpjG-m5vJwjvXuFWXhxedFaNp79I4vFOHMZKd2oajjdEbhStIJaO7g4tc9MS9GC7yzMsIqWfol0yWacUp4h&h=AT2bdIpNWnhEJNrtkajM7KethV8xBRSeu0BCHRVumOSpYPIxgQzlbfja-CKMNuszfd_i2jW_PQb7-a8N9fotiy_rGLnwxb6uNk2EalppPu_omH-gXrVE15mYpWfi&__tn__=-UK-R&c[0]=AT0y1FV4eIQYh0CRZMdLMY3866C8_8Lxi_DO53YIjH2cQR4IAAKecXyvxewYf7dwz3VZa5MdpNUipx31XZ7TJX7_1M5Wl44mUr7T20FY2WftgS2BAbZw1KiT_GwCvCEQTzq9CcsWPI9r_AfhxX5muWZB0LT1IBK0dJnRdMiEgKvhCItI88_67Z1mra_1M5SC9Ps2LWl6DkPzJxTcOK6diIXWnMnj0CvP5dedVgwXpAC9kPw8fsOjzRdBuQ)
