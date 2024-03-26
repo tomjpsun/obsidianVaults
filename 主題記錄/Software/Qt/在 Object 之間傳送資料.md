@@ -12,9 +12,6 @@ Qt的事件系統（QEvent）允許你發送自定義的事件到任何QObject�
 **自定義事件示例：**
 
 首先，定義一個自定義事件類，繼承自`QEvent`。
-
-cppCopy code
-
 解釋
 
 ``` C++
@@ -33,13 +30,9 @@ private:
 
 然後，你可以通過呼叫`QCoreApplication::postEvent()`來發送這個事件給B物件。
 
-cppCopy code
-
 `QCoreApplication::postEvent(bObject, new DataEvent("Hello, World!"));`
 
 在B物件中，你需要重寫`event()`方法來處理這個自定義事件。
-
-cppCopy code
 
 解釋
 
