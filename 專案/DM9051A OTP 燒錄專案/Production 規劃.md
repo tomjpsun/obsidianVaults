@@ -129,8 +129,10 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 + Device ID
 + Programmer 是否正常
 + Start MAC Addr
-+ End Mac Addr
-+ Current Mac Addr
++ End MAC Addr
++ Current MAC Addr 
+	+ 如果 profile 裏面有上一次的，就複製，否則從 Start MAC Addr 複製
++ Effective MAC Addr
 + Current Connected COM port
 + 已燒錄 MAC 數量
 + 未燒錄 MAC 數量
