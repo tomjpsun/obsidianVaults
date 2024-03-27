@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     QFile file(":/stylesheet.qss");
     if(file.open(QFile::ReadOnly)) {
         QString styleSheet = QLatin1String(file.readAll());
-        qApp->setStyleSheet(styleSheet);
+        q.setStyleSheet(styleSheet);
         file.close();
     }
 
