@@ -1,9 +1,10 @@
 
-| 本文件版本 | comment                             |     |
-| ----- | ----------------------------------- | --- |
-| 0.1.0 | 初稿                                  |     |
-| 0.1.1 | Review 2024/02/27                   |     |
-| 0.1.2 | 2024/3/12 新增流程章節，修改 Settings ，初稿待討論 |     |
+| 本文件版本 | comment                                                                |     |
+| ----- | ---------------------------------------------------------------------- | --- |
+| 0.1.0 | 初稿                                                                     |     |
+| 0.1.1 | Review 2024/02/27                                                      |     |
+| 0.1.2 | 2024/03/12 新增流程章節，修改 Settings ，初稿待討論                                   |     |
+| 0.1.3 | 2024/03/29 修改 Settings JSON 欄位，字串“N“，”Y“ 改爲 Boolean False，Boolean True |     |
 
 # 定義
 下列定義都是以 JSON format 存檔，方便使用者改寫。 
@@ -26,17 +27,6 @@
 | Log Path                      | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |
 | Report Path                   | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |
 | Refresh Interval default (ms) | 1000                   | 1000                                                             |
-| FirstTimeFlag                 | True                   | True                                                             |
-
-
-> [!NOTE] FirstTimeFlag
-> 因爲程式第一次執行需要修改各種 Path，按系統不同而修改：
-> Windows 需要加上 prefix  ~/My Documents 
-> Linux 需要加上 prefix ~/Documents
-> 
->修改後 FirstTimeFlag 將設爲 False
-
-
 
 ## Template
 當按下 **New Programmer** 的時候，跳出 Wizard，Wizard 根據 Template 內容對新增的 Profile 初始化，並讓 user 填寫內容。Template 欄位如下表所示。
@@ -146,25 +136,26 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 
 下面列出 3 種 states：
 
+**Table 1**  
+
 | State     | Color on Tab |
 | --------- | ------------ |
 | 自動燒錄流程運行中 | Green        |
 | 沒有運行燒錄流程  | Red          |
-|           |              |
-|           |              |
-**Table 1**  
+
+**Table 2**
 
 | Result | Color Mark |
 | ------ | ---------- |
 | 燒錄驗證成功 | Green V    |
 | 燒錄驗證失敗 | Red     X  |
-**Table 2**
+**Table 3**
 
 | Result | Text or Icon |
 | ------ | ------------ |
 | 蓋子打開   | Open         |
 | 蓋子關閉   | Close        |
-**Table 3**
+
 
 >[!Warning] 每一次燒錄必須經過 讀、寫、讀 三個 command，
 >第一個 command 讀，要檢查 MAC Address 是否爲 Empty？若是 Empty，才能繼續，否則用 Dialog 警告 user 該 Chip 曾經燒錄過，確認後才繼續。
