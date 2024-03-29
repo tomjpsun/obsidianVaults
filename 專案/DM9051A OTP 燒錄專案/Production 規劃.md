@@ -51,8 +51,8 @@
 | VID               | 0A46              | 0A46              |
 | Template Version  | 1.0.0             | 1.0.0             |
 | ManuFacturer      | DAVICOM           | DAVICOM           |
-| StopOnFailure     | Y                 | Y                 |
-| SkipFailedMAC     | N                 | N                 |
+| StopOnFailure     | true              | true              |
+| SkipFailedMAC     | false             | false             |
 
 >[!Note]
 >
