@@ -5,6 +5,7 @@
 | 0.1.1 | Review 2024/02/27                                                      |     |
 | 0.1.2 | 2024/03/12 新增流程章節，修改 Settings ，初稿待討論                                   |     |
 | 0.1.3 | 2024/03/29 修改 Settings JSON 欄位，字串“N“，”Y“ 改爲 Boolean False，Boolean True |     |
+| 0.1.4 | 2024/04/02  OverwriteNonEmptyEEPROM 移到 Template                        |     |
 
 # 定義
 下列定義都是以 JSON format 存檔，方便使用者改寫。 
@@ -33,16 +34,17 @@
 ### 出廠設定：
 包括 要燒錄的 MAC Address 範圍，這個範圍由 MAC begin 到 MAC end 指定，還有 PID 、VID、Template 版號。
 
-| Field             | Example           | Initial Value     |
-| ----------------- | ----------------- | ----------------- |
-| Begin MAC Address | AA:BB:CC:DD:EE:00 | 00:00:00:00:00:00 |
-| End MAC Address   | AA:BB:CC:DD:EE:FF | 00:00:00:00:00:00 |
-| PID               | 9051              | 9051              |
-| VID               | 0A46              | 0A46              |
-| Template Version  | 1.0.0             | 1.0.0             |
-| ManuFacturer      | DAVICOM           | DAVICOM           |
-| StopOnFailure     | true              | true              |
-| SkipFailedMAC     | false             | false             |
+| Field                      | Example           | Initial Value     |
+| -------------------------- | ----------------- | ----------------- |
+| Begin MAC Address          | AA:BB:CC:DD:EE:00 | 00:00:00:00:00:00 |
+| End MAC Address            | AA:BB:CC:DD:EE:FF | 00:00:00:00:00:00 |
+| PID                        | 9051              | 9051              |
+| VID                        | 0A46              | 0A46              |
+| Template Version           | 1.0.0             | 1.0.0             |
+| ManuFacturer               | DAVICOM           | DAVICOM           |
+| StopOnFailure              | true              | true              |
+| SkipFailedMAC              | false             | false             |
+| Overwrite Non-Empty EEPROM | N                 | N                 |
 
 >[!Note]
 >
@@ -66,7 +68,6 @@ Copy from [Template 出廠設定](#Template)
 | Profile Number(one start)          | 1                                  | index of profile                        |
 | COM Port                           | com 5                              | NULL                                    |
 | Log File                           | 2024_0226_160530_com5.log          | 依照 create time 初始化, 檔名參考下面的 Note        |
-| Overwrite Non-Empty EEPROM         | N                                  | N                                       |
 | Source Template<sup>`Note2`</sup>  | ~/my_folder/templates/DM9051A.tmpl | Settings[`"Source Template File"`]      |
 | Refresh Interval<sup>`Note2`</sup> | 1000                               | Settings\[`"Refresh Interval Default"`] |
 
