@@ -1,4 +1,10 @@
+---
+tags:
+  - memory_management
+---
+
 [Source from here](https://stackoverflow.com/questions/2491707/memory-management-in-qt/2491976#2491976)
+
 
 常常看到 Qt new 物件但是沒有 delete？到底 Qt 怎麼管理物件的 delete 呢？
 Qt 提供 QObject 內建的機制：Owner 會自動 delete 所有 owned objects， 而且這個 owner 關係與 class 的繼承是**無關**的，例如：
