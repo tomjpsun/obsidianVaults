@@ -149,7 +149,8 @@ Connected --> Socket_wait: Start Run Loop or AutoRun
 
 Socket_wait --> Burn: socket close
 Burn --> Socket_wait: 驗證 OK & Not MAC END
-Burn --> Connected: 驗證失敗 or MAC END
+Burn --> Connected: 驗證失敗
+Burn --> Start: MAC END
 
 
 class Connected Box
