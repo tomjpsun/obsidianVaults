@@ -1,12 +1,12 @@
 
-| 本文件版本 | comment                                                                |     |
-| ----- | ---------------------------------------------------------------------- | --- |
-| 0.1.0 | 初稿                                                                     |     |
-| 0.1.1 | Review 2024/02/27                                                      |     |
-| 0.1.2 | 2024/03/12 新增流程章節，修改 Settings ，初稿待討論                                   |     |
-| 0.1.3 | 2024/03/29 修改 Settings JSON 欄位，字串“N“，”Y“ 改爲 Boolean False，Boolean True |     |
-| 0.1.4 | 2024/04/02  OverwriteNonEmptyEEPROM 移到 Template                        |     |
-| 0.1.5 | 新增 Tab 顏色                                                              |     |
+| 本文件版本 | comment                                                                |
+| ----- | ---------------------------------------------------------------------- |
+| 0.1.0 | 初稿                                                                     |
+| 0.1.1 | Review 2024/02/27                                                      |
+| 0.1.2 | 2024/03/12 新增流程章節，修改 Settings ，初稿待討論                                   |
+| 0.1.3 | 2024/03/29 修改 Settings JSON 欄位，字串“N“，”Y“ 改爲 Boolean False，Boolean True |
+| 0.1.4 | 2024/04/02  OverwriteNonEmptyEEPROM 移到 Template                        |
+| 0.1.5 | 定義 [燒錄操作流程](#燒錄操作流程)                                                   |
 
 # 定義
 下列定義都是以 JSON format 存檔，方便使用者改寫。 
@@ -29,6 +29,7 @@
 | Log Path                      | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |
 | Report Path                   | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |
 | Refresh Interval default (ms) | 1000                   | 1000                                                             |
+| Status Max Size               | 1000                   | 1000                                                             |
 
 ## Template
 當按下 **New Programmer** 的時候，跳出 Wizard，Wizard 根據 Template 內容對新增的 Profile 初始化，並讓 user 填寫內容。Template 欄位如下表所示。
@@ -136,7 +137,7 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 + button start ： 手動繼續 after error
 + polling state 依照 refresh_interval\(ms)
 
-### 操作流程
+### 燒錄操作流程
 
 ```mermaid
 stateDiagram-v2
@@ -161,20 +162,22 @@ class Start Box
 
 
 
-下面列出 3 種 states：
+下面列出 4 種 states：
 
 **Table 1**  
 
-| State     | Color on Tab |
-| --------- | ------------ |
-| 自動燒錄流程運行中 | Green        |
-| 沒有運行燒錄流程  | Red          |
+| State       | Color on Tab | 說明                          |
+| ----------- | ------------ | --------------------------- |
+| Start       | Gray         | App 開始，尚未與燒錄器連線             |
+| Connected   | Light Green  | 已與燒錄器連線，尚未進入 Run Loop       |
+| Socket Wait | Yellow       | 進入 Run Loop，Socket 等待 IC 放置 |
+| Burn        | Orange       | 燒錄中                         |
 
 **Table 2**
 
 | Result | Color Mark |
 | ------ | ---------- |
-| 燒錄驗證成功 | Green V    |
+| 燒錄驗證成功 | Green  O   |
 | 燒錄驗證失敗 | Red     X  |
 **Table 3**
 
@@ -184,7 +187,7 @@ class Start Box
 | 蓋子關閉   | Close        |
 
 
->[!Warning] 每一次燒錄必須經過 讀、寫、讀 三個 command，
+>[!Warning] 燒錄驗證：每一次燒錄必須經過 讀、寫、讀 三個 commands
 >第一個 command 讀，要檢查 MAC Address 是否爲 Empty？若是 Empty，才能繼續，否則用 Dialog 警告 user 該 Chip 曾經燒錄過，確認後才繼續。
 >第二個 command 寫，先 reset **曾經打開蓋子** 的 flag，然後再燒錄內容
 >第三個 command 讀，核對與寫入的內容是否相同
