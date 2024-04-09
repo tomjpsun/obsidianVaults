@@ -141,10 +141,11 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 ```mermaid
 stateDiagram-v2
         [*] --> 已連線
-        已連線 --> Moving
-        Moving --> Still
-        Moving --> Crash
-        Crash --> [*]
+        已連線 --> RunLoop
+        RunLoop --> Socket等待置換
+        Socket等待置換 --> 燒錄中
+        燒錄中 --> Socket等待置換
+        燒錄中 --> 已連線
 
 ```
 
