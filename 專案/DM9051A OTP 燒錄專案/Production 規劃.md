@@ -47,11 +47,15 @@
 | StopOnFailure              | true              | true              |
 | SkipFailedMAC              | false             | false             |
 | Overwrite Non-Empty EEPROM | N                 | N                 |
+| Chip Binary Profile        | 0A531128CBF6..... | 000000000000..... |
+| Chip Binary Profile Size   | 22                | 22                |
+| Template ID                | CustomerXYZ       | CustomerXYZ       |
 
 >[!Note]
 >
 >Report Path：產生 Report 時存放的檔案Path
 >Refresh Interval 以 millisec 爲單位，不提供使用者調整
+>Template ID：識別 Template 識別字串
 
 >[!MD5]
 Template  存檔資訊附帶 MD5 ，方便確認爲原廠 Template。
