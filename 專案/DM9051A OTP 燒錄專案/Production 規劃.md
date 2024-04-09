@@ -6,6 +6,7 @@
 | 0.1.2 | 2024/03/12 新增流程章節，修改 Settings ，初稿待討論                                   |     |
 | 0.1.3 | 2024/03/29 修改 Settings JSON 欄位，字串“N“，”Y“ 改爲 Boolean False，Boolean True |     |
 | 0.1.4 | 2024/04/02  OverwriteNonEmptyEEPROM 移到 Template                        |     |
+| 0.1.5 | 新增 Tab 顏色                                                              |     |
 
 # 定義
 下列定義都是以 JSON format 存檔，方便使用者改寫。 
