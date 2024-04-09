@@ -143,16 +143,16 @@ stateDiagram-v2
         
 classDef Box fill:#00a,color:white,font-weight:bold,stroke-cwidth:2px,stroke:yellow
 
-Start --> Connect: Configure
-Connect --> [*]: Program Close
-Connect --> Socket_wait: Start Run Loop
+Start --> Connected: Configure
+Connected --> [*]: Program Close
+Connected --> Socket_wait: Start Run Loop or AutoRun
 
 Socket_wait --> Burn: socket close
 Burn --> Socket_wait: 驗證 OK & Not MAC END
-Burn --> Connect: 驗證失敗 or MAC END
+Burn --> Connected: 驗證失敗 or MAC END
 
 
-class Connect Box
+class Connected Box
 class Socket_wait Box
 class Burn Box
 class Start Box
