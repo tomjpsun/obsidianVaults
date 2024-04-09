@@ -136,6 +136,18 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 + button start ： 手動繼續 after error
 + polling state 依照 refresh_interval\(ms)
 
+### 操作流程
+
+```mermaid
+stateDiagram-v2
+        [*] --> 已連線
+        已連線 --> Moving
+        Moving --> Still
+        Moving --> Crash
+        Crash --> [*]
+
+```
+
 下面列出 3 種 states：
 
 **Table 1**  
@@ -173,3 +185,4 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 
 整合 Modbus 0319_1002 版本
 ![[modbus_update_0319.png]]
+
