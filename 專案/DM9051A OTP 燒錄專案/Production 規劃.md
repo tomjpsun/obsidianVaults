@@ -140,14 +140,25 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 
 ```mermaid
 stateDiagram-v2
-        [*] --> 已連線
-        已連線 --> RunLoop
-        RunLoop --> Socket等待置換
-        Socket等待置換 --> 燒錄中
-        燒錄中 --> Socket等待置換
-        燒錄中 --> 已連線
+        
+classDef Box fill:#00a,color:white,font-weight:bold,stroke-cwidth:2px,stroke:yellow
 
+Start --> Connect: Configure
+Connect --> [*]: Program Close
+Connect --> Socket_wait: Start Run Loop
+
+Socket_wait --> Burn: socket close
+Burn --> Socket_wait: 驗證 OK & Not MAC END
+Burn --> Connect: 驗證失敗 or MAC END
+
+
+class Connect Box
+class Socket_wait Box
+class Burn Box
+class Start Box
 ```
+
+
 
 下面列出 3 種 states：
 
