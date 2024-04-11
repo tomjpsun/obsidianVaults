@@ -205,7 +205,7 @@ class s1 Comment
 + 蓋子曾經打開 Lid Ever Open
 + 蓋子目前狀態 Lid Is Opened
 
-# Update Notes
+# 整合 communication layer
 
 整合 Modbus 0319_1002 版本
 ![[modbus_update_0319.png]]
