@@ -145,8 +145,9 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 
 ```mermaid
 stateDiagram-v2
-        
+s1 : All states will direct to Program Close
 classDef Box fill:#00a,color:white,font-weight:bold,stroke-cwidth:2px,stroke:yellow
+classDef Comment fill:#ccc,color:black,font-weight:stroke-cwidth:1px,stroke:gray
 
 Start --> Connected: Configure
 Connected --> [*]: Program Close
@@ -158,10 +159,13 @@ Burn --> Connected: 驗證失敗
 Burn --> Start: MAC END
 
 
+
 class Connected Box
 class Socket_wait Box
 class Burn Box
 class Start Box
+class Window_Close Comment
+class s1 Comment
 ```
 
 
