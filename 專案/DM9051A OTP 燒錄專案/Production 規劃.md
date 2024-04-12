@@ -47,8 +47,8 @@
 | StopOnFailure              | true              | true              |
 | SkipFailedMAC              | false             | false             |
 | Overwrite Non-Empty EEPROM | N                 | N                 |
-| Chip Binary Profile        | 0A531128CBF6..... | 000000000000..... |
-| Chip Binary Profile Size   | 22                | 22                |
+| Binary Profile             | 0A531128CBF6..... | 000000000000..... |
+| Binary Profile Size        | 22                | 22                |
 | Template ID                | CustomerXYZ       | CustomerXYZ       |
 
 >[!Note]
