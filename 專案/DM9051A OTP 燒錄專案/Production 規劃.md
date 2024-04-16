@@ -174,12 +174,12 @@ class s1 Comment
 
 **Table 1**  
 
-| State       | Color on Tab | 說明                          |
-| ----------- | ------------ | --------------------------- |
-| Start       | Gray         | App 開始，尚未與燒錄器連線             |
-| Connected   | Light Green  | 已與燒錄器連線，尚未進入 Run Loop       |
-| Socket Wait | Yellow       | 進入 Run Loop，Socket 等待 IC 放置 |
-| Burn        | Orange       | 燒錄中                         |
+| State       | Color on Tab                | 說明                          |
+| ----------- | --------------------------- | --------------------------- |
+| Start       | $${\color{gray}Gray}$$      | App 開始，尚未與燒錄器連線             |
+| Connected   | $${\color{green}Green}$$    | 已與燒錄器連線，尚未進入 Run Loop       |
+| Socket Wait | $${\color{yellow}Yell ow}$$ | 進入 Run Loop，Socket 等待 IC 放置 |
+| Burn        | $${\color{Red}Red}$$        | 燒錄中                         |
 
 **Table 2**
 
