@@ -1,4 +1,17 @@
- Install By Debian Package
+# Install By Official Installer
+
+下載後安裝
+
+## 下載後安裝
+Qt Offline Installers
+https://www.qt.io/offline-installers
+有下載一份放在 Team-player NAS **/public/develop/Qt Installer**
+
+Qt 6.x for Open Source Development  
+[Download the Qt Online Installer](https://www.qt.io/download-open-source) 頁面中間有 Download 按鈕，可以前往
+[Download Qt for open source use](https://www.qt.io/download-qt-installer-oss?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4) 下載
+
+# Install By Debian Package
 
 目前沒有整合好，需要一些手動部分。
 首先
@@ -48,7 +61,5 @@ Qt version 明確選好後，應該可以解決 *沒有 Kits 可以選擇* 的�
 
 雖然是社羣版本，但是缺乏與 Example 整合。我需要 Example 當作 start point.....
 
-# Install By Qt Official Site : Installer
-首先取得 Qt Installer: [[Qt Downloads]]
 
 
