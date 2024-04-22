@@ -54,4 +54,5 @@ NLP的關鍵任務包括：
 參考資料
 1. [Medium 文章：Transformer — Attention Is All You Need ](https://medium.com/ching-i/transformer-attention-is-all-you-need-c7967f38af14)
 2. [很好的 Transfomer 介紹](https://www.youtube.com/watch?v=bCz4OMemCcA)
-3. [Transformer 論文解說](https://www.youtube.com/watch?v=nzqlFIcCSWQ&t=516s)
+3. 上面的影片充滿濃濃的印度腔，[這個是正英文比較好聽](https://www.youtube.com/watch?v=4Bdc55j80l8)
+4. 中文 [Transformer 論文解說](https://www.youtube.com/watch?v=nzqlFIcCSWQ&t=516s)
