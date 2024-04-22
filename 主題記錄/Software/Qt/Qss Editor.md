@@ -11,3 +11,9 @@ https://github.com/hustlei/QssStylesheetEditor/releases
 1. download [QssStylesheetEditor-1.7-py3-none-any.whl](https://github.com/hustlei/QssStylesheetEditor/releases)
 2. run `pip install QssStylesheetEditor-1.7-py3-none-any.whl` install QssStylesheetEditor
 3. run `qsseditor` or `QssStylesheetEditor` the app will start
+
+跑起來後長這樣：
+
+![[Pasted image 20240422075714.png]]
+
+選單 Open 後選擇 css 檔案即可編輯
