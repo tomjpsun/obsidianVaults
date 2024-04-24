@@ -149,7 +149,8 @@ s1 : All states will direct to Program Close
 classDef Box fill:#00a,color:white,font-weight:bold,stroke-cwidth:2px,stroke:yellow
 classDef Comment fill:#ccc,color:black,font-weight:stroke-cwidth:1px,stroke:gray
 
-Start --> Connected: Configure
+Start --> Connected: Configure accepted
+Start --> Start: Configure aborted
 Connected --> [*]: Program Close
 Connected --> Socket_wait: Start Run Loop or AutoRun
 
