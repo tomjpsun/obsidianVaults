@@ -146,11 +146,13 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 ```mermaid
 stateDiagram-v2
 s1 : All states will direct to Program Close
-classDef Box fill:#00a,color:white,font-weight:bold,stroke-cwidth:2px,stroke:yellow
+classDef Start fill:#555,color:white,font-weight:bold,stroke-cwidth:2px,stroke:yellow
+classDef Connect fill:#060,color:white,font-weight:bold,stroke-cwidth:2px,stroke:yellow
+classDef Runloop fill:#a22,color:white,font-weight:bold,stroke-cwidth:2px,stroke:yellow
 classDef Comment fill:#ccc,color:black,font-weight:stroke-cwidth:1px,stroke:gray
 
 Start --> Connected: Configure accepted
-Start --> Start: Configure aborted
+Connected --> Start: Configure aborted
 Connected --> [*]: Program Close
 Connected --> Socket_wait: Start Run Loop or AutoRun
 
@@ -161,10 +163,10 @@ Burn --> Start: MAC END
 
 
 
-class Connected Box
-class Socket_wait Box
-class Burn Box
-class Start Box
+class Connected Connect
+class Socket_wait Runloop
+class Burn Runloop
+class Start Start
 class Window_Close Comment
 class s1 Comment
 ```
@@ -201,6 +203,11 @@ class s1 Comment
 >第二個 command 寫，先 reset **曾經打開蓋子** 的 flag，然後再燒錄內容
 >第三個 command 讀，核對與寫入的內容是否相同
 >
+
+> [!NOTE] 關於 Report 
+> 由 Start 進入 Connected 的時候， 開始建立一份 Report， 當回到 Start 或 結束程式的時候，視爲一個 Report 截止的地方 。
+> Report 建立時會用一個 unique ID 當作識別號碼，以便於在 log 串流裏面可以找出屬於該 Report 的所有 log 的內容
+> 
 
 ## Programmer Status
 + 蓋子曾經打開 Lid Ever Open
