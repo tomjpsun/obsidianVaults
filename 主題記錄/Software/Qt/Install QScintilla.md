@@ -1,4 +1,4 @@
-QScintilla 是一個 Qt Open Source Project ， 提供基本的 editor 功能，意味着使用者可以 _客製化_ 自己的 editor，有下列特點：
+QScintilla 是一個 Qt Open Source Project ， 提供基本的 editor 功能，基於 Scintilla ，再包一層 Qt，意味着使用者可以 _客製化_ 自己的 editor，有下列特點：
 - syntax styling with support for over 70 languages
 - error indicators
 - code completion
