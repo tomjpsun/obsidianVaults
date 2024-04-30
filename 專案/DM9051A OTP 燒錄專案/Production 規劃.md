@@ -24,8 +24,9 @@
 | Profile\[3]<br>               | ex3.json               | profile_3.json                                                   |
 | Profile\[4]                   | 4.json                 | profile_4.json                                                   |
 | Profile Path                  | ~/my_folder/profiles/  | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
-| Template Version              | 1.0.0                  | 1.0.0                                                            |
-| App Version                   | 1.0.0                  | 1.0.0                                                            |
+| Major Version                 | 1                      | 1                                                                |
+| Minor Version                 | 0                      | 0                                                                |
+| Patch Version                 | 0                      | 0                                                                |
 | Log Path                      | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |
 | Report Path                   | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |
 | Refresh Interval default (ms) | 1000                   | 1000                                                             |
