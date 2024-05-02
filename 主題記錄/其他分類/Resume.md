@@ -10,13 +10,13 @@
 
 # C++專案履歷
 
+在個人職涯中，多半是爲公司需求的專案，各自採用適當的程式語言，包含 C++、Python、Java、Objective-C 等，其中採用 C++ 的專案如下:
+
 - 用 Qt 開發 IC 燒錄器應用程式。（目前4個月，仍在進行中）
 - Middleware: 用 Ethernet 對接主動式標籤的 Gateway，收、送命令，解析封包內容，傳給使用者界面的 UI 層。 （專案時間 2 年） 
 - RFID 應用軟體系統 ，分爲：
 	- 底層 RFID Engine ：Socket 收送 自定義封包並 Parse 欄位 
 	- 上層 Data Handler 送 Data 到 Web Server，或是到 SQL DB，或是採用 KDE 演算法分析。（專案時間 2 年）
-- Modem 生產測試程式，藉由 RS-232 對 Modem 測試功能。（半年）
-
 
 # 學歷
 
