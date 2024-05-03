@@ -15,22 +15,22 @@
 程式初始需要讀的設定，第一次自行 create。
 欄位如下：
 
-| Field                         | Example Value          | Initial Value                                                    |
-| ----------------------------- | ---------------------- | ---------------------------------------------------------------- |
-| Template Path                 | ~/my_folder/templates/ | ${HOME}/programmer/templates                                     |
-| Source Template File          | DM9051A.tmpl           | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |
-| Profile\[1]                   | my_1.json              | profile_1.json                                                   |
-| Profile\[2]                   | test_2.json            | profile_2.json                                                   |
-| Profile\[3]<br>               | ex3.json               | profile_3.json                                                   |
-| Profile\[4]                   | 4.json                 | profile_4.json                                                   |
-| Profile Path                  | ~/my_folder/profiles/  | get from QFileDialog, default to ${HOME}/programmer/profiles/    |
-| Major Version                 | 1                      | 1                                                                |
-| Minor Version                 | 0                      | 0                                                                |
-| Patch Version                 | 0                      | 0                                                                |
-| Log Path                      | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |
-| Report Path                   | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |
-| Refresh Interval default (ms) | 1000                   | 1000                                                             |
-| Status Max Size               | 1000                   | 1000                                                             |
+| Field                         | Example Value          | Initial Value                                                    |     |
+| ----------------------------- | ---------------------- | ---------------------------------------------------------------- | --- |
+| Template Path                 | ~/my_folder/templates/ | ${HOME}/programmer/templates                                     |     |
+| Source Template File          | DM9051A.tmpl           | ${HOME}/programmer/templates/DM9051A.tmpl (create if not exist ) |     |
+| Profile\[1]                   | my_1.json              | profile_1.json                                                   |     |
+| Profile\[2]                   | test_2.json            | profile_2.json                                                   |     |
+| Profile\[3]<br>               | ex3.json               | profile_3.json                                                   |     |
+| Profile\[4]                   | 4.json                 | profile_4.json                                                   |     |
+| Profile Path                  | ~/my_folder/profiles/  | get from QFileDialog, default to ${HOME}/programmer/profiles/    |     |
+| Major Version                 | 1                      | 1                                                                |     |
+| Minor Version                 | 0                      | 0                                                                |     |
+| Patch Version                 | 0                      | 0                                                                |     |
+| Log Path                      | ~/my_folder/logs/      | ${HOME}/programmer/logs/                                         |     |
+| Report Path                   | ~/my_folder/reports/   | ${HOME}/programmer/reports/                                      |     |
+| Refresh Interval default (ms) | 1000                   | 1000                                                             |     |
+| Status Max Size               | 1000                   | 1000                                                             |     |
 
 ## Template
 當按下 **New Programmer** 的時候，跳出 Wizard，Wizard 根據 Template 內容對新增的 Profile 初始化，並讓 user 填寫內容。Template 欄位如下表所示。
