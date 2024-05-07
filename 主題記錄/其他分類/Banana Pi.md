@@ -1,0 +1,7 @@
+Banana Pi BPI-F3 RISC-V SBC 公開販售
+
+[#BananaPi](https://www.facebook.com/hashtag/bananapi?__eep__=6&__cft__[0]=AZVcYrtBFsMherGAeqdkbe-AJCz2rL3zCQXSC1Y_zTvXO8YKocRLMb2DsV_BH06cbgyW4R2D3HdpeVqdnd64dH4wFQkXFJrl8KrVfOfMZh7aYxnFW0GgIusnDWJNbm0TnAbp3IekL4R_Bc1cLVC6fDbHJCSqyhAxHlBuIyK7SDEzuUoEEeW6cSK7XRgZhbnIYN8CIn_RBBjA-Bkhb8bqZaWvXgAlhpzqjll9v4W3AYDhQw&__tn__=*NK-R) BPI-F3 是工業級 [#RISCV](https://www.facebook.com/hashtag/riscv?__eep__=6&__cft__[0]=AZVcYrtBFsMherGAeqdkbe-AJCz2rL3zCQXSC1Y_zTvXO8YKocRLMb2DsV_BH06cbgyW4R2D3HdpeVqdnd64dH4wFQkXFJrl8KrVfOfMZh7aYxnFW0GgIusnDWJNbm0TnAbp3IekL4R_Bc1cLVC6fDbHJCSqyhAxHlBuIyK7SDEzuUoEEeW6cSK7XRgZhbnIYN8CIn_RBBjA-Bkhb8bqZaWvXgAlhpzqjll9v4W3AYDhQw&__tn__=*NK-R) 開發板,它採用 [#SpacemiT](https://www.facebook.com/hashtag/spacemit?__eep__=6&__cft__[0]=AZVcYrtBFsMherGAeqdkbe-AJCz2rL3zCQXSC1Y_zTvXO8YKocRLMb2DsV_BH06cbgyW4R2D3HdpeVqdnd64dH4wFQkXFJrl8KrVfOfMZh7aYxnFW0GgIusnDWJNbm0TnAbp3IekL4R_Bc1cLVC6fDbHJCSqyhAxHlBuIyK7SDEzuUoEEeW6cSK7XRgZhbnIYN8CIn_RBBjA-Bkhb8bqZaWvXgAlhpzqjll9v4W3AYDhQw&__tn__=*NK-R) K1 8核心 RISC-V 晶片設計,CPU 整合 2.0 TOPs AI 運算力。 8G DDR 和 16G eMMC 上機。 2x GbE 乙太網 pro,4x USB 3.0 和 PCIe 適用於 M。 2 個介面,供應 HDMI 和 Dual MIPI-CSI 相機。
+
+[https://forum.banana-pi.org/....../banana-pi-bpi....../17956](https://forum.banana-pi.org/t/banana-pi-bpi-f3-risc-v-development-board-public-sale/17956?fbclid=IwZXh0bgNhZW0CMTAAAR1YMC-MQ4tTFJk8nV5OLu-jcLDCEHkrz0SS6ECg8tea0eVI7uxEccSRiZY_aem_AQWyCE8qtLfV5y90ksyx2CTSV_UASmUBfLqSEGN-BBaQUgD6Ik0pL9wtvOsRDHGFz5wbQCO2flaM6IwJzmmJy4Db)
+
+
