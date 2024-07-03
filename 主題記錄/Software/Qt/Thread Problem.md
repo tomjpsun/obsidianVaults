@@ -6,3 +6,5 @@ QObject: Cannot create children for a parent that is in a different thread.
 https://blog.csdn.net/qq_35511927/article/details/121422908
 
 
+
+q

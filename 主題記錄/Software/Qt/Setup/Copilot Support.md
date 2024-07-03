@@ -1,8 +1,8 @@
 從 **Edit | Preferences** 下來，default 不會看到 copilit 選項 , 因爲 要從 **Help | 關於外掛程式** 來打開（Qt Creator 是整人大師吧 ？！）
 
 勾選 Compiler Explorer 以及 Copilot Plugin 就可以出現 copilot 設定了，（下圖是選擇 **系統選單**|**編輯**|**Preferences...** 後的畫面）
-![[螢幕快照 2024-01-08 15-55-42.png]]
 
+![[Pasted image 20240605090653.png]]
 
 點選 Copilot 設定 Sign in 資訊，**Node.js path** 需要找到 *Node.js* 安裝的路徑，**Path to agent** 需要從 https://github.com/github/copilot.vim.git 下載 **copilot.vim** 專案，然後指定它下面的 *dist* 路徑：
 

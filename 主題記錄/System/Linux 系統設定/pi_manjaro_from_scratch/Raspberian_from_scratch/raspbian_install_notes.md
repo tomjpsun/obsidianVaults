@@ -1,5 +1,15 @@
-Raspbian setup notes (Markdown format)
-Avahi setup
+### add user as sudoer
+
+```bash
+> su
+> [...type passwd]
+> /sbin/adduser tom sudo
+```
+
+然後重新開機即可
+
+
+### Avahi setup
 
 Install avahi-daemon:
 
@@ -38,14 +48,14 @@ Verification:
 
 On another PC, use avahi-discover -a. The raspbi host should appear.
 
-eth0/wlan0 route setup
+### eth0/wlan0 route setup
 
-Goal:
+#### Goal:
 
 Connect eth0 to RFID Reader (LAN 192.168.88.0)
 Connect wlan0 to wireless AP (LAN 192.168.68.0) with internet access
 
-Current route table:
+#### Current route table:
 
 Destination    Gateway       Genmask    Flags Metric Ref  Use Iface
 0.0.0.0       192.168.68.1  0.0.0.0    UG    303    0    0 wlan0
@@ -53,7 +63,7 @@ Destination    Gateway       Genmask    Flags Metric Ref  Use Iface
 192.168.68.0  0.0.0.0       255.255.255.0 U    303    0    0 wlan0
 192.168.88.0  0.0.0.0       255.255.255.0 U    202    0    0 eth0
 
-Steps:
+#### Steps:
 
 Install ifmetric:
 
