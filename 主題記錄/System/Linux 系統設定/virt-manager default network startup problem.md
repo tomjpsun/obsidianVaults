@@ -3,7 +3,7 @@
 
 After first shutdown I can't start it. I get this error message:
 
-```
+```bash
 Error starting domain: Requested operation is not valid: network 'default' is not active
 
 Traceback (most recent call last):

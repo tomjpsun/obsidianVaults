@@ -82,5 +82,3 @@ gantt
     Add another diagram to demo page    :48h
 ```
 
-其他參考：
-[https://www.runoob.com/markdown/md-advance.html?tdsourcetag=s_pctim_aiomsg](https://www.runoob.com/markdown/md-advance.html?tdsourcetag=s_pctim_aiomsg)
