@@ -3,6 +3,4 @@
 
 已經有跑 service `firewalld`，用工具 `firewall-config` 將 `samba` & `samba-client` 打開
 
-![[螢幕快照 2024-02-21 13-46-48.png]]
-
 關閉後從 client 端重連，可以了。

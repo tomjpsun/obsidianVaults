@@ -16,22 +16,10 @@
 
 Build Type : Release
 
-接著，就要找出程式編譯的輸出目錄。在「專案」設定的圖示按一下後，就可以看到目前的檔案輸出目錄了。
+接著，就要找出程式編譯的輸出目錄。在「專案」設定的圖示按一下後，就可以看到目前的檔案輸出目錄了，執行檔應該出現在 `release` 目錄下。
 
-[![](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtprjconf.jpg?resize=300%2C212&ssl=1)]
-(https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtprjconf.jpg?ssl=1)
+![[Pasted image 20240904132042.png]]
 
-[![](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtoutputdir.jpg?resize=300%2C79&ssl=1)](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtoutputdir.jpg?ssl=1)
-
-輸出目錄
-
-看一下輸出目錄下的 Release 目錄，就可以看到編譯出的檔案。
-
-[![](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/outputdirfiles.jpg?resize=300%2C82&ssl=1)](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/outputdirfiles.jpg?ssl=1)
-
-編譯出的檔案
-
-這邊就可以看到 .exe 檔了，但是還不能執行，下一步就是將所需的動態連結檔收集起來。
 
 #### QT 指令環境
 
@@ -53,6 +41,7 @@ QT 指令環境
 
 這時，再執行 .exe 就可以成功執行，不會再提示缺少 .dll 檔案了。
 
+我們可以在這裏做一個 `tmp` 目錄，把 exe 檔案 copy 進來，重新跑一遍：在這裏執行 `windeployqt`。
 ### 用 enigma virtual box 將程式打包成單一執行檔
 
 目前程式以可以獨立執行，不需要再安裝 QT 的開發環境了。但一堆檔案看起來總是不太舒服，這時我們可以利用 [enigma virtual box](https://enigmaprotector.com/en/aboutvb.html) 這個工將所有的程式打包成一個執行檔，而不是以目錄來儲存所有所需的檔案。**這是個免費工具**，可以直接下載使用。請到官網 [https://enigmaprotector.com/en/downloads.html](https://enigmaprotector.com/en/downloads.html)進行下載安裝。Attachement 目錄附上我使用的版本，以防連結失效。

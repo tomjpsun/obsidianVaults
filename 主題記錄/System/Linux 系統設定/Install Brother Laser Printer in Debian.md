@@ -59,7 +59,7 @@ When CUPS will ask you to choose the driver to communicate with your printer, ch
 
 If you don’t see the exact model of your printer, pick the closest option based on your model’s number. For example, I have an 7060D model. Most close option is 7065 model − most probably that will work like a charm.
 
-![](https://miro.medium.com/v2/resize:fit:933/1*nEGxxfVwb79wUg4uN-K93g.png)
+![[主題記錄/System/Linux 系統設定/ef8ef94dadd0319f86a02bd931b92207_MD5.png]]
 
 > These keywords may help you find this article via search engines:  
 > brother printer cups, cups brother printer is not printing, brother cups drivers, cups brother printers

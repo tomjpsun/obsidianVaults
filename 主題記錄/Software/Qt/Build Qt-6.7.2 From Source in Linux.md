@@ -1,3 +1,7 @@
+---
+qt-build:
+---
+
 來源參考[這篇 Qt 文件](https://doc.qt.io/qt-6/build-sources.html)
 
 首先安裝一些需要的 packages：
@@ -14,7 +18,7 @@ CMake Error at /usr/lib/llvm-14/lib/cmake/clang/ClangTargets.cmake:756 (message)
      "/usr/lib/llvm-14/lib/libclangBasic.a"
 ```
 
-到 [download.io](https://download.qt.io/official_releases/qt/6.7/6.7.2/single/)下載 _qt-everywhere-src-6.7.2.tar.xz_ 解開後開始build
+到 [download.io]($dir$下載 _qt-everywhere-src-6.7.2.tar.xz_ 解開後開始build
 
 ```bash
 mkdir -p ~/dev/qt-build
@@ -23,8 +27,8 @@ cd ~/dev/qt-build
 /tmp/qt-everywhere-src-6.7.2/configure -skip qtwebengine
 
 # ....等 configure 結束，不要用 --paralled 因爲虛擬機，會等不到回應而報錯
-sudo cmake --build . 
-
+cmake --build . 
+sudo make install
 ```
 
 這裏記錄一下最後結果：
@@ -50,10 +54,10 @@ source ~/.bashrc
 ```
 ### Install QtCreator
 ```bash
-apt install qtcreator
+sudo apt install qtcreator
 ```
 ### Add Qt Version
-這時候安裝的 Qt Creator 並沒有可使用的 Qt version，到 Preferences => Kits => Add 一個新的，路徑採用上面新增的 Qt PATH
+這時候安裝的 Qt Creator 並沒有可使用的 Qt version，到 Edit | Preferences => Kits => Add 一個新的，路徑採用上面新增的 Qt PATH
 
 ![[Pasted image 20240625092743.png]]
 

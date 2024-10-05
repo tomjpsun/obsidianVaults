@@ -1,4 +1,4 @@
-#gantt #flowchart #journey
+#gantt #flowchart #mermaid
 
 
 Obsidian **內建支援** mermaid 作圖，只要將指令用 \`\`\` mermaid \`\`\` 包起來就好了

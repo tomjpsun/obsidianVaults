@@ -11,7 +11,7 @@ docker: Got permission denied while trying to connect to the Docker daemon socke
 我們可以把目前使用者加到 docker 群組裡面, 當 docker service 起來時, 會以這個群組的成員來初始化相關服務:
 
 ``` bash
-sudo usermod -aG docker tom
+sudo usermod -aG docker $USER
 ```
 
 ### 啓動 Portianer
@@ -28,7 +28,8 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 
 然後 browser 開 http://localhost:9000
 或是 secure http  https://localhost:9443
-目前 admin 密碼是  admin20021223
+創建一個 admin account
+目前我 admin 密碼是  admin20021223
 
 ## 依照 docker-compose.yml 啓動 container
 
@@ -51,7 +52,7 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 來這裏：
 ![[portainer_edit_yml.png]]
 
-修改一下 volumes，我希望它一開始就看到 source root，把 `/home/tom/work/PyCharm/handson-ml2` 填在冒號 (:) 前面.:
+修改一下 volumes，我希望它一開始就看到 source root，把 `/home/tom/work/PyCharm/handson-ml2` 填在冒號 (:) 前面，這裏的意義是，冒號前面是 Host 系統的檔案路徑，冒號後面是對應到 container 的檔案路徑。
 
 ![[portainer-edit-volume.png]]
 

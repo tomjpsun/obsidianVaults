@@ -2,7 +2,7 @@
 
 以QT Creator 開發的程式，一般在編譯後都是以動態連結的方式在執行期才與需要的 .dll 做連結，所以如果沒做特別的處理，並無法單獨執行，一定要在開啟 IDE 的狀態執行才可以。如果你試著在輸出目錄執行 exe 檔的話，應該會看到類似下列的錯誤。
 
-[![](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?resize=602%2C351&ssl=1)](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?ssl=1)
+[![[主題記錄/Software/Qt/3ea12c2bcc8d78343f61ca268b2f9bd3_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?ssl=1)
 
 找不到Lib
 
@@ -14,7 +14,7 @@
 
 目前試出的結果是**只能對 Release 設置做打包**，如果是用 Debug 的話，則會失敗。編譯的設定，可以直接在左下角做修改。
 
-[![](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtbuildtype.jpg?resize=283%2C300&ssl=1)](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtbuildtype.jpg?ssl=1)
+[![[主題記錄/Software/Qt/e52cb4b916ca04fec950d7f85c9919d9_MD5.jpg]]](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtbuildtype.jpg?ssl=1)
 [Home](https://moon-half.info)
 
 [程式設計](https://moon-half.info/p/category/%e7%a8%8b%e5%bc%8f%e8%a8%ad%e8%a8%88)
@@ -29,7 +29,7 @@ QT 學習筆記 – 程式佈署與enigma virtual box打包
 
 以QT Creator 開發的程式，一般在編譯後都是以動態連結的方式在執行期才與需要的 .dll 做連結，所以如果沒做特別的處理，並無法單獨執行，一定要在開啟 IDE 的狀態執行才可以。如果你試著在輸出目錄執行 exe 檔的話，應該會看到類似下列的錯誤。
 
-[![](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?resize=602%2C351&ssl=1)](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?ssl=1)
+[![[主題記錄/Software/Qt/3ea12c2bcc8d78343f61ca268b2f9bd3_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?ssl=1)
 
 找不到Lib
 
@@ -41,22 +41,22 @@ QT 學習筆記 – 程式佈署與enigma virtual box打包
 
 目前試出的結果是**只能對 Release 設置做打包**，如果是用 Debug 的話，則會失敗。編譯的設定，可以直接在左下角做修改。
 
-[![](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtbuildtype.jpg?resize=283%2C300&ssl=1)](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtbuildtype.jpg?ssl=1)
+[![[主題記錄/Software/Qt/e52cb4b916ca04fec950d7f85c9919d9_MD5.jpg]]](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtbuildtype.jpg?ssl=1)
 
 Build Type
 
 接著，就要找出程式編譯的輸出目錄。在「專案」設定的圖示按一下後，就可以看到目前的檔案輸出目錄了。
 
-[![](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtprjconf.jpg?resize=300%2C212&ssl=1)]
+[![[主題記錄/Software/Qt/587bfea595392e1d63f45dd4f4d4122c_MD5.jpg]]]
 (https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtprjconf.jpg?ssl=1)
 
-[![](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtoutputdir.jpg?resize=300%2C79&ssl=1)](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtoutputdir.jpg?ssl=1)
+[![[主題記錄/Software/Qt/156f0550be0cc5ed7d54bb9bef87ba38_MD5.jpg]]](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtoutputdir.jpg?ssl=1)
 
 輸出目錄
 
 看一下輸出目錄下的 Release 目錄，就可以看到編譯出的檔案。
 
-[![](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/outputdirfiles.jpg?resize=300%2C82&ssl=1)](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/outputdirfiles.jpg?ssl=1)
+[![[主題記錄/Software/Qt/91583438e3cab4243c2f31ada43b4f30_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/outputdirfiles.jpg?ssl=1)
 
 編譯出的檔案
 
@@ -65,18 +65,18 @@ Build Type
 #### QT 指令環境
 
 要執行打包程式，可以利用 QT 的指令環境。在搜尋的地方打上 QT，就會列出 “QT 5.6 for Desktop…”，執行該項目就會跳到DOS視窗。
-[![](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtcmdenv.jpg?resize=602%2C475&ssl=1)](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtcmdenv.jpg?ssl=1)
+[![[主題記錄/Software/Qt/ac47cc439f523b3403ce1cd9c0d458fb_MD5.jpg]]](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/qtcmdenv.jpg?ssl=1)
 
 QT 指令環境
 
-接著將目錄切換到剛的 .exe 位置，再執行 windeployqt . ，就會進行所需檔案收集的的動作。[![](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/collection.jpg?resize=602%2C381&ssl=1)](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/collection.jpg?ssl=1)
+接著將目錄切換到剛的 .exe 位置，再執行 windeployqt . ，就會進行所需檔案收集的的動作。[![[主題記錄/Software/Qt/c52ee94b3393eb4f90cf48ee0590d76a_MD5.jpg]]](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/collection.jpg?ssl=1)
 
 檔案收集
 #### 再次執行檔案
 
 當收集完檔案後，可以看到編譯輸出的目錄，多了很多檔案。
 
-[![](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/collectionafter.jpg?resize=602%2C464&ssl=1)](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/collectionafter.jpg?ssl=1)
+[![[主題記錄/Software/Qt/cf964bd5345d203bcc33f6e9ff9ddaa9_MD5.jpg]]](https://i1.wp.com/moon-half.info/wp-content/uploads/2021/04/collectionafter.jpg?ssl=1)
 
 收集到的檔案
 
@@ -90,7 +90,7 @@ Enigma Virtualbox
 
 安裝完打開程式，先設定幾個部份
 
-[![](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/eopen.jpg?resize=602%2C422&ssl=1)](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/eopen.jpg?ssl=1)
+[![[主題記錄/Software/Qt/b8ac4a1671f62a10887a0b4ea1567f50_MD5.jpg]]](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/eopen.jpg?ssl=1)
 
 Enigma 程式
 
@@ -102,13 +102,13 @@ Enigma 程式
 
 展開檔案樹，看起來的畫面就會像下面這樣。
 
-[![](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/eniaddfiles.jpg?resize=300%2C296&ssl=1)](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/eniaddfiles.jpg?ssl=1)
+[![[主題記錄/Software/Qt/acbfcd2fd3c97ec9f98993cd09796884_MD5.jpg]]](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/eniaddfiles.jpg?ssl=1)
 
 加入額外檔案
 
 最後按下 「Process」，就會進行打包壓縮，完成後就會產生出單一的可執行檔案了！
 
-[![](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/process.jpg?resize=602%2C423&ssl=1)](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/process.jpg?ssl=1)
+[![[主題記錄/Software/Qt/69b975b37693e2f0e9ccb01ffa611a5d_MD5.jpg]]](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/process.jpg?ssl=1)
 
 打包壓縮中
 ### 執行檔案
