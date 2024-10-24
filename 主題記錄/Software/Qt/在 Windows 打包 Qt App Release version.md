@@ -2,7 +2,7 @@
 
 以QT Creator 開發的程式，一般在編譯後都是以動態連結的方式在執行期才與需要的 .dll 做連結，所以如果沒做特別的處理，並無法單獨執行，一定要在開啟 IDE 的狀態執行才可以。如果你試著在輸出目錄執行 exe 檔的話，應該會看到類似下列的錯誤。
 
-[![[主題記錄/Software/Qt/3ea12c2bcc8d78343f61ca268b2f9bd3_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?ssl=1)
+[![[3ea12c2bcc8d78343f61ca268b2f9bd3_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?ssl=1)
 
 找不到Lib
 
@@ -29,7 +29,7 @@ QT 學習筆記 – 程式佈署與enigma virtual box打包
 
 以QT Creator 開發的程式，一般在編譯後都是以動態連結的方式在執行期才與需要的 .dll 做連結，所以如果沒做特別的處理，並無法單獨執行，一定要在開啟 IDE 的狀態執行才可以。如果你試著在輸出目錄執行 exe 檔的話，應該會看到類似下列的錯誤。
 
-[![[主題記錄/Software/Qt/3ea12c2bcc8d78343f61ca268b2f9bd3_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?ssl=1)
+[![[3ea12c2bcc8d78343f61ca268b2f9bd3_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/loadfailed.jpg?ssl=1)
 
 找不到Lib
 
@@ -47,16 +47,16 @@ Build Type
 
 接著，就要找出程式編譯的輸出目錄。在「專案」設定的圖示按一下後，就可以看到目前的檔案輸出目錄了。
 
-[![[主題記錄/Software/Qt/587bfea595392e1d63f45dd4f4d4122c_MD5.jpg]]]
+[![[587bfea595392e1d63f45dd4f4d4122c_MD5.jpg]]]
 (https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtprjconf.jpg?ssl=1)
 
-[![[主題記錄/Software/Qt/156f0550be0cc5ed7d54bb9bef87ba38_MD5.jpg]]](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtoutputdir.jpg?ssl=1)
+[![[156f0550be0cc5ed7d54bb9bef87ba38_MD5.jpg]]](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/qtoutputdir.jpg?ssl=1)
 
 輸出目錄
 
 看一下輸出目錄下的 Release 目錄，就可以看到編譯出的檔案。
 
-[![[主題記錄/Software/Qt/91583438e3cab4243c2f31ada43b4f30_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/outputdirfiles.jpg?ssl=1)
+[![[91583438e3cab4243c2f31ada43b4f30_MD5.jpg]]](https://i2.wp.com/moon-half.info/wp-content/uploads/2021/04/outputdirfiles.jpg?ssl=1)
 
 編譯出的檔案
 
@@ -108,7 +108,7 @@ Enigma 程式
 
 最後按下 「Process」，就會進行打包壓縮，完成後就會產生出單一的可執行檔案了！
 
-[![[主題記錄/Software/Qt/69b975b37693e2f0e9ccb01ffa611a5d_MD5.jpg]]](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/process.jpg?ssl=1)
+[![[69b975b37693e2f0e9ccb01ffa611a5d_MD5.jpg]]](https://i0.wp.com/moon-half.info/wp-content/uploads/2021/04/process.jpg?ssl=1)
 
 打包壓縮中
 ### 執行檔案
