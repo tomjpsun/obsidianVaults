@@ -1,0 +1,1 @@
+cmd_/home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/modules.order := {   echo /home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/dm9051_ptp.ko; :; } > /home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/modules.order

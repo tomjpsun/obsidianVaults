@@ -1,0 +1,1 @@
+cmd_/home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/Module.symvers :=  sed 's/ko$$/o/'  /home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/modules.order | scripts/mod/modpost -m -a    -o /home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/Module.symvers -e -i Module.symvers -T - 

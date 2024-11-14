@@ -17,21 +17,17 @@ https://pinout.xyz/pinout/spi
 
 如下圖:
 灰線跟紫線分別是 Ground 與 VCC3_3
-右邊那一撮是 SPI 0 的接線
-
-![[IMG_4032.png]]
-![[IMG_4035.png]]
-
-
-
+綠線 MOSI
+紫線 MISO
+藍線 SCLK
+黃線 CE1
+![[IMG_4086.png]]
 
 # 開發板的部分
 
-左邊 J4 右邊 J3 
-
-![[IMG_4030.png]]
-
+![[IMG_4083.png]]
+![[IMG_4084.png]]
 pin layout :
 
-![[IMG_4034.png]]
+![[IMG_4034.png|950]]
 

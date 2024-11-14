@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"f8c133c6f4202dc9","type":"text","text":"分析 Linux IGB (Intel Giga Bytes network device) 網路驅動程式的文件:\nhttps://blog.csdn.net/weixin_39950873/article/details/128837649","x":-640,"y":-420,"width":500,"height":120},
+		{"id":"3f9c741a3813aefd","type":"text","text":"[[ptp 在 igb driver 相關的 functions]]","x":-640,"y":-260,"width":500,"height":60},
+		{"id":"773956ad52c43db6","type":"text","text":"**clock 微調**\n如果有定義  `HAVE_PTP_CLOCK_INFO_ADJFINE`:\nadapter->ptp_caps.adjfine = `igb_ptp_adjfine_82580`;\n不然就只有\nadapter->ptp_caps.adjfreq = `igb_ptp_adjfreq_82580`; \n`注意, adjfreq 底下是透過 adjfine 完成動作`, 對 E1000_TIMINCA register 寫新的 counter 值","x":-640,"y":-160,"width":500,"height":200},
+		{"id":"03ebff725eb6e99d","type":"text","text":"**時間調整**\nadapter->ptp_caps.adjtime = `igb_ptp_adjtime_i210`; \n注意: 對 E1000_SYSTIM { L | H } registers 讀寫 ","x":-640,"y":60,"width":500,"height":100}
+	],
+	"edges":[
+		{"id":"8546de747bf51d3d","fromNode":"3f9c741a3813aefd","fromSide":"bottom","toNode":"773956ad52c43db6","toSide":"top"}
+	]
+}

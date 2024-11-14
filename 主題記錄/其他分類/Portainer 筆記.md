@@ -14,6 +14,7 @@ docker: Got permission denied while trying to connect to the Docker daemon socke
 sudo usermod -aG docker $USER
 ```
 
+
 ### 啓動 Portianer
 依照
 https://ivonblog.com/posts/portainer-installation/
@@ -34,7 +35,8 @@ docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name portainer --restart=
 ## 依照 docker-compose.yml 啓動 container
 
 現成的 docker compose yml 可從 GitHub 專案取得，例如：
-[handson-ml2](git@github.com:ageron/handson-ml2.git)
+https://github.com/ageron/handson-ml2
+
 
 我們使用該專案的 `docker/docker-compose.yml` 來實驗：
 ![[portainer_live_connect.png|700]]

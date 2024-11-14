@@ -1,0 +1,1 @@
+cmd_/home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/dm9051_ptp.mod := printf '%s\n'   dm9051_ptp.o | awk '!x[$$0]++ { print("/home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/"$$0) }' > /home/ptp001/Stone/2024-04-23-master-copy/DM9052-1588-OK/dm9051_ptp.mod
