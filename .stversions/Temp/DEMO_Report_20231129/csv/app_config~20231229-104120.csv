@@ -1,8 +1,0 @@
-"id","uid","data"
-"1","c5f1d942-70ff-42cd-8e09-168638073909","{
- ""backend_port"": 80,
- ""backend_url"": ""192.168.249.50"",
- ""hmi_id"": ""1"",
- ""log_switch"": ""CONSOLE""
-}"
-"2","33","{""backend_url"":""http://192.168.249.112"",""backend_port"":""3002"",""hmi_id"":""33"",""log_switch"":""CONSOLE"",""dashboard_height"":""1000px""}"
