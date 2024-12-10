@@ -6,3 +6,10 @@ E[14:49:36.545] Failed to prepare a compiler instance: unknown target ABI 'lp64'
 ...
 ```
 
+解決辦法, 在 source 目錄下,新增一個檔案 : `.clangd` 內容是:
+
+```bash
+CompileFlags:    
+  Remove: -mabi=lp64
+```
+

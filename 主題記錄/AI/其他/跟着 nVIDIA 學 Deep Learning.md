@@ -1,11 +1,18 @@
 這本書是翻譯原文書 [Learning Deep Learning](https://ldlbook.com/)，網頁中有 [Running LDL code examples in a Docker Container](https://ldlbook.com/2022/01/31/dl-in-docker/)
-``` ln:false
+```bash ln:false
 nvidia-docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm -it -p 8888:8888 -v /home/USERNAME/LDL-main:/home/LDL nvcr.io/nvidia/tensorflow:21.07-tf2-py3 /bin/bash
 ```
 將 /home/USERNAME/... 的路徑，換成我們下載的 LDL-main 路徑
-如果 8888 已經佔用，改成其他例如 7777 的 port，matplotlib 需要指定 3.6 不然現在版本太新，會出現 TensorFlow 不相容的問題，就跟 docker 提供的不合了。
-``` ln:false
+如果 8888 已經佔用，改成其他例如 7777 的 port，matplotlib 需要指定 3.6 不然現在版本太新，會出現 TensorFlow 不相容的問題，就跟 docker 提供的不合了, 以我這邊環境爲例：
+```bash ln=false
+nvidia-docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm -it -p 7777:8888 -v /home/tom/work/python_projects/LDL:/home/LDL nvcr.io/nvidia/tensorflow:21.07-tf2-py3 /bin/bash
+```
+
+開起來後，下命令安裝 _matplotlib_, _numpy_
+
+```bash ln:false
 pip install matplotlib==3.6
+pip install numpy==1.19.2
 ```
 
 > [!NOTE] 這個 docker 需要 NumPy 1.19.2
@@ -14,7 +21,7 @@ pip install matplotlib==3.6
 
 docker 的 bash 裏面可以跑 notebook：
 
-``` ln:false
+```bash ln:false 
 cd /home/LDL
 
 jupyter notebook --ip 0.0.0.0 --port 8888 --allow-root

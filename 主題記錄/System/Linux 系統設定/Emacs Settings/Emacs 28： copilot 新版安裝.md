@@ -43,3 +43,11 @@ _use-package [RET]_
   :straight (:host github :repo "copilot-emacs/copilot.el" :files ("*.el"))
   :ensure t)
 ```
+# Copilot  path
+emacs _package install_ ''exec-path-from-shell''
+
+```js
+;; init.el 在 package initialize 後加上
+(exec-path-from-shell-initialize)    
+```
+

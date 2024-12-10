@@ -1,6 +1,3 @@
-Author : Stone
-
-1. PTP init (1588 enable)
 2. PTP clock read/write
 3. PTP TX/RX TS read
 4. PTP offset write
