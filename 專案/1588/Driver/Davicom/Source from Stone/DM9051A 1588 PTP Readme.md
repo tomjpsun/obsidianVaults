@@ -10,6 +10,7 @@
    PTP function enable => write MAC register 0x60 bit 0 setup to 0x00 (default value 0x00!)
    PTP clock enable => write MAC register 0x61 bit 0 setup to 0x01 (只要寫一次就好,除非MAC register 0x61 bit 1 setup to 1,否則不用再寫一次,寫0不會影響!)
    PTP TX TS enable => write MAC register 0x02 bit 7 setup to 0x80 
+   ==Tom: 改到 single tx 的時候再寫這個 bit==
    PTP RX TS enable => write MAC register 0x64 bit 4 setup to 0x010
    PTP 1-step update check sum enable => write MAC register 0x63 bit 7 setup to 0x00 (default value 0x00 enable)
    PTP 1-step 8-byte TX TS insert add offset => write MAC register 0x65 bit 0:7 (default 0x4E => 1-setp sync packet!)
