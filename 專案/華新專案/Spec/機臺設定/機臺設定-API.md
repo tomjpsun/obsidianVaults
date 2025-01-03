@@ -32,12 +32,12 @@
             "data": null,
             "reserved": null,
             "comment": "HMI002"
-        }    
+        }
     ]
 }
 
 
-response: 
+response:
 {
     "service": 1,
     "code": 200,
@@ -152,7 +152,7 @@ response:
 // body:
 {
 //   "eventname":"hmi_config"",  // table name (optional)
-    "data": 
+    "data":
         {
             // "tb1.id": "1",
             // "tb2.id": "1",
@@ -164,7 +164,7 @@ response:
 }
 
 
-// response: 
+// response:
 {
     "service": 1,
     "code": 200,

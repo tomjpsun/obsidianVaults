@@ -1,5 +1,5 @@
 # 文件版本
-|   |   |   
+|   |   |
 |---|---|
 |Date|Ver.|
 |2020-12-01|_1.0_
@@ -92,7 +92,7 @@ _以客戶術語描述，給線段的周轉軸是 “滿上空下”_
 
 從前面表格可以知道：每種機臺的機器與等待區個數（即組態）不全部相同，但是同機種的組態會相同。
 
-## Reader Status  
+## Reader Status
 
 ![[reader_status.png]]
 
@@ -106,13 +106,13 @@ _以客戶術語描述，給線段的周轉軸是 “滿上空下”_
 以上爲第二、三階段功能，目前尚未設計
 
 #### NOTE： 第一階段展示 Dashboard，以觀察到周轉軸上、下架爲主要目的
-    
+
 # 用戶界面設計
 
 我們以 NextJS 爲基礎架構，NextJS 是一個基於 React 的開源 JavaScript 框架，用於構建用戶端和服務端渲染的 Web 應用程序。它使構建和部署 Web 應用程序變得更加簡單高效。Next.js 提供了許多功能和優勢，使其成為當今最受歡迎的 React 框架之一。
 
 我們的元件是採用 NextUI。NextUI 是一個現代化的 React UI 函式庫，專注於設計和易用性。它提供了一系列精心設計的組件，旨在創建美觀、響應迅速且易於使用的用戶界面。NextUI 的風格和特點使其在眾多 UI 函式庫中脫穎而出。
-    
+
 # 技術架構：
 
 本程式使用 Javascript / Typescript 爲程式語言，架構以 NextJS 爲基礎，配合後端 Database services 與 Core services 來運作
@@ -123,7 +123,7 @@ _以客戶術語描述，給線段的周轉軸是 “滿上空下”_
 # 功能描述：
 ## 存取 HMI 參數
 每臺 HMI 上線時，首先透過 Database 存取上次的參數，如果Database 沒有參數，例如首次執行時，則採用預設值。
-## Dashboard 
+## Dashboard
 根據 HMI 參數，向 Database Service 取得 HMI 欲監控之機臺組態，以 ST03 機臺爲例，Dashboard 必須顯示 捲取段：一個捲取機，其配置有一個空軸準備區，兩個滿軸準備區。給線段：五個給線機，各別配置有一個空軸準備區，一個滿軸準備區。如前表格所示，總共需要部署十九支天線監控。
 
 因此，根據機臺組態，Dashboard layout 呈現左邊一組捲取設備 group，右邊五組給線設備 groups，每一個 group 都有機器與準備區。每一個機器或準備區都記錄下列訊息：
@@ -143,7 +143,7 @@ Dashboard 對於不同的機臺，會根據資料庫，找出附屬關係，並�
 
 ![[Dashboard_decomposite.png]]
 
-紅色區域： 資料放在 **AxisData**  裏面， UI componet 是 **AxisCard** 
+紅色區域： 資料放在 **AxisData**  裏面， UI componet 是 **AxisCard**
 綠色區域： 資料放在 **ReelData** 裏面，UI component 是 **NextUI Card**
 藍色區域：資料放在 **ReelStatus** 裏面，UI component 是 **ReelCard**
 
@@ -161,7 +161,7 @@ Dashboard 對於不同的機臺，會根據資料庫，找出附屬關係，並�
 # 性能和優化：
 採用 NextJS 框架，將渲染部分拆成可以在框架的 Server 執行，就預先 render 頁面，再送到框架的 FrontEnd 執行，其他就等到 FrontEnd 進行 DOM tree rendering，所以效能可以事先優化。
 # 安全性和可靠性**：
-    
+
 由 SWR library 提供 fetch 行爲，根據 fetch 的結果有三種可能：1 正在 Loading 資料，2 取得資料，3 有錯誤。那我們的 component 可以根據這三種結果來呈現頁面：
 
 ```js
@@ -181,5 +181,5 @@ if (error) return <div>failed to load HMI Configure Data</div>;
 這樣使得網頁兼具可讀性與可靠性：可以反應網路問題給使用者。
 
 # 結語：
-    
+
 目前進度只到第一階段，但是 Dashboard 已經可以順利呈現周轉軸的上、下架情況，在規劃時程內完工。

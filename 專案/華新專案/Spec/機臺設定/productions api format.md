@@ -40,7 +40,7 @@
 }
 
 
-response: 
+response:
 {
     "service": 1,
     "code": 200,
@@ -80,7 +80,7 @@ response:
 // method: get
 // body: none
 
-// response: 
+// response:
 {
     "service": 1,
     "code": 200,
@@ -128,7 +128,7 @@ response:
   "ids": ["5","15"]      // ids array (required)
 }
 
-// response: 
+// response:
 {
     "service": 1,
     "code": 200,
@@ -160,7 +160,7 @@ response:
 // body:
 {
 //   "tablename":"virtual_devices",  // table name (optional)
-    "data": 
+    "data":
         {
             // "tb4.name": "BS01G05RF01"
             "tb1.reel_number": "D0800X002"
@@ -170,7 +170,7 @@ response:
 
 
 
-// response: 
+// response:
 {
     "service": 1,
     "code": 200,

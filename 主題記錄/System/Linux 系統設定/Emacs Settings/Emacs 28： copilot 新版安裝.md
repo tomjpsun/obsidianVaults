@@ -9,7 +9,7 @@
 依照 https://github.com/radian-software/straight.el
 的建議，在 **init.el** 開頭就安裝：
 
-``` lisp ln:false 
+``` lisp ln:false
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name
@@ -37,7 +37,7 @@
 _M-x package-install [RET]_
 _use-package [RET]_
 # Install copilot
-**init.el** 加上這個即可： 
+**init.el** 加上這個即可：
 ``` ln:false
 (use-package copilot
   :straight (:host github :repo "copilot-emacs/copilot.el" :files ("*.el"))
@@ -48,6 +48,6 @@ emacs _package install_ ''exec-path-from-shell''
 
 ```js
 ;; init.el 在 package initialize 後加上
-(exec-path-from-shell-initialize)    
+(exec-path-from-shell-initialize)
 ```
 

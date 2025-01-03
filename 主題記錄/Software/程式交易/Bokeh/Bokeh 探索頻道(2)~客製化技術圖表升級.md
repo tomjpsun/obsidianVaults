@@ -42,12 +42,12 @@ Tags: [BOKEH](https://www.finlab.tw/tag/bokeh/), [PYTHON](https://www.finlab.tw/
 
 ### 改造動機
 
-[上次介紹了Bokeh厲害的地方](https://www.finlab.tw/python-bokeh1-setup-and-first-impression/)，那可不可以應用到投資圖表的繪製呢？  
+[上次介紹了Bokeh厲害的地方](https://www.finlab.tw/python-bokeh1-setup-and-first-impression/)，那可不可以應用到投資圖表的繪製呢？
 在Hahow課程：『Python 理財：打造小資族選股策略』的單元20中，韓老師用Talib和matplotlib套件示範了如何提取資料和客製化技術圖表繪圖，點出應用方向，然而課程重點是放在選股，不是在視覺化，圖表功能比較簡單，當時Bokeh也沒那麼厲害。
 
 ![Q8hEt30 1](http://34.96.136.135/wp-content/uploads/2020/07/Q8hEt30-1-1024x557.png "Bokeh 探索頻道(2)~客製化技術圖表升級 1")
 
-有些同學希望能有更精美的圖表可使用，搭配課程精彩的選股程式技巧，不就更完美了？這個願望今天就可以實現，後面有銜接課程的程式碼直接提供使用。  
+有些同學希望能有更精美的圖表可使用，搭配課程精彩的選股程式技巧，不就更完美了？這個願望今天就可以實現，後面有銜接課程的程式碼直接提供使用。
 現在有Bokeh的幫忙，用Python也能打造不錯的互動圖表效果，接下來就要綜合小資族課程、Bokeh、網路上各路技巧，來打造適用於Hahow課程的新圖表。沒參與課程的可以用github 連結裡的demo_json檔來試試，只要資料格式對應，都可使用。
 
 #### github:[https://github.com/benbilly3/bokeh_explore](https://github.com/benbilly3/bokeh_explore)
@@ -56,12 +56,12 @@ Tags: [BOKEH](https://www.finlab.tw/tag/bokeh/), [PYTHON](https://www.finlab.tw/
 
 ### 繪圖技巧說明
 
-寫Python就要利用其他魔法師的咒語，省時有效率，先來Bokeh gallery看看沒有範例。  
+寫Python就要利用其他魔法師的咒語，省時有效率，先來Bokeh gallery看看沒有範例。
 結果有現成的Ｋ線圖範例，太好了！
 
 ![wjTomBS](https://i.imgur.com/wjTomBS.png "Bokeh 探索頻道(2)~客製化技術圖表升級 2")
 
-雖然仍是陽春的靜態圖，但至少有了改造藍圖，從官網的程式碼：  
+雖然仍是陽春的靜態圖，但至少有了改造藍圖，從官網的程式碼：
 [https://docs.bokeh.org/en/latest/docs/gallery/candlestick.html](https://docs.bokeh.org/en/latest/docs/gallery/candlestick.html)
 
 可以發現bokeh輕鬆地用pandas分類紅黑棒資料，再用segment畫引線和用vbar畫長棒圖。眼尖的人可以發現股價碰到假日的時候會有空值，這造成閱讀上有些礙眼，能否有讓時間序列日期資料的解決辦法呢？
@@ -75,7 +75,7 @@ fig.xaxis.major_label_overrides = {
         }
 ```
 
-bokeh是物件導向繪圖庫，都封裝相當好，基本上沒啥程式技巧，就像玩樂高積木一樣，搜尋工具來堆，不難，比較繁瑣，內容頗多。  
+bokeh是物件導向繪圖庫，都封裝相當好，基本上沒啥程式技巧，就像玩樂高積木一樣，搜尋工具來堆，不難，比較繁瑣，內容頗多。
 接著主要會實踐下列功能到圖表，有興趣學的可以看連結。
 
 #### 1. figure圖紙設定，bokeh各種models應用
@@ -146,7 +146,7 @@ def get_price_data(stock_id,date):
     df['MA120']=df['close'].rolling(120).mean()
     df['volume']=df['volume']/1000
 
-    
+
     RSI = pd.DataFrame(abstract.RSI(df, timeperiod=12),columns=['RSI_12'])
     RSI['RSI_36']=abstract.RSI(df, timeperiod=36)
     RSI=RSI.to_dict()
@@ -155,7 +155,7 @@ def get_price_data(stock_id,date):
     basic=df.iloc[-1,:2].to_dict()
     df=df.drop(columns=['stock_id','name']).to_dict()
     data={'basic':basic,'price_df':df,'RSI':RSI,'STOCH' :STOCH,'MACD':MACD }
-    
+
     return data
 ```
 
@@ -323,7 +323,7 @@ def technical_chart(json_df):
         # use hide or mute
         fig.legend.click_policy = "hide"
         #     fig.add_layout(legend, 'left')
-    
+
     # use brower output
 #     output_file("candlestick.html", title="candlestick.py example")
     # use jupyter output

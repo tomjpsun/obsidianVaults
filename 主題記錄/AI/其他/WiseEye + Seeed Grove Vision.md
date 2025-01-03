@@ -2,4 +2,3 @@ Himax的WiseEye™超低功耗AI智慧感測解決方案，整合全時CMOS影�
 
 https://www.youtube.com/watch?v=VE-MDlkVTbY&list=PLo_tFZGoEZunBKVy51xqgoySAyX5N2QKC
 
- 

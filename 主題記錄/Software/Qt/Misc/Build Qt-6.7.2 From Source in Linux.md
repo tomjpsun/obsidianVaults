@@ -27,7 +27,7 @@ cd ~/dev/qt-build
 /tmp/qt-everywhere-src-6.7.2/configure -skip qtwebengine
 
 # ....等 configure 結束，不要用 --paralled 因爲虛擬機，會等不到回應而報錯
-cmake --build . 
+cmake --build .
 sudo make install
 ```
 

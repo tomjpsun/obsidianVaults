@@ -7,7 +7,7 @@ import txt from 'file.txt';
 
 還沒試驗，有此一說：
 ```javascript
-<input type=file></input> 
+<input type=file></input>
 ```
 
 用 [Raw.Macro][https://github.com/pveyes/raw.macro]， then

@@ -59,7 +59,7 @@ export default function DataTable() {
 
 #### yich comment:
 
-Table "walsin_peripheral"."reader_device_state" 
+Table "walsin_peripheral"."reader_device_state"
  "id" bigint [unique, pk, increment]
  "action_cmd" int    // action command: unknown = 0, inventorystart=1, inventorystop=2
 

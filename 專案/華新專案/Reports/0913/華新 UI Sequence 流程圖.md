@@ -6,18 +6,18 @@ sequenceDiagram
   participant Dashboard
   participant DB
   Dashboard->> HMI:讀取本機 HMI ID
-  Dashboard->> DB: 取得 HMI 資料 
+  Dashboard->> DB: 取得 HMI 資料
   DB-->>Dashboard: 回傳 HMI 資料
   Dashboard->>DB: 取得機臺設定與組態
   DB-->>Dashboard: 回傳機臺設定與組態
-  
+
   loop Motitor
 	  Dashboard->>DB: 取得機臺資料
 	  DB-->>Dashboard: 回傳機臺資料
 	  Dashboard ->>Dashboard: period
   end
-  
-  
+
+
 ```
 
 
@@ -41,7 +41,7 @@ sequenceDiagram
 
 
 #### 系統設定
-  
+
 匯入：
 
 ```mermaid
@@ -56,7 +56,7 @@ sequenceDiagram
 
 ```
 
-  
+
 修改：
 
 ```mermaid
@@ -65,7 +65,7 @@ sequenceDiagram
   participant DB
 
   UI->> DB: 讀取 settings
-  loop 
+  loop
 	  UI ->>UI: 更新欄位
   end
   UI->> DB: 寫入 settings
@@ -81,7 +81,7 @@ sequenceDiagram
   participant DB
 
   UI->> DB: start/stop service command
-  loop 
+  loop
 	  DB ->>DB: 等待更新
   end
   DB-->> UI: result

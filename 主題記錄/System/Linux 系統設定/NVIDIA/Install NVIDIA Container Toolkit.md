@@ -53,7 +53,7 @@ sudo systemctl restart docker
 CDI 是 Container Device Interface， 在 container runtime 時提供可以使用的 NVidia Device（例如 GPU）它們會在是系統的 `/etc/cdi` 與 `/var/run/cdi` 下產生 specification file。
 有時候 docker 啓動後會反應沒有 CDI spec. 這時候就依照下列官方網站來安裝 CDI：
 
-[官方網站](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/cdi-support.html) 
+[官方網站](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/cdi-support.html)
 
 \#
 

@@ -1,14 +1,14 @@
 # Package Management
 
 > [!NOTE] Note
->build package::file info 
+>build package::file info
 
 sudo pacman -S pkgfile
 sudo pkgfile -u
 # search package which contains file
 pkgfile file
 
-# add admin user 
+# add admin user
 sudo useradd -m admin
 sudo passwd admin
 //45101524
@@ -19,11 +19,11 @@ sudo usermod --append --groups wheel admin
 > [!NOTE] Note
 > Re-login to take effect
 
-# add to video group 
-//can use vcgencmd utility 
+# add to video group
+//can use vcgencmd utility
 sudo usermod -a -G video admin
 
-# tftp server 
+# tftp server
 
 sudo pacman -S tftp-hpa
 ### /srv/tftp 權限要打開:
@@ -37,7 +37,7 @@ TFTPD_ARGS="--secure --create /srv/tftp/"
 sudo systemctl enable tftpd.service
 sudo systemctl start tftpd.service
 
-# Change Hostname 
+# Change Hostname
 
 Check hosts file:
 	getent hosts
@@ -59,7 +59,7 @@ to:
 127.0.1.1        aidia-gw.localdomain aidia-gw
 
 
-# ssh daemon 
+# ssh daemon
 
 Install:
 	sudo pacman -S openssh
@@ -70,7 +70,7 @@ Enable:
 	sudo systemctl enable sshd.service
      	sudo systemctl start sshd.service
 
-# avahi 
+# avahi
 
 Install:
 	sudo pacman -S avahi nss-mdns gtk3 python-dbus python-gobject
@@ -79,7 +79,7 @@ Enable:
 	sudo systemctl start dbus.service
 	sudo systemctl start avahi-daemon.service
 
-# samba 
+# samba
 
 Install:
 	sudo pacman -S samba
@@ -91,7 +91,7 @@ Enable:
 	sudo systemctl enable --now smb nmb
 
 
-# temperature measurement 
+# temperature measurement
 
 sudo pacman -S sysstat
 
@@ -138,7 +138,7 @@ sudo systemctl enable cronie.service
 ### Start service
 sudo systemctl start cronie.service
 
-# access control service 
+# access control service
 
 ### install aidia_server
 git clone ssh://git@192.168.1.130:30001/aiot/access_control.git
@@ -167,7 +167,7 @@ sudo systemctl enable access_control
 sudo systemctl start access_control
 
 
-#  mariadb service 
+#  mariadb service
 sudo pacman -Syu mariadb
 sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 sudo systemctl start mariadb
@@ -198,7 +198,7 @@ sudo mysql -uroot -p
 > [!NOTE]
 > Enter sudo password, not mysql user password
 
-# template to set database 
+# template to set database
 ### create user: `dbuser` in database
 ```d
 	CREATE USER '<dbuser>'@'localhost' IDENTIFIED BY '<PASSWORD>';
@@ -215,7 +215,7 @@ GRANT ALL PRIVILEGES ON <dbname>.* TO '<dbuser>'@'%' IDENTIFIED BY '<PASSWORD>';
 FLUSH PRIVILEGES;
 ```
 
-## example 
+## example
 ```d
 CREATE USER 'dbuser'@'localhost' IDENTIFIED BY '123456';
 CREATE DATABASE inventory CHARACTER SET utf8 COLLATE utf8_bin;

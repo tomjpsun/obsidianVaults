@@ -61,14 +61,14 @@ Qt 的 signal 與 slot 機制是一種用於對象間通信的方式，主要用
 class MyWidget : public QWidget {
     Q_OBJECT
 public:
-    MyWidget(QWidget *parent = nullptr) : QWidget(parent) 
+    MyWidget(QWidget *parent = nullptr) : QWidget(parent)
     {
 	    // 將 QPushButton 的 clicked 信號接到我們的 onButtonClicked() 信號槽
-        connect(button, &QPushButton::clicked, 
+        connect(button, &QPushButton::clicked,
 		        this, &MyWidget::onButtonClicked);
     }
 private slots:
-    void onButtonClicked() 
+    void onButtonClicked()
     {
         // 處理按鈕點擊事件
     }
@@ -116,7 +116,7 @@ Signal & Slot 是 Qt 的一個重要設計，Qt 模組之間透過 signal & slot
     "BinaryProfile": "000000000000000000000000000000000000000000000000",
     "BinaryProfileSize": 24,
     "MajorVersion": 1,
-    "MinorVersion": 0,   
+    "MinorVersion": 0,
 	"PatchVersion": 0,
     "OverwriteNonEmptyEEPROM": false,
     "Manufacturer": "DAVICOM",
@@ -130,8 +130,8 @@ Signal & Slot 是 Qt 的一個重要設計，Qt 模組之間透過 signal & slot
 ```
 ## Profile
 這是每次執行一份 Production 燒錄的設定：
-範例 
-### profile_1 
+範例
+### profile_1
 全部從 Template copy 過來，然後根據 user 設定，新增下列欄位：
 ```json
 {
@@ -149,15 +149,15 @@ Signal & Slot 是 Qt 的一個重要設計，Qt 模組之間透過 signal & slot
 App start 時，讀取 **settings**（初始從 resource 來）。
 進入 `configure profile wizard`，從 template 取得初始值，
 然後程式建立幾個 paths：
-#### source template path 
+#### source template path
 	default bin file 也放在 template 裏面
-#### profile path 
+#### profile path
 	根據 default bin 修改爲使用者的 bin file 放在這裏
 #### log path
 	log 記錄、database 也放在這裏
 #### report path
 	產生 report 報告的地方
-	
+
 結束後存入 **settings** 。
 
 App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
@@ -235,7 +235,7 @@ Summary:
 # Engineering Mode 程式說明
 當 settings 出現
 ```json
-   { 
+   {
 	   "EngineerMode": true,...
    }
 ```

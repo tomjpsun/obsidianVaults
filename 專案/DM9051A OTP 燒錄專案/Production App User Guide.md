@@ -1,7 +1,7 @@
 
 本文件是燒錄程式的手冊，介紹如何使用程式燒錄 Davicom DM 9051 A .
 
-# Hardware Setup 
+# Hardware Setup
 
 以下將燒錄程式簡稱爲 App，本程式提供 Windows 與 Linux 版本。
 App 在燒錄的 PC 上執行，首先，將燒錄器 USB 插入 PC，不需要安裝驅動程式，應該在系統裏面，分別會出現新的 COM 裝置 （Windows 下），或 ttyACM 裝置（Linux下），這是等一下要連接的界面。
@@ -47,7 +47,7 @@ App 在燒錄的 PC 上執行，首先，將燒錄器 USB 插入 PC，不需要�
 `Skip Failed MAC` : 表示如果燒錄失敗，就繼續下一個 MAC 編號
 `Overwrite Non Empty EEPROM` : 表示直接覆寫上去，不報任何錯誤。
 
-設定好，按下 Finish 就開始燒錄，此時`標識 1` 的 State 會進入 <span style="color: green;">Connected </span> 
+設定好，按下 Finish 就開始燒錄，此時`標識 1` 的 State 會進入 <span style="color: green;">Connected </span>
 
 ![[Pasted image 20240827135952.png]]
 # 開始燒錄

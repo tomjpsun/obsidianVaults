@@ -13,7 +13,7 @@ Multiple driver files such as `ptp_clock.c`, `ptp_chardev.c`, `ptp_sysfs.c`, and
 
 A function called ethtool_get_ts_info is responsible for handling timestamping information.
 
-```c 
+```c
 static int ethtool_get_ts_info(struct net_device *dev, void __user *useraddr) {
     struct kernel_ethtool_ts_info kernel_info;
     struct ethtool_ts_info info = {};
@@ -23,7 +23,7 @@ static int ethtool_get_ts_info(struct net_device *dev, void __user *useraddr) {
 
 There is a declaration for the function \_\_ethtool_get_ts_info.
 
-```c 
+```c
 int __ethtool_get_ts_info(struct net_device *dev, struct kernel_ethtool_ts_info *info);
 ```
 
@@ -31,7 +31,7 @@ int __ethtool_get_ts_info(struct net_device *dev, struct kernel_ethtool_ts_info 
 
 The \_\_ethtool_get_ts_info function sets up the command number to ETHTOOL_GET_TS_INFO.
 
-```c 
+```c
 int __ethtool_get_ts_info(struct net_device *dev, struct kernel_ethtool_ts_info *info) {
     memset(info, 0, sizeof(*info));
     info->cmd = ETHTOOL_GET_TS_INFO;
@@ -42,7 +42,7 @@ In include/uapi/linux/ethtool.h:
 
 Defines ETHTOOL_GET_TS_INFO as a command for retrieving timestamping and PHC (Precision Hardware Clock) information.
 
-```c 
+```c
 #define ETHTOOL_GET_TS_INFO 0x00000041 /* Get time stamping and PHC info */
 
 ```
@@ -51,7 +51,7 @@ In Documentation/networking/ethtool-netlink.rst:
 
 The documentation mentions the ETHTOOL_GET_TS_INFO ioctl request.
 
-``` 
+```
 Gets timestamping information like ``ETHTOOL_GET_TS_INFO`` ioctl request.
 ```
 

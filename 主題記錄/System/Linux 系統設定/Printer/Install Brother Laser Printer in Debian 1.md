@@ -6,7 +6,7 @@ tags:
 
 Although Brother has its own drivers for CUPS, they’re precompiled for x86 (32-bit) architecture. Raspberry Pi is based on ARM arch, so manufactures’ drivers are note compatible with your Pi out of the box.
 
-New to Raspberry Pi and CUPS Print Server?  
+New to Raspberry Pi and CUPS Print Server?
 [Check out this article](https://medium.com/swlh/setup-a-print-server-using-raspberry-pi-cups-part-1-c8f3d48af047) to make your own local printer server to print wirelessly to your printer (including native support on iOS and Mac devices).
 
 # Solution
@@ -52,7 +52,7 @@ Right after that restart your CUPS server with this command to reload list of in
 
 sudo service cups restart
 
-Now login to CUPS (link is [http://localhost:631/](http://localhost:631/), if you didn’t change this).  
+Now login to CUPS (link is [http://localhost:631/](http://localhost:631/), if you didn’t change this).
 Click on «Administration», then press on «Add Printer» button.
 
 When CUPS will ask you to choose the driver to communicate with your printer, choose «brlaser».
@@ -61,6 +61,6 @@ If you don’t see the exact model of your printer, pick the closest option base
 
 ![[ef8ef94dadd0319f86a02bd931b92207_MD5.png]]
 
-> These keywords may help you find this article via search engines:  
+> These keywords may help you find this article via search engines:
 > brother printer cups, cups brother printer is not printing, brother cups drivers, cups brother printers
 

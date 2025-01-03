@@ -1,10 +1,10 @@
-## up and running 
-遵照 parseable github 
+## up and running
+遵照 parseable github
 https://github.com/parseablehq/parseable
 的 readme 就可以跑起來，然後用 curl 送 log message 可以成功
 但是如果 portainer 已經佔領 8000, 啓動的 docker 命令要改 port ：
 ``` bash
-# local port changed to 8200, map to service port 8000 in docker 
+# local port changed to 8200, map to service port 8000 in docker
 docker run -p 8200:8000 \
   -v $HOME/parseable/data:/parseable/data \
   -v $HOME/parseable/staging:/parseable/staging \

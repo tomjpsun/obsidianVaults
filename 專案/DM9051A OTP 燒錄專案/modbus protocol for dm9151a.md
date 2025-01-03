@@ -22,9 +22,9 @@ Example of a request to read 0...1 (register 30001 to 30002) from slave device 1
 |Trailer|None|CR LF|
 |Total Bytes|8|17|
 
-  
 
-**Response  
+
+**Response
 **The register data in the response message are packed as two bytes per register, with the binary contents right justified within each byte. For each register the first byte contains the high-order bits, and the second contains the low-order bits.
 
 Example of a response to the request:
@@ -82,9 +82,9 @@ Here is an example of a request to write two registers starting at 40002 to 00 0
 |Trailer|None|CR LF|
 |Total Bytes|13|23|
 
-  
 
-**Response  
+
+**Response
 **The normal response returns the slave address, function code, starting address, and quantity of registers written. Here is an example of a response to the request shown above.
 
 |   |   |   |

@@ -1,8 +1,8 @@
 # 發生情形
 
-在 Home 頁面，採用 Recoil 記錄環境給的參數，例如 backend URL/Port，可能會看到這個警告： 
+在 Home 頁面，採用 Recoil 記錄環境給的參數，例如 backend URL/Port，可能會看到這個警告：
 
-Warning: Cannot update a component (`Batcher`) while rendering a different component (`Home`). To locate the bad setState() call inside `Home`, follow the stack trace as described in [https://reactjs.org/link/setstate-in-render](https://reactjs.org/link/setstate-in-render "https://reactjs.org/link/setstate-in-render")	
+Warning: Cannot update a component (`Batcher`) while rendering a different component (`Home`). To locate the bad setState() call inside `Home`, follow the stack trace as described in [https://reactjs.org/link/setstate-in-render](https://reactjs.org/link/setstate-in-render "https://reactjs.org/link/setstate-in-render")
 
 這是 React + Recoil 才可能看到。網絡有人也遇過：
 

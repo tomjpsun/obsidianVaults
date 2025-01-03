@@ -78,8 +78,8 @@ MCU 透過 Serial Interface 轉接到 USB Serial 界面，連接到 HMI 裝置
 |Offset |0|1|Programmer 開始 Program 的位置，目前只有支援從 0 開始|
 |Data  |9051A profile content|||
 
-`[Note]` 
-Size =  1 （8 Bits）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 Bits（即 255 Bytes）的需求，則新增 OP Code 來對應 
+`[Note]`
+Size =  1 （8 Bits）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 Bits（即 255 Bytes）的需求，則新增 OP Code 來對應
 ### Response OP Format(A5H)
 |意義|值|Size|備註|
 |---|---|---|---|
@@ -87,9 +87,9 @@ Size =  1 （8 Bits）, 用於目前 Data 長度最多 255 個 Bytes 的情況�
 |Response OP Code |Table: Response OP Code|1||
 
 
-`[Note]` 
-Size =  1 （Byte）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應 
-`[Note]` 
+`[Note]`
+Size =  1 （Byte）, 用於目前 Data 長度最多 255 個 Bytes 的情況，如果日後有 offset 超過 8 bits（即 256）的需求，則新增 OP Code 來對應
+`[Note]`
 燒錄功能以穩定優先，採取 Synchronous 的命令，一個動作做完再做下一個，因此**不支援** Asynchronouse 的命令模式，也不需要在 Response 回應 Command ID
 ### Response OP Codes
 |意義|值|Size|備註|

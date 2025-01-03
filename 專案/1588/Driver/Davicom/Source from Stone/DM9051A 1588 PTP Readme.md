@@ -9,19 +9,19 @@
 => PTP 1588 enable  #driver => dm9051_ptp_init()
    PTP function enable => write MAC register 0x60 bit 0 setup to 0x00 (default value 0x00!)
    PTP clock enable => write MAC register 0x61 bit 0 setup to 0x01 (只要寫一次就好,除非MAC register 0x61 bit 1 setup to 1,否則不用再寫一次,寫0不會影響!)
-   PTP TX TS enable => write MAC register 0x02 bit 7 setup to 0x80 
+   PTP TX TS enable => write MAC register 0x02 bit 7 setup to 0x80
    ==Tom: 改到 single tx 的時候再寫這個 bit==
    PTP RX TS enable => write MAC register 0x64 bit 4 setup to 0x010
    PTP 1-step update check sum enable => write MAC register 0x63 bit 7 setup to 0x00 (default value 0x00 enable)
    PTP 1-step 8-byte TX TS insert add offset => write MAC register 0x65 bit 0:7 (default 0x4E => 1-setp sync packet!)
    PTP 1-step check sum address offset => write MAC register 0x66 bit 0:7 (default 0x3c => 1-setp sync packet!)
 
-========================================================================================   
+========================================================================================
 2. PTP clock read/write
 => read:            #driver => ptp_9051_gettime()
         write MAC register 0x61 bit 2 & bit 7, setup to 0x84 (Clear MAC register 0x68 index to 0x0 and Read PTP clock)
         read MAC register 0x68 index 0-7 (讀8次,index 0-3 => nanosec; index 4-7 => sec 詳細的每個byte請參考data sheet)
-   
+
 => write: driver => ptp_9051_settime()
          write MAC register 0x61 bit bit 7, setup to 0x80  (Clear MAC register 0x68 index to 0x0)
          write MAC register 0x68 index 0-7 (write 8次,index 0-3 => nanosec; index 4-7 => sec 詳細的每個byte請參考data sheet)
@@ -33,7 +33,7 @@
              write MAC register 0x61 bit bit 7, setup to 0x80  (Clear MAC register 0x68 index to 0x0)
              write MAC register 0x62 bit 0, setup to 0x01
              read MAC register 0x68 index 0-7 (讀8次,index 0-3 => nanosec; index 4-7 => sec 詳細的每個byte請參考data sheet)
-             
+
 => RX TS read  driver => dm9051_loop_rx()/dm9051_ptp_rx_hwtstamp()
              read RX packet header (rdy (1-byte), stauts (1-byte bit 5 => 0x20), 8-bytes RX TS (4-bytes sec + 4-bytes nanosec))
 
@@ -42,21 +42,21 @@
 => PTP offset write  #driver => ptp_9051_adjtime()
                    write MAC register 0x61 bit bit 7, setup to 0x80  (Clear MAC register 0x68 index to 0x0)
                    write MAC register 0x68 index 0-7 (write 8次,index 0-3 => nanosec; index 4-7 => sec 詳細的每個byte請參考data sheet)
-                   write MAC register 0x61 bit 4, setup to 0x10       
+                   write MAC register 0x61 bit 4, setup to 0x10
 
 ========================================================================================
 5. PTP rate write
 => PTP rate write    #driver => ptp_9051_adjfine()
                  write MAC register 0x61 bit 7, setup to 0x80  (Clear MAC register 0x68 index to 0x0)
                  write MAC register 0x68 index 0-7 (write 8次,index 0-3 => nanosec; index 4-7 => sec 詳細的每個byte請參考data sheet)
-                 Write MAC register 0x61 bit 6,5 (bit 6, 0: add, 1: subtract)        
-          
-          
+                 Write MAC register 0x61 bit 6,5 (bit 6, 0: add, 1: subtract)
+
+
 ========================================================================================
 6. PTP 1-setp setup
 => 1-step sync insert TS and update check sum    #driver => dm9051_ptp_init()/dm9051_single_tx()
    PTP 1-step sync insert TX TS enable => write MAC reg 0x02 bit 6 to enable insert TX time stamp!
-   
+
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -92,23 +92,23 @@ PTP 1588 driver 注意事項:
 	  /* must be last field, see pskb_expand_head() */
 	  skb_frag_t	frags[MAX_SKB_FRAGS];
       };
-       
+
    =>在dm9051_loop_tx()中加入
-     
+
      db->ptp_tx_flags = skb_shinfo(skb)->tx_flags;
 	 if (db->ptp_tx_flags){
 		  db->ptp_class = ptp_classify_raw(skb);
 		  db->ptp_hdr = ptp_parse_header(skb, db->ptp_class);
 		  db->ptp_msgtype = ptp_get_msgtype(db->ptp_hdr, db->ptp_class);
-		}  
-        
-     可以讓在呼叫dm9051_single_tx()中可以判斷是否需要在TX封包內加入TX TS (1-step sync).
-     
-     或是後面可以再判斷是否要往ptp4l送上TX TS,或是其他資料.
-        
-       
+		}
 
-   
+     可以讓在呼叫dm9051_single_tx()中可以判斷是否需要在TX封包內加入TX TS (1-step sync).
+
+     或是後面可以再判斷是否要往ptp4l送上TX TS,或是其他資料.
+
+
+
+
 2. ptp4l與Linux driver interface
    (目前查到的資料是kernel version 6.11, 但是測試環境是kernel verion 6.1左右的版本)
    struct ptp_clock_info - / include / linux / ptp_clock_kernel.h
@@ -377,7 +377,7 @@ enum hwtstamp_rx_filters {
 -----------------------------------------------------------------------------------------------
 / include / linux / netdevice.h
 
-struct net_device_ops {}中有 
+struct net_device_ops {}中有
 int			(*ndo_eth_ioctl)(struct net_device *dev,
 						 struct ifreq *ifr, int cmd);
 可以設定network device用ioctl方式
@@ -386,9 +386,9 @@ int			(*ndo_eth_ioctl)(struct net_device *dev,
 #define SIOCSHWTSTAMP	0x89b0		/* set and get config		*/
 #define SIOCGHWTSTAMP	0x89b1		/* get config			*/
 
-driver_ddev2ops.c中dm9051_netdev_ioctl()即用此種方式去call到dm9051_ptp.c有關設定tx_type/rx_filter!  
+driver_ddev2ops.c中dm9051_netdev_ioctl()即用此種方式去call到dm9051_ptp.c有關設定tx_type/rx_filter!
 
 ---------------------------------------------------------------------------------------------------
 ethtool當中需要加入的function, 可以使用ethtool -T ethx 確認PTP的tx_type/rx_filters/so_timestamping/phc_index
 const struct ethtool_ops {}中 .get_ts_info去實現
- 
+

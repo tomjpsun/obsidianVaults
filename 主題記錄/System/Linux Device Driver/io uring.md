@@ -15,17 +15,17 @@ Published at 2021-09-01 | Last Update 2021-11-19
 既然性能跟傳統 AIO 差不多，那為什麼還稱 `io_uring` 為革命性技術呢？
 
 1. 它首先和最大的貢獻在於：**==統一了 Linux 非同步 I/O 框架==**，
-    
+
     - Linux AIO **==只支援 direct I/O==** 模式的**==儲存檔案==** （storage file），而且主要用在**==資料庫這一細分領域==**；
     - `io_uring` 支援儲存檔案和網路檔案（network sockets），也支援更多的非同步系統呼叫 （`accept/openat/stat/...`），而非僅限於 `read/write` 系統呼叫。
 2. 在**==設計上是真正的非同步 I/O==**，作為對比，Linux AIO 雖然也 是非同步的，但仍然可能會阻塞，某些情況下的行為也無法預測；
-    
+
     似乎之前 Windows 在這塊反而是領先的，更多參考：
-    
+
     - [淺析開放原始碼專案之 io_uring](https://zhuanlan.zhihu.com/p/361955546)，“分步試儲存”專欄，知乎
     - [Is there really no asynchronous block I/O on Linux?](https://stackoverflow.com/questions/13407542/is-there-really-no-asynchronous-block-i-o-on-linux)，stackoverflow
 3. **==靈活性和可擴展性==**非常好，甚至能基於 `io_uring` 重寫所有系統呼叫，而 Linux AIO 設計時就沒考慮擴展性。
-    
+
 
 eBPF 也算是非同步框架（事件驅動），但與 `io_uring` 沒有本質聯絡，二者屬於不同子系統， 並且在模型上有一個本質區別：
 
@@ -37,21 +37,21 @@ eBPF 作為動態跟蹤工具，能夠更方便地排查和觀測 `io_uring` 等
 本文介紹 Linux 非同步 I/O 的發展歷史，`io_uring` 的原理和功能， 並給出了一些**==程序示例==**和**==性能壓測==**結果（我們在 5.10 核心做了類似測試，結論與原文差不多）。
 
 > Ceph 程式碼上已經支援了 `io_uring`，但發行版在編譯時沒有打開這個組態，判斷是否支援 io_uring [直接返回的 `false`](https://github.com/ceph/ceph/blob/a67d1cf2a7a4031609a5d37baa01ffdfef80e993/src/blk/kernel/io_uring.cc#L256)， 因此想測試得自己重新編譯。測試時的參考組態：
-> 
+>
 > ```
 > $ cat /etc/ceph/ceph.conf
 > [osd]
 > bluestore_ioring = true
 > ...
 > ```
-> 
+>
 > 確認組態生效（這是只是隨便挑一個 OSD）：
-> 
+>
 > ```
 > $ ceph config show osd.16 | grep ioring
 > bluestore_ioring                       true                                            file
 > ```
-> 
+>
 > 還要去看下日誌，是否因為檢測 io_uring 失敗而 fallback 回了 libaio。
 
 **由於譯者水平有限，本文不免存在遺漏或錯誤之處。如有疑問，請查閱原文。**
@@ -161,11 +161,11 @@ ssize_t write(int fd, const void *buf, size_t count);
 近期，[Linux AIO 甚至支援了](https://lwn.net/Articles/742978/) `epoll()`：也就是說 不僅能提交 storage I/O 請求，還能提交網路 I/O 請求。照這樣發展下去，linux-aio **==似乎能成為一個王者==**。但由於它糟糕的演進之路，這個願望幾乎不可能實現了。 我們從 **==Linus 標誌性的激烈言辭中就能略窺一斑==**：
 
 > Reply to: [to support opening files asynchronously](https://lwn.net/Articles/671657/)
-> 
+>
 > _So I think this is ridiculously ugly._
-> 
+>
 > _AIO is a horrible ad-hoc design, with the main excuse being “other, less gifted people, made that design, and we are implementing it for compatibility because database people — who seldom have any shred of taste — actually use it”._
-> 
+>
 > — Linus Torvalds (on lwn.net)
 
 首先，作為資料庫從業人員，我們想借此機會為我們的沒品（lack of taste）向 Linus 道歉。 但更重要的是，我們要進一步解釋一下**==為什麼 Linus 是對的==**：Linux AIO 確實問題纏身，
@@ -200,13 +200,13 @@ io_uring 來自資深核心開發者 Jens Axboe 的想法，他在 Linux I/O sta
 `io_uring` 與 `linux-aio` 有著本質的不同：
 
 1. **==在設計上是真正非同步的==**（truly asynchronous）。只要 設定了合適的 flag，它在**==系統呼叫上下文中就只是將請求放入佇列==**， 不會做其他任何額外的事情，**==保證了應用永遠不會阻塞==**。
-    
+
 2. **==支援任何類型的 I/O==**：cached files、direct-access files 甚至 blocking sockets。
-    
+
     由於設計上就是非同步的（async-by-design nature），因此**==無需 poll+read/write 來處理 sockets==**。 只需提交一個阻塞式讀（blocking read），請求完成之後，就會出現在 completion ring。
-    
+
 3. **==靈活、可擴展==**：基於 `io_uring` 甚至能重寫（re-implement）Linux 的每個系統呼叫。
-    
+
 
 ## 2.2 原理及核心資料結構：SQ/CQ/SQE/CQE
 
@@ -225,11 +225,11 @@ io_uring 來自資深核心開發者 Jens Axboe 的想法，他在 Linux I/O sta
 **==使用方式==**：
 
 - 請求
-    
+
     - 應用建立 SQ entries (SQE)，更新 SQ tail；
     - 核心消費 SQE，更新 SQ head。
 - 完成
-    
+
     - 核心為完成的一個或多個請求建立 CQ entries (CQE)，更新 CQ tail；
     - 應用消費 CQE，更新 CQ head。
     - 完成事件（completion events）可能以任意順序到達，到總是與特定的 SQE 相關聯的。
@@ -272,27 +272,27 @@ io_uring 來自資深核心開發者 Jens Axboe 的想法，他在 Linux I/O sta
 io_uring 實例可工作在三種模式：
 
 1. **==中斷驅動模式==**（interrupt driven）
-    
+
     **==默認模式==**。可通過 io_uring_enter() 提交 I/O 請求，然後直接檢查 CQ 狀態判斷是否完成。
-    
+
 2. **==輪詢模式==**（polled）
-    
+
     Busy-waiting for an I/O completion，而不是通過非同步 IRQ（Interrupt Request）接收通知。
-    
+
     這種模式需要檔案系統（如果有）和塊裝置（block device）支援輪詢功能。 相比中斷驅動方式，這種方式延遲更低（[連系統呼叫都省了](https://www.phoronix.com/scan.php?page=news_item&px=Linux-io_uring-Fast-Efficient)）， 但可能會消耗更多 CPU 資源。
-    
+
     目前，只有指定了 O_DIRECT flag 打開的檔案描述符，才能使用這種模式。當一個讀 或寫請求提交給輪詢上下文（polled context）之後，應用（application）必須呼叫 `io_uring_enter()` 來輪詢 CQ 佇列，判斷請求是否已經完成。
-    
+
     對一個 io_uring 實例來說，**==不支援混合使用輪詢和非輪詢模式==**。
-    
+
 3. **==核心輪詢模式==**（kernel polled）
-    
+
     這種模式中，會 **==建立一個核心執行緒==**（kernel thread）來執行 SQ 的輪詢工作。
-    
+
     使用這種模式的 io_uring 實例， **==應用無需切到到核心態==** 就能觸發（issue）I/O 操作。 通過 SQ 來提交 SQE，以及監控 CQ 的完成狀態，應用無需任何系統呼叫，就能提交和收割 I/O（submit and reap I/Os）。
-    
+
     如果核心執行緒的空閒時間超過了使用者的組態值，它會通知應用，然後進入 idle 狀態。 這種情況下，應用必須呼叫 `io_uring_enter()` 來喚醒核心執行緒。如果 I/O 一直很繁忙，核心線性是不會 sleep 的。
-    
+
 
 ## 2.5 `io_uring` 系統呼叫 API
 
@@ -367,10 +367,10 @@ int io_uring_enter(unsigned int fd, unsigned int to_submit, unsigned int min_com
 1. `fd` 是 `io_uring_setup()` 返回的檔案描述符；
 2. `to_submit` 指定了 SQ 中提交的 I/O 數量；
 3. 依據不同模式：
-    
+
     - 默認模式，如果指定了 `min_complete`，會等待這個數量的 I/O 事件完成再返回；
     - 如果 io_uring 是 polling 模式，這個參數表示：
-        
+
         1. 0：要求核心返回當前以及完成的所有 events，無阻塞；
         2. 非零：如果有事件完成，核心仍然立即返回；如果沒有完成事件，核心會 poll，等待指定的次數完成，或者這個處理程序的時間片用完。
 
@@ -478,7 +478,7 @@ int main(int argc, char *argv[]) {
         fsize += 4096;
     }
 
-    // 4. 依次準備 4 個 SQE 讀請求，指定將隨後讀入的資料寫入 iovecs 
+    // 4. 依次準備 4 個 SQE 讀請求，指定將隨後讀入的資料寫入 iovecs
     struct io_uring_sqe *sqe;
     offset = 0;
     i = 0;
@@ -722,19 +722,19 @@ int main(int argc, char *argv[]) {
 程式碼中實現了三個函數：
 
 1. `copy_file()`：高層複製循環邏輯；它會呼叫 `queue_rw_pair(ring, this_size, offset)` 來構造 SQE pair； 並通過一次 `io_uring_submit()` 呼叫將所有建構的 SQE pair 提交。
-    
+
     這個函數維護了一個最大 DQ 數量的 inflight SQE，只要資料 copy 還在進行中；否則，即資料已經全部讀取完成，就開始等待和收割所有的 CQE。
-    
+
 2. `queue_rw_pair()` 構造一個 read-write SQE pair.
-    
+
     read SQE 的 `IOSQE_IO_LINK` flag 表示開始一個 chain，write SQE 不用設定這個 flag，標誌著這個 chain 的結束。 使用者 data 欄位設定為同一個 data 描述符，並且在隨後的 completion 處理中會用到。
-    
+
 3. `handle_cqe()` 從 CQE 中提取之前由 `queue_rw_pair()` 保存的 data 描述符，並在描述符中記錄處理進展（index）。
-    
+
     如果之前請求被取消，它還會重新提交 read-write pair。
-    
+
     一個 CQE pair 的兩個 member 都處理完成之後（`index==2`），釋放共享的 data descriptor。 最後通知核心這個 CQE 已經被消費。
-    
+
 
 # 4 `io_uring` 性能壓測（基於 `fio`）
 
@@ -786,7 +786,7 @@ int main(int argc, char *argv[]) {
 1. `io_uring` 相比 `linux-aio` 確實有一定提升，但並非革命性的。
 2. 開啟高級特性，例如 buffer & file registration 之後性能有進一步提升 —— 但也還 沒有到為了這些性能而重寫整個應用的地步，除非你是搞資料庫研發，想搾取硬體的最後一分性能。
 3. `io_uring` and `linux-aio` **==都比同步 read 介面快 2 倍，而後者又比 posix-aio 快 2 倍==** —— 初看有點差異。但看看**==上下文切換次數==**，就不難理解為什麼 posix-aio 這麼慢了。
-    
+
     - 同步 read 性能差是因為：在這種沒有 page cache 的情況下， **==每次 read 系統呼叫都會阻塞，因此就會涉及一次上下文切換==**。
     - `posix-aio` 性能更差是因為：不僅核心和應用程式之間要頻繁上下文切換，執行緒池的**==多個執行緒之間也在頻繁切換==**。
 
@@ -795,11 +795,11 @@ int main(int argc, char *argv[]) {
 第二組測試 buffered I/O：
 
 1. 將檔案資料提前載入到記憶體，然後再測隨機讀。
-    
+
     - 由於**==資料全部在 page cache==**，因此**==同步 read 永遠不會阻塞==**。
     - 這種場景下，我們預期**==同步讀和 io_uring 的性能差距不大（都是最好的）==**。
 2. 其他測試條件不變。
-    
+
 
 表 2. Buffered I/O（資料全部來自 page cache，==100% hot cache==）：1KB 隨機讀，100% CPU 下的 I/O 性能
 
@@ -816,13 +816,13 @@ int main(int argc, char *argv[]) {
 結果分析：
 
 1. 同步讀和 `io_uring` 性能差距確實很小，二者都是最好的。
-    
+
     但注意，**==實際的應用==**不可能一直 100% 時間執行 IO 操作，因此 基於同步讀的真實應用性能**==還是要比基於 io_uring 要差的==**，因為 io_uring 會將多個系統呼叫批處理化。
-    
+
 2. `posix-aio` 性能最差，直接原因是**==上下文切換次數太多==**，這也和場景相關： 在這種 **==CPU 飽和的情況下==**，它的執行緒池反而是累贅，會完全拖慢性能。
-    
+
 3. `linux-aio` 並**==不是針對 buffered I/O 設計的==**，在這種 page cache 直接返回的場景， 它的**==非同步介面反而會造成性能損失==** —— 將操作分 為 dispatch 和 consume 兩步不但沒有性能收益，反而有額外開銷。
-    
+
 
 ## 4.3 性能測試小結
 

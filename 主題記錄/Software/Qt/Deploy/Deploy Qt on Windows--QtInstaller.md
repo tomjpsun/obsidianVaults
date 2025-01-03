@@ -5,7 +5,7 @@
 ![[Pasted image 20240521163102.png]]
 
 3 新增一個是
-{Qt Root}\\Tools\\QtInstallerFramework\\{Installer Version}\\bin 
+{Qt Root}\\Tools\\QtInstallerFramework\\{Installer Version}\\bin
 爲了可以執行 *binarycreator*， 這裏 Installer Version 是 4.8，Qt Root 是 C:\\Users\\Qt
 新增另一個是 {Qt Root}\\Qt\\{Qt Version}，爲了可以執行 *windeployqt* ，這裏 Qt Version 是 6.7.0
 
@@ -39,7 +39,7 @@ config.xml 長這樣：
     <Publisher>DAVICOM SW Team</Publisher>
     <StartMenuDir>Ptp4l</StartMenuDir>
     <TargetDir>@HomeDir@/InstallationDirectory</TargetDir>
-</Installer> 
+</Installer>
 ```
  其中 InstallationDirectory 改爲我們想要的路徑名稱，例如 "PTP4L"
  package.xml 長這樣：
@@ -52,9 +52,9 @@ config.xml 長這樣：
     <Default>true</Default>
 </Package>
 ```
- 
+
  裏面需要注意的是  *TargetDir* , 用 Installer 預設的變數，代表 user 的 Home dir 與 預設的安裝目錄。
- 
+
 6 用 console 進到 第 5 步的  data 目錄，然後 將第 4 步的 app copy 過來。
 
 7 data 目錄下，現在只有一個 app 程式:
@@ -62,7 +62,7 @@ config.xml 長這樣：
 ``` shell
 PTP@DESKTOP-3HHHQQF MINGW64 ~/Documents/QT_exercises/Ptp4l/packages/com.davicom.ptp4l/data (main)
 $ ls
-Ptp4l.exe* 
+Ptp4l.exe*
 ```
 
 下指令 `windeployqt` 將 dependency libraries 拉進來:
@@ -95,4 +95,3 @@ binarycreator -c config/config.xml -p packages output/installer.exe
 
 _The end_
 
- 

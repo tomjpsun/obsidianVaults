@@ -1,9 +1,9 @@
 POST http://192.168.249.112:3002/catalog/hmi_configure/findReports
 
-Body 設定爲 Raw - JSON 
+Body 設定爲 Raw - JSON
 ```js
 {
-    "data": 
+    "data":
         {
             "tb1.id": "1"
             // "tb2.id": "1"
@@ -264,6 +264,6 @@ response
 ```
 
 
-參考 [[專案/華新專案/Spec/IDTS-UI spec/機臺設定/機臺設定-API]] 說明: 
+參考 [[專案/華新專案/Spec/IDTS-UI spec/機臺設定/機臺設定-API]] 說明:
 
 tb1.id = hmi_config.id, tb2.id = machines.id, tb3.name = virtual_devices.name 對應資料表欄位名稱.

@@ -2,53 +2,53 @@
 
 TA-Lib（技術分析庫）是一個廣泛使用的技術分析軟體庫，尤其在金融市場數據分析中非常流行。它支援多種技術指標，這些指標大致可以分為以下幾類：
 
-# 重疊研究 (Overlap Studies): 
+# 重疊研究 (Overlap Studies):
 這些指標通常用於識別價格趨勢和支撐/阻力水平。包括：
 
 移動平均線（如簡單移動平均、指數移動平均）
 布林帶
 帕拉波利克SAR
 平均真實範圍 (ATR)
-# 動量指標 (Momentum Indicators): 
+# 動量指標 (Momentum Indicators):
 用於識別資產價格動量的變化，這有助於預測趨勢的強度和可能的反轉。包括：
 
 相對強弱指數 (RSI)
 隨機振盪器 (Stochastic)
 MACD（移動平均匯聚散布指標）
 通道商品指數 (CCI)
-# 成交量指標 (Volume Indicators): 
+# 成交量指標 (Volume Indicators):
 這些指標用於分析交易量與價格變動之間的關係。包括：
 
 成交量加權平均價 (VWAP)
 成交量振盪器
 買賣壓力指標 (OBV)
-# 波動率指標 (Volatility Indicators): 
+# 波動率指標 (Volatility Indicators):
 這些指標用於衡量市場價格的波動性。包括：
 
 平均真實範圍 (ATR)
 布林帶
 標準差
-# 價格轉換 (Price Transform): 
+# 價格轉換 (Price Transform):
 這些函數用於變換或平滑價格數據。包括：
 
 均線
 高低差價
 關閉價格比率
-# 周期指標 (Cycle Indicators): 
+# 周期指標 (Cycle Indicators):
 用於識別市場周期或重複模式。包括：
 
 希爾伯特轉換
 階段累積振盪器
-# 統計函數 (Statistic Functions): 
+# 統計函數 (Statistic Functions):
 提供基本統計分析功能，如均值、標準差等。
 
-# 數學運算 (Math Operators): 
+# 數學運算 (Math Operators):
 基本數學運算，如加、減、乘、除。
 
-# 數學轉換 (Math Transform): 
+# 數學轉換 (Math Transform):
 包括一些數學上的轉換，如對數、平方根等。
 
-# 圖形識別 (Pattern Recognition): 
+# 圖形識別 (Pattern Recognition):
 用於識別常見的價格圖形，如頭肩形、三角形等。
 
 這些指標廣泛應用於股票、外匯、期貨等金融市場的技術分析中，幫助交易者和分析師識別市場趨勢、預測價格變動，並制定交易策略。TA-Lib 提供了這些指標的計算方法，使得用戶可以輕鬆地在自己的交易系統或分析工具中整合和使用這些指標。

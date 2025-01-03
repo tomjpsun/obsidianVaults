@@ -1,4 +1,4 @@
-當執行 `docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi`  
+當執行 `docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi`
 看到下面 error：
 
 ``` ln:false

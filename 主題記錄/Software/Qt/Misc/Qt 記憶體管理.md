@@ -36,10 +36,10 @@ window->setCentralWidget(widget); //widget is now owned by window.
 ```
 
 上例，_setCentralWidget()_ 也可以設定 owner 關係。
-其他會影響 owner 關係的 APIs，參考 Qt 文件。 
+其他會影響 owner 關係的 APIs，參考 Qt 文件。
 
 
-> [!注意] 
+> [!注意]
 > 如果沒有從 QObject 繼承，就回到純 c++ 的做法，要自行 delete[]
 
 

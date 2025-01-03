@@ -74,4 +74,3 @@ const BackendUrl = (url: string, api: number, query: QueryObject = {}) => {
 ```
 
 雖然比較搞鋼，目前沒有找到可以解決 build 的方法，只好將就一下。
- 

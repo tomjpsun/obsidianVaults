@@ -80,16 +80,16 @@ t 1 , t 2 , t 3 , t 4 由 TSU 測量並為 PTP 從屬時鐘所知；它們用於
 Linux 核心實現了對 PTP 事件消息的硬體時間戳記的內建支持。該支持由 PHC 基礎設施和 SO_TIMESTAMPING 套接字選項組成（見圖 2）。這些核心
 
 
-> [!NOTE] 
+> [!NOTE]
 > 2. 優勢包括：以亞納秒解析度調整時鐘偏差、測量時鐘延遲、生成低相位噪聲時鐘、生成具有多種頻率的時鐘、生成符合 ITU-T 的同步以太網時鐘，以及管理冗餘時鐘源等。
 
 >[!Note] Figure 2 翻譯
 > MAC 封包交換網路 PTP 封包 PHC
-> 
+>
 > 本地振盪器 PHC 基礎設施 SO_TIMESTAMPING 套接字選項 IEEE 1588 協議堆棧 核心驅動 PTP 時鐘 時鐘伺服 PTP 從屬時鐘 TSU = 時間戳單元 PHC = PTP 硬體時鐘 TOD = 日常時間 PPS = 每秒脈衝 TOD PHC PTP 主時鐘 TOD M PTP 封包 t1, t2, t3, t4 伺服迴路 PTP 時間戳
-> 
+>
 > 時鐘操作 核心驅動 硬體 TSU
-> 
+>
 > TOD TSU GPL-2 軟體 Linux 核心 用戶空間 TOD PPS 時鐘信號 標準介面 標準介面。
 
 **原文頁面 5**
@@ -116,7 +116,7 @@ ClockMatrix Linux 內核驅動程序與 Linux PTP 軟件套件版本 3.0 及更�
 
 > [!NOTE]
 > 3. ts2phc 實用程序包含在來自網絡時間基金會的 Linux PTP 軟件套件中。
-> 
+>
 > 4. 有關更多信息，請參見 Renesas 白皮書，標題為 限制由數據包延遲變化引起的 IEEE 1588 從屬時鐘漂移。
 
 **原文頁面 6**
@@ -139,13 +139,13 @@ Renesas PTP時鐘管理器使用其自己的替代方案ts2phc將TOD TSU與TOD P
 
 > [!NOTE] Figure 3 & 4 翻譯
 > MAC封包交換網路 PTP封包
-> 
+>
 > Renesas ClockMatrix 本地振盪器 PHC基礎設施 SO_TIMESTAMPING 套接字選項
-> 
+>
 > Linux PTP v3+ IEEE 1588 協議棧 內核驅動
-> 
+>
 > Linux PTP3+ PTP時鐘 時鐘伺服 PTP從時鐘 TOD PHC PTP主時鐘 TOD M PTP封包 t 1 , t 2 , t 3 , t 4 伺服迴路 內核驅動 硬體 TSU TOD TSU Renesas SW Renesas HW 非Renesas SW 非Renesas HW GPL-2 SW TOD PPS時鐘信號 Linux PTP套件 TSU = 時間戳單元 PHC = PTP硬體時鐘 TOD = 當前時間 PPS = 每秒脈衝
-> 
+>
 > Linux內核用戶空間 PTP時間戳 時鐘操作。
 
 **原文頁面 7**

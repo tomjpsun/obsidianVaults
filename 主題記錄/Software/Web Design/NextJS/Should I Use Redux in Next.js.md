@@ -1,7 +1,7 @@
 來源：
 https://javascript.plainenglish.io/should-you-use-redux-in-next-js-5e57201c34da
 
-**答案是：不是一定不要，只是沒有那麼必要 
+**答案是：不是一定不要，只是沒有那麼必要
 
 ## 場景 1：您已經知道頁面上的內容
 
@@ -16,9 +16,9 @@ https://javascript.plainenglish.io/should-you-use-redux-in-next-js-5e57201c34da
 
 ```js
 export async function getStaticProps(context: GetStaticPropsContext) {
-    
+
     const products = await getProducts();
-    
+
     return {
         props: {
             products
@@ -32,10 +32,10 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 ```js
 export async function getServerSideProps(context: GetServerSidePropsContext) {
     const request = context.req;
-   
+
     const products: getProductList()
-  
-    return { 
+
+    return {
       props: {
         products
       }
@@ -64,15 +64,15 @@ const { data} = useQuery(['products', page], () => fetchProducts(page), { keepPr
 
 ```js
 const useAuthState = () => {
-  
+
   const setAuthState = ( currentState ) => {
     localStorage.set("auth_state" , currentState)
   }
-  
+
   const getAuthState = () => {
     return localStorage.get("auth_state" ,false);
   }
-  
+
   return { setAuthState , getAuthState }
 }
 ```

@@ -9,7 +9,7 @@
 | 0.1.5 | 定義 [燒錄操作流程](#燒錄操作流程)                                                   |
 
 # 定義
-下列定義都是以 JSON format 存檔，方便使用者改寫。 
+下列定義都是以 JSON format 存檔，方便使用者改寫。
 ## Settings：
 
 程式初始需要讀的設定，第一次自行 create。
@@ -86,7 +86,7 @@ Copy from [Template 出廠設定](#Template)
 > [!Note2]
 > Source Template File 從 Settings 讀取
 > Refresh Interval 也是從 Settings 讀取
-> 從 Settings 讀到的欄位是用 Template 產生 Profile 的時候，動態附加上去，出廠的 Template 沒有這些欄位 
+> 從 Settings 讀到的欄位是用 Template 產生 Profile 的時候，動態附加上去，出廠的 Template 沒有這些欄位
 > Refresh Interval 以 millisec 爲單位，不提供使用者調整。
 # 流程設計
 ## App Start
@@ -103,9 +103,9 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 各自有各自的 profile
 
 >[!Note] 在 `configure settings` 的過程，關於每個 `profile`  設定，不進行設定，
-以後每個 tab 裏面提供按鈕呼叫 `configure profile wizard` 
+以後每個 tab 裏面提供按鈕呼叫 `configure profile wizard`
 
->[!Info] 
+>[!Info]
 >第一階段提供一個 tab，第二階段提供 4 個 tabs
 ## Tab i 頁面 （ i 是頁面 index 從 0 開始)
 
@@ -120,24 +120,24 @@ App 畫面 4 個 Tabs，初始不連上 Programmer，之後自動 connect
 	+ PID
 	+ VID
 	+ Stop on error （發生錯誤是否自動 restart）
-	
-	
-### Tab [ i ] 
+
+
+### Tab [ i ]
 
 顯示下列內容：
 + Device ID
 + Programmer 是否正常
 + Start MAC Addr
 + End MAC Addr
-+ Current MAC Addr 
++ Current MAC Addr
 	+ 如果 profile 裏面有上一次的，就複製，否則從 Start MAC Addr 複製
 + Effective MAC Addr
 + Current Connected COM port
 + 已燒錄 MAC 數量
 + 未燒錄 MAC 數量
-+ 可用 MAC 佔全部百分比 
++ 可用 MAC 佔全部百分比
 + 用 icon 分別表示 蓋子打開、關閉
-+ configure 裏面的 Stop on error 
++ configure 裏面的 Stop on error
 + a `configure profile` button
 + button start ： 手動繼續 after error
 + polling state 依照 refresh_interval\(ms)
@@ -176,7 +176,7 @@ class s1 Comment
 
 下面列出 4 種 states：
 
-**Table 1**  
+**Table 1**
 
 | State       | Color on Tab | 說明                          |
 | ----------- | ------------ | --------------------------- |
@@ -205,10 +205,10 @@ class s1 Comment
 >第三個 command 讀，核對與寫入的內容是否相同
 >
 
-> [!NOTE] 關於 Report 
+> [!NOTE] 關於 Report
 > 由 Start 進入 Connected 的時候， 開始建立一份 Report， 當回到 Start 或 結束程式的時候，視爲一個 Report 截止的地方 。
 > Report 建立時會用一個 unique ID 當作識別號碼，以便於在 log 串流裏面可以找出屬於該 Report 的所有 log 的內容
-> 
+>
 
 ## Programmer Status
 + 蓋子曾經打開 Lid Ever Open

@@ -1,4 +1,4 @@
-mpf.plot keywords 
+mpf.plot keywords
 https://zhuanlan.zhihu.com/p/536863284
 
 convert time to DatetimeIndex:

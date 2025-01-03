@@ -66,36 +66,36 @@ gantt
     dateFormat  YYYY-MM-DD
     excludes weekends
     axisFormat %Y-%m-%d
-    
-%% 特別指定要排除的日期 
-section Holidays 
-颱風假期 (Typhoon Holiday) : crit, 2024-10-01, 2024-10-02 
-中秋節 (Moon Festival) : crit, 2024-09-17, 1d 
-國慶日 (National Day) : crit, 2024-10-10, 1d 
 
-    
+%% 特別指定要排除的日期
+section Holidays
+颱風假期 (Typhoon Holiday) : crit, 2024-10-01, 2024-10-02
+中秋節 (Moon Festival) : crit, 2024-09-17, 1d
+國慶日 (National Day) : crit, 2024-10-10, 1d
+
+
     section Study
       研究 1588 相關資料: done, Study1, 2024-09-16, 5d
       RFC8173: done, Study2, after Study1, 5d
       IEEE Standard for a Precision Clock Synchronization Protocol: after Study2, 2d
-      
+
     section Development Environment Setup(Debian Linux)
       Debian Linux Installation via WSL: done, EnvSetup1, 2024-10-14, 2d
       Debian Linux Installation on PC : done, EnvSetup2, after EnvSetup1, 2d
       Debian Linux Installation on Raspberry Pi 5 : done, EnvSetup3, after EnvSetup2, 1d
-      
+
     section IEEE 1588 Synchronization with ptp4l
       IEEE 1588 PTP Network Setup: done, ptp4l_sync1, after EnvSetup3, 3d
       IEEE 1588 PTP Testing with ptp4l Implementation: done, ptp4l_sync2, after ptp4l_sync1, 2d
-      
+
     section Research and Code Tracing of ptp4l Implementation
-	    ptp4l: active, TracingCode1, after TracingCode3, 5d    
-    	phc2sys: active, TracingCode2, after ptp4l_sync2, 5d    
-	    ts2phc: active, TracingCode3, after TracingCode2, 5d    
+	    ptp4l: active, TracingCode1, after TracingCode3, 5d
+    	phc2sys: active, TracingCode2, after ptp4l_sync2, 5d
+	    ts2phc: active, TracingCode3, after TracingCode2, 5d
 
 
 
-	    
+
 	section Sample
       Get tag information: done, Sample1, 2024-10-30, 7d
       Get reader status : active, Sample2, after Sample1, 7d
@@ -111,29 +111,29 @@ gantt
     title Development Gantt Chart
     dateFormat  YYYY-MM-DD
     excludes weekends
-    
+
     section Study
       研究 1588 相關資料: done, Study1, 2024-09-16, 5d
       RFC8173: done, Study2, after Study1, 5d
       IEEE Standard for a Precision Clock Synchronization Protocol: after Study2, 2d
-      
+
     section Development Environment Setup(Debian Linux)
       Debian Linux Installation via WSL: done, EnvSetup1, 2024-10-14, 2d
       Debian Linux Installation on PC : done, EnvSetup2, after EnvSetup1, 2d
       Debian Linux Installation on Raspberry Pi 5 : done, EnvSetup3, after EnvSetup2, 1d
-      
+
     section IEEE 1588 Synchronization with ptp4l
       IEEE 1588 PTP Network Setup: done, ptp4l_sync1, after EnvSetup3, 3d
       IEEE 1588 PTP Testing with ptp4l Implementation: done, ptp4l_sync2, after ptp4l_sync1, 2d
-      
+
     section Research and Code Tracing of ptp4l Implementation
-	    ptp4l: active, TracingCode1, after TracingCode3, 5d    
-    	phc2sys: active, TracingCode2, after ptp4l_sync2, 5d    
-	    ts2phc: active, TracingCode3, after TracingCode2, 5d    
+	    ptp4l: active, TracingCode1, after TracingCode3, 5d
+    	phc2sys: active, TracingCode2, after ptp4l_sync2, 5d
+	    ts2phc: active, TracingCode3, after TracingCode2, 5d
 
 
 
-	    
+
 	section Sample
       Get tag information: done, Sample1, 2024-10-30, 7d
       Get reader status : active, Sample2, after Sample1, 7d
@@ -145,8 +145,8 @@ gantt
 
 
 ```mermaid
-pie  
-title IEEE 1588/PTP4L 開發時間分配  
+pie
+title IEEE 1588/PTP4L 開發時間分配
 "Study" : 15
 "Environment Setup" : 5
 "IEEE 1588 Synchronization with ptp4l" : 5

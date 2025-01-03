@@ -15,7 +15,7 @@ QT       += charts
 #include <QChart>
 class MainWindow : public QMainWindow
 {
-...    
+...
 
 	QChartView* chartView;
     QChart* chart;
@@ -38,9 +38,9 @@ MainWindow::MainWindow(QWidget *parent)
     ,ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-	
+
     chart = new QChart();
-    
+
 	// 指定x、y軸刻度，加入 chart 物件
     QValueAxis* axisX = new QValueAxis();
     QValueAxis* axisY = new QValueAxis();

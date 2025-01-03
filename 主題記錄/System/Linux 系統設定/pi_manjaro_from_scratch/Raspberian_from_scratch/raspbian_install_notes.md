@@ -73,9 +73,9 @@ Set eth0 with lower priority (higher metric):
 
 	sudo ifmetric eth0 305
 
-Configure permanent settings in /etc/dhcpcd.conf: 
+Configure permanent settings in /etc/dhcpcd.conf:
 
-> [!WARNING] 
+> [!WARNING]
 > dhcpcd is replaced by NetworkManager in Pi 5
 
 

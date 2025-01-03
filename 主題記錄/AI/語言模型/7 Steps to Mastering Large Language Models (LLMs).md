@@ -10,12 +10,12 @@ By **[Bala Priya C](https://www.kdnuggets.com/author/bala-priya "Posts by Bala P
 
 ---
 
-  
 
-![7 Steps to Mastering Large Language Models (LLMs)](file:///home/tom/%E4%B8%8B%E8%BC%89/7%20Steps%20to%20Mastering%20Large%20Language%20Models%20(LLMs)%20-%20KDnuggets_files/c_7_steps_mastering_large_language_models_llms_2.webp)  
+
+![7 Steps to Mastering Large Language Models (LLMs)](file:///home/tom/%E4%B8%8B%E8%BC%89/7%20Steps%20to%20Mastering%20Large%20Language%20Models%20(LLMs)%20-%20KDnuggets_files/c_7_steps_mastering_large_language_models_llms_2.webp)
 Image by Author
 
-  
+
  
 
 GPT-4, Llama, Falcon, and many more—Large Language Models—LLMs—are literally the talk of the ~~town~~ year. And if you’re reading this chances are you’ve already used one or more of these large language models through a chat interface or an API. 
@@ -136,12 +136,12 @@ _Are there parameter-efficient techniques?_ Remember, LLMs have 10s of billions 
 
 _What if you don’t have access to the weights?_ 
 
-   
+ 
 
-![[主題記錄/AI/語言模型/attachments/1a73900181d19a2aa76f44e5d8d60bcd_MD5.png]]  
+![[主題記錄/AI/語言模型/attachments/1a73900181d19a2aa76f44e5d8d60bcd_MD5.png]]
 Image by Author
 
-  
+
  
 
 How do you fine-tune an LLM when you don't have access to the model’s weights and accessing the model through an API? Large Language Models are capable of i**n-context learning**—without the need for an explicit fine-tuning step. you can leverage their ability to learn from analogy by providing input; sample output examples of the task.
@@ -168,10 +168,10 @@ You can explore techniques like:
 - Reinforcement Learning from Human feedback (RLHF)
 - Contrastive Post-training
 
-RLHF uses human preference annotations on LLM outputs and fits a reward model on them. Contrastive post-training aims at leveraging contrastive techniques to automate the construction of preference pairs.  
-   
-![[主題記錄/AI/語言模型/attachments/8a6d49697723160d660cc7542713defa_MD5.webp]]  
-Techniques for Alignment in LLMs | [Image Source](https://arxiv.org/abs/2310.02263v1)  
+RLHF uses human preference annotations on LLM outputs and fits a reward model on them. Contrastive post-training aims at leveraging contrastive techniques to automate the construction of preference pairs.
+ 
+![[主題記錄/AI/語言模型/attachments/8a6d49697723160d660cc7542713defa_MD5.webp]]
+Techniques for Alignment in LLMs | [Image Source](https://arxiv.org/abs/2310.02263v1)
  
 
 To learn more, check out the following resources:
@@ -209,9 +209,9 @@ Here are some helpful resources:
 
 # Step 7: Building and Deploying LLM Apps
 
-After developing and fine-tuning an LLM for specific tasks, start building and deploying applications that leverage the LLM's capabilities. In essence, **use LLMs to build useful real-world solutions**.   
-   
-![[主題記錄/AI/語言模型/attachments/df19a0e7a58f4ef926421f56f26cc742_MD5.png]]  
+After developing and fine-tuning an LLM for specific tasks, start building and deploying applications that leverage the LLM's capabilities. In essence, **use LLMs to build useful real-world solutions**. 
+ 
+![[主題記錄/AI/語言模型/attachments/df19a0e7a58f4ef926421f56f26cc742_MD5.png]]
 Image by Author
 
 ## Building LLM Applications
@@ -247,13 +247,13 @@ You can also use frameworks like [LlamaIndex](https://www.kdnuggets.com/build-yo
 
 We started our discussion by defining what large language models are, why they are popular, and gradually delved into the technical aspects. We’ve wrapped up our discussion with building and deploying LLM applications requiring careful planning, user-focused design, robust infrastructure, while prioritizing data privacy and ethics.
 
-As you might have realized, it’s important to stay updated with the recent advances in the field and keep building projects. If you have some experience and natural language processing, this guide builds on the foundation. Even if not, no worries. We’ve got you covered with our [7 Steps to Mastering Natural Language Processing](https://www.kdnuggets.com/7-steps-to-mastering-natural-language-processing) guide. Happy learning!  
-   
+As you might have realized, it’s important to stay updated with the recent advances in the field and keep building projects. If you have some experience and natural language processing, this guide builds on the foundation. Even if not, no worries. We’ve got you covered with our [7 Steps to Mastering Natural Language Processing](https://www.kdnuggets.com/7-steps-to-mastering-natural-language-processing) guide. Happy learning!
+ 
  
 
 **[](https://twitter.com/balawc27)**[Bala Priya C](https://www.kdnuggets.com/wp-content/uploads/bala-priya-author-image-update-230821.jpg)**** is a developer and technical writer from India. She likes working at the intersection of math, programming, data science, and content creation. Her areas of interest and expertise include DevOps, data science, and natural language processing. She enjoys reading, writing, coding, and coffee! Currently, she's working on learning and sharing her knowledge with the developer community by authoring tutorials, how-to guides, opinion pieces, and more. Bala also creates engaging resource overviews and coding tutorials.
 
-  
+
 
 ### More On This Topic
 
@@ -264,6 +264,6 @@ As you might have realized, it’s important to stay updated with the recent adv
 - [Introducing Healthcare-Specific Large Language Models from John Snow Labs](https://www.kdnuggets.com/2023/04/john-snow-introducing-healthcare-specific-large-language-models-john-snow-labs.html)
 - [What are Large Language Models and How Do They Work?](https://www.kdnuggets.com/2023/05/large-language-models-work.html)
 
-  
+
 
 ![](file:///wp-content/uploads/newsletter.png)

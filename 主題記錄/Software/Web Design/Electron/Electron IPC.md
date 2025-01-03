@@ -1,4 +1,4 @@
-[原文出處](https://ithelp.ithome.com.tw/articles/10235110) 
+[原文出處](https://ithelp.ithome.com.tw/articles/10235110)
 # [ Day 9 ] - 動物聊天室(二) - IPC 與訊息交換
 
 第三天時 , 本魯提過 IPC 這個名詞 , 並說這是 Main Process 與 BrowserWindow 做溝通訊息的方式
@@ -24,8 +24,8 @@ Electron 提供了 IpcRenderer 與 IpcMain 方便工程師實作 IPC
 
 - 別人來接
 
-由 IpcMain.on 監聽 IpcRenderer.send 傳來的訊息  
-之後用 event.reply 回傳  
+由 IpcMain.on 監聽 IpcRenderer.send 傳來的訊息
+之後用 event.reply 回傳
 說人話 : 你將小貓帶回家後 , 你請媽媽幫忙照顧你的小貓 , 由她幫忙餵食
 
 ![[Pasted image 20231213154023.png]]
@@ -47,7 +47,7 @@ ipcRenderer.send('take-cat-home-message', '帶小貓回家')
 
 ```
 
-- 等待回應  
+- 等待回應
     你一直在盯著小貓怕她肚子餓 , 這中間你不做任何事情
 
 ![[2E7ONWb.png]]
@@ -66,7 +66,7 @@ const { ipcRenderer } = require('electron')
 console.log(ipcRenderer.sendSync('take-cat-home-message', '帶小貓回家')) // prints "小貓肚子餓"
 ```
 
-- 通知回應  
+- 通知回應
     你打掃家裡，小貓肚子餓會 "喵喵叫"
 
 ![[i8nNnBR.png]]

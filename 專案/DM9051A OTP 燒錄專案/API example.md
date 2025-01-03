@@ -1,4 +1,4 @@
-int writeRegisters(int nSlave, int nRegister, QByteArray aryData);	
+int writeRegisters(int nSlave, int nRegister, QByteArray aryData);
 nRegister 是 1-based .
 
 例如要寫 VendorID (offset = 8)

@@ -9,4 +9,4 @@ sudo apt install piper
 ![[Pasted image 20240530091853.png]]
 
 用畫面這組就很順暢：靈敏度 250, 1200 dpi
-#mouse 
+#mouse

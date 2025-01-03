@@ -1,4 +1,4 @@
-下載 QSS 檔案資源 [Qss templates](git@github.com:GTRONICK/QSS.git) 
+下載 QSS 檔案資源 [Qss templates](git@github.com:GTRONICK/QSS.git)
 當然還有其他的啦，這裏先用來展示**如何將 qss 整合進來**
 我想避開檔案的路徑，因爲需要跨平臺使用，所以直接用 **資源檔** 的方式取得 qss.
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 
 ```bash
 # change directory to our project, then
-cp ../QSS/MacOS.qss stylesheet.qss 
+cp ../QSS/MacOS.qss stylesheet.qss
 ```
 
 這樣，我們 run time 讀到的 resource，就更換爲 MacOS 風格：

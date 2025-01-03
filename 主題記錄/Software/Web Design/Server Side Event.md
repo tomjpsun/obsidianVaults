@@ -34,17 +34,17 @@ Content-Type: "text/event-stream"
 
 而前端則是透過 [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) API 來處理，具體範例也很簡單：
 
-const sse = new EventSource('/api/v1/sse');  
-  
-sse.addEventListener("notice", (e) => {  
-  console.log(e.data)  
-});  
-sse.addEventListener("update", (e) => {  
-  console.log(e.data)  
-})  
-  
-sse.addEventListener("message", (e) => {  
-  console.log(e.data)  
+const sse = new EventSource('/api/v1/sse');
+
+sse.addEventListener("notice", (e) => {
+  console.log(e.data)
+});
+sse.addEventListener("update", (e) => {
+  console.log(e.data)
+})
+
+sse.addEventListener("message", (e) => {
+  console.log(e.data)
 });
 
 建立好連線之後就可以接收 SSE 的訊息做後續的處理。
@@ -68,13 +68,13 @@ SSE 的限制是
 原來早在 2016 年就有人提出這個問題，[Setting headers for EventSource #2177](https://github.com/whatwg/html/issues/2177)，並且也有蠻多討論的，後來有 EventSource 的團隊成員跳出來[回應](https://github.com/whatwg/html/issues/2177#issuecomment-332071504)：
 
 > I work on the team that maintains EventSource for Chrome. EventSource is not being actively developed. We feel resources are better spent in filling the gaps in the more generally-useful facilities provided by fetch().
-> 
+>
 > To give some idea of scale, fetch() body streaming is already used on ten times as many pages as EventSource in Chrome.
-> 
+>
 > I acknowledge that the resumption facilities provided by EventSource are very convenient. However, you can already achieve the same things, with more control, in browsers that support fetch() streaming. I expect that every everfresh browser will support fetch() streaming before any browser supports setting headers for EventSource.
-> 
+>
 > To be clear, I don’t oppose improvements to EventSource. [@danielwegener](https://github.com/danielwegener)’s arguments in [#2177 (comment)](https://github.com/whatwg/html/issues/2177#issuecomment-278254601) are very persuasive. However, my team cannot justify spending any resources on it.
-> 
+>
 > In summary: possible? yes. Likely to happen? no.
 
 説 EventSource 其實沒有更多的開發資源了，而且 fetch 做得更好， fetch streaming 也已經被 chrome 實作了，而且可以接受的 request 量比 EventSource 高十倍以上。雖然 EventSource 如果可以直接支援 custom header 會更方便，但沒有道理要為 fetch 已經可以達到同樣的目的要再增加這個功能。
@@ -87,20 +87,20 @@ SSE 的限制是
 
 範例：
 
-fetch(url).then(response => {  
-  const reader = response.body  
-    .pipeThrough(new TextDecoderStream())  
-    .getReader();  
-  const stream = new ReadableStream({  
-    start() {  
-      reader.read().then(() => null);  
-    },  
-    pull() {  
-      reader.read().then(({  
-        value  
-      }) => console.log(value))  
-    }  
-  })  
+fetch(url).then(response => {
+  const reader = response.body
+    .pipeThrough(new TextDecoderStream())
+    .getReader();
+  const stream = new ReadableStream({
+    start() {
+      reader.read().then(() => null);
+    },
+    pull() {
+      reader.read().then(({
+        value
+      }) => console.log(value))
+    }
+  })
 });
 
 主要是用到了 ReadableStream 取得 Stream 的資料。目前支援度也蠻高的(只看主流瀏覽器的話）因此 ReadableStream 應該是現今處理 SSE 更好的做法。

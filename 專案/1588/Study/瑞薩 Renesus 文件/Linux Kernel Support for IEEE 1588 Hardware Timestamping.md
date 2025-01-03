@@ -1,5 +1,5 @@
 
-# Linux Kernel Support for IEEE 1588 Hardware Timestamping 
+# Linux Kernel Support for IEEE 1588 Hardware Timestamping
 
 Michael Rupert, Principle System Design Engineer, Data Center Business Division
 
@@ -9,28 +9,28 @@ This white paper discusses Linux kernel support for IEEE 1588 hardware timestamp
 ## Introduction
 
 
-IEEE 1588 defines a protocol, the Precision Time Protocol (PTP), that enables accurate synchronization over packet switched networks (PSN). Hardware timestamping of PTP event messages is key to achieving nanosecond synchronization accuracy for PTP slave clocks. A typical PTP slave clock with hardware time stamping can be divided into four components: 
-1. User-space software that implements an IEEE 1588 protocol stack and a PTP clock servo 
-2. Hardware time stamp unit (TSU) integrated with a MAC or PHY 
-3. PTP hardware clock (PHC) that provides the timing reference for the hardware TSU and that is controlled by the PTP clock servo 
+IEEE 1588 defines a protocol, the Precision Time Protocol (PTP), that enables accurate synchronization over packet switched networks (PSN). Hardware timestamping of PTP event messages is key to achieving nanosecond synchronization accuracy for PTP slave clocks. A typical PTP slave clock with hardware time stamping can be divided into four components:
+1. User-space software that implements an IEEE 1588 protocol stack and a PTP clock servo
+2. Hardware time stamp unit (TSU) integrated with a MAC or PHY
+3. PTP hardware clock (PHC) that provides the timing reference for the hardware TSU and that is controlled by the PTP clock servo
 4. Linux kernel
 
-The Linux kernel implements built-in support for hardware timestamping of PTP event messages. The support is comprised of the PHC infrastructure and the SO_TIMESTAMPING socket option. These kernel facilities provide standardized user-space APIs for the PHC and TSU functions, and they provide standardized interfaces for PHC and TSU device drivers. The net result for system integrators is improved availability of device drivers and simplified system integration, resulting in lower development costs and reduced time to market. 
+The Linux kernel implements built-in support for hardware timestamping of PTP event messages. The support is comprised of the PHC infrastructure and the SO_TIMESTAMPING socket option. These kernel facilities provide standardized user-space APIs for the PHC and TSU functions, and they provide standardized interfaces for PHC and TSU device drivers. The net result for system integrators is improved availability of device drivers and simplified system integration, resulting in lower development costs and reduced time to market.
 
-To realize the benefits of the PTP support in Linux, PHC device drivers must support the PHC infrastructure; and TSU drivers must support the SO_TIMESTAMPING socket option. 
+To realize the benefits of the PTP support in Linux, PHC device drivers must support the PHC infrastructure; and TSU drivers must support the SO_TIMESTAMPING socket option.
 
-Renesas provides a Linux kernel driver for the ClockMatrix family that supports the Linux PHC infrastructure. Any IEEE 1588 software package that uses the Linux PHC API can control a ClockMatrix device using this API. For example, Linux PTP from the Network Time Foundation is designed to use the Linux PHC API. The ClockMatrix Linux kernel driver is available as part of main line Linux. 
+Renesas provides a Linux kernel driver for the ClockMatrix family that supports the Linux PHC infrastructure. Any IEEE 1588 software package that uses the Linux PHC API can control a ClockMatrix device using this API. For example, Linux PTP from the Network Time Foundation is designed to use the Linux PHC API. The ClockMatrix Linux kernel driver is available as part of main line Linux.
 
 The Renesas PTP Clock Manager software includes a PTP clock servo with a packet delay variation (PDV) filter and other functionality that meets global ITU-T synchronization recommendations for telecom applications. The PTP Clock Manager can be used with any IEEE 1588 protocol stack (e.g., Linux PTP) and it is compatible with the Linux PHC API. The PTP Clock Manager is available under license from Renesas
 
 ## Definitions
 
-+ Clock 
++ Clock
 	+ IEEE 1588 defines a clock as follows: A device that can provide a measurement of the passage of time since a defined epoch.
 
-+ Clock Signal 
++ Clock Signal
 	+ IEEE 1588 defines a clock signal as follows: A physical signal that has periodic events. The periodic events mark the significant instants at which a time counter is incremented. The clock signal is characterized by its frequency and phase
-+ IEEE 1588 
++ IEEE 1588
 	+ Precision Time Protocol – IEEE 1588[1] defines a protocol, the Precision Time Protocol (PTP), that enables accurate synchronization over packet switched networks (PSN). PTP has a wide range of applications including telecom, industrial, enterprise, and others. PTP can be used to synchronize PTP slave clocks with nanosecond accuracy.
 
 [Note 1] IEEE Std 1588-2019, Standard for a Precision Clock Synchronization Protocol for Networked Measurement and Control Systems.
@@ -44,16 +44,16 @@ Figure 1. Basic Precision Time Protocol Event Message Exchange
 
 ## Hardware Timestamping of PTP Event Messages
 
-Hardware timestamping of PTP event messages is key to achieving nanosecond synchronization accuracy for PTP slave clocks. The TSU should be in the signal path as close to the physical layer as practical. Hardware TSUs are typically implemented in network interface devices such as MACs or PHYs. Compared to software timestamping, hardware timestamping reduces uncertainty in the arrival and departure times of PTP event messages from milliseconds to nanoseconds; and in this way, hardware timestamping improves the accuracy of a PTP slave clock. 
+Hardware timestamping of PTP event messages is key to achieving nanosecond synchronization accuracy for PTP slave clocks. The TSU should be in the signal path as close to the physical layer as practical. Hardware TSUs are typically implemented in network interface devices such as MACs or PHYs. Compared to software timestamping, hardware timestamping reduces uncertainty in the arrival and departure times of PTP event messages from milliseconds to nanoseconds; and in this way, hardware timestamping improves the accuracy of a PTP slave clock.
 
 Hardware TSUs incorporate a time of day (TOD) accumulator that measures the passage of time by counting the cycles of a reference clock signal from a PTP hardware clock (PHC). The PHC is steered by the PTP clock servo that issues corrections (clock operations) to the PHC. The IEEE 1588 protocol stack obtains the PTP timestamp information from the hardware TSU and provides it to the clock servo. This is illustrated in Figure 2.
 
 ![[Linux Kernel Support for IEEE 1588 Hardware Timestamping02.png]]
 
 
-The logical PHC and TSU functions can be implemented in a single silicon device or they can be implemented in separate devices. Separate timing devices have advantages2 as a central resource for generating and managing clock signals that are shared between TSUs in multiple devices. For this reason, the PHC function is often implemented in a dedicated timing device. Figure 2 shows TSU and PHC functions implemented in separate devices. 
+The logical PHC and TSU functions can be implemented in a single silicon device or they can be implemented in separate devices. Separate timing devices have advantages2 as a central resource for generating and managing clock signals that are shared between TSUs in multiple devices. For this reason, the PHC function is often implemented in a dedicated timing device. Figure 2 shows TSU and PHC functions implemented in separate devices.
 
-A perennial challenge for PTP system integrators is obtaining and maintaining drivers for PHCs and hardware TSUs. It is inefficient for silicon device manufacturers to create drivers to cover more than a few of the PTP protocol stacks and clock servo software packages available in the industry. For this reason, device manufacturers typically provide example driver code and leave driver development to the system integrator. 
+A perennial challenge for PTP system integrators is obtaining and maintaining drivers for PHCs and hardware TSUs. It is inefficient for silicon device manufacturers to create drivers to cover more than a few of the PTP protocol stacks and clock servo software packages available in the industry. For this reason, device manufacturers typically provide example driver code and leave driver development to the system integrator.
 
 The Linux kernel implements built-in support for hardware timestamping of PTP event messages. The support is comprised of the PHC infrastructure and the SO_TIMESTAMPING socket option (see Figure 2). These kernel facilities provide standardized user-space APIs for the PHC and TSU functions, and they provide standardized interfaces for PHC and TSU device drivers.
 
@@ -126,9 +126,9 @@ The standardized PHC infrastructure and SO_TIMESTAMPING socket option APIs enabl
 | 1.0      | Jan.29.21 | Initial release. |
 
 
-## IMPORTANT NOTICE AND DISCLAIMER 
+## IMPORTANT NOTICE AND DISCLAIMER
 
-RENESAS ELECTRONICS CORPORATION AND ITS SUBSIDIARIES (“RENESAS”) PROVIDES TECHNICAL SPECIFICATIONS AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT OF THIRD-PARTY INTELLECTUAL PROPERTY RIGHTS. 
+RENESAS ELECTRONICS CORPORATION AND ITS SUBSIDIARIES (“RENESAS”) PROVIDES TECHNICAL SPECIFICATIONS AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT OF THIRD-PARTY INTELLECTUAL PROPERTY RIGHTS.
 
 These resources are intended for developers who are designing with Renesas products. You are solely responsible for (1) selecting the appropriate products for your application, (2) designing, validating, and testing your application, and (3) ensuring your application meets applicable standards, and any other safety, security, or other requirements. These resources are subject to change without notice. Renesas grants you permission to use these resources only to develop an application that uses Renesas products. Other reproduction or use of these resources is strictly prohibited. No license is granted to any other Renesas intellectual property or to any third-party intellectual property. Renesas disclaims responsibility for, and you will fully indemnify Renesas and its representatives against, any claims, damages, costs, losses, or liabilities arising from your use of these resources. Renesas' products are provided only subject to Renesas' Terms and Conditions of Sale or other applicable terms agreed to in writing. No use of any Renesas resources expands or otherwise alters any applicable warranties or warranty disclaimers for these products.
 
