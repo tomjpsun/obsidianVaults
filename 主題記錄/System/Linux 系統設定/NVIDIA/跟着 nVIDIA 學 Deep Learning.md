@@ -20,28 +20,20 @@ docker run --gpus all  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864
 ```
 
 # matplot & numpy
-==Debian 12==
-開起來後，下命令安裝 _matplotlib_, _numpy_
-
 ```bash ln:false
 pip install matplotlib==3.6
 pip install numpy==1.19.2
 ```
 
-> [!NOTE] 這個 docker 需要 NumPy 1.19.2
+> [!NOTE] 這個 docker 的相容 NumPy 
+> docker 裏面是 Python 3.8 根據：
 > https://matplotlib.org/devdocs/devel/min_dep_policy.html
-這裏 `matplotlib`3.6 對應 `NumPy` 是 1.19 才符合 TF 的需求
-
-==Ubuntu 22.04==
-docker 內提供 _tensorflow 2.5.0+nv_  , _numpy 1.19.5_, _matplotlib-inline             0.1.2_
-不用另外安裝
-
+> 
 # jupyter notebook
 docker 的 bash 裏面可以跑 notebook：
 
 ```bash ln:false
 cd /home/LDL
-
 jupyter notebook --ip 0.0.0.0 --port 8888 --allow-root
 ```
 
@@ -71,3 +63,47 @@ root@b8a4ffb7d8f6:/workspace# jupyter notebook --ip 0.0.0.0 --port 8888 --allow-
 
 > [!Warning] Port
 > Docker 裏面是用 8888 ，對應到我們 Host 的 7777，開頭有說明
+
+# 讀不到檔案...
+### 如果用 Google Colab 
+
+左邊可以上傳 **glove.6B.100d.txt** 給 `colab 的 /content/sample_data`
+右邊就修改到 `/content/sample_data/glove.6B.100d.txt`
+
+![[attachments/螢幕快照 2025-02-09 17-44-09.png]]
+
+### 如果用 local docker 
+以 6-2-glove_embeddings 爲例子， read_embeddings() 要開啓 `./glove.6B.100d.txt`
+
+
+```python
+import numpy as np
+import scipy.spatial
+
+# 定義一個載入詞向量的函式
+def read_embeddings():
+    FILE_NAME = './glove.6B.100d.txt'
+    embeddings = {}
+    file = open(FILE_NAME, 'r', encoding='utf-8')
+    for line in file:
+        values = line.split()
+        word = values[0]
+        vector = np.asarray(values[1:],
+                            dtype='float32')
+        embeddings[word] = vector
+    file.close()
+    print('Read %s embeddings.' % len(embeddings))
+    return embeddings
+read_embeddings()
+```
+
+意思就是在 6-2-glove_embeddings.ipynb 同目錄下，有 glove.6B.100d.txt 這個檔案：
+
+[[主題記錄/System/Linux 系統設定/NVIDIA/attachments/20fb7b7e1fbe699476c346ac01807e68_MD5.jpeg|Open: Pasted image 20250209173903.png]]
+![[主題記錄/System/Linux 系統設定/NVIDIA/attachments/20fb7b7e1fbe699476c346ac01807e68_MD5.jpeg]]
+### 6-1-autocomplete_embedding 降版本
+
+實際發現經過以上 docker 後，不需要降版本就可以執行：
+[[主題記錄/System/Linux 系統設定/NVIDIA/attachments/280b09927cf25580602f1c66cb034e03_MD5.jpeg|Open: Pasted image 20250209224542.png]]
+![[主題記錄/System/Linux 系統設定/NVIDIA/attachments/280b09927cf25580602f1c66cb034e03_MD5.jpeg]]
+

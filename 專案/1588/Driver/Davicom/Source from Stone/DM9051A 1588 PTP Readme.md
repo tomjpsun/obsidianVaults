@@ -48,7 +48,7 @@
 5. PTP rate write
 => PTP rate write    #driver => ptp_9051_adjfine()
                  write MAC register 0x61 bit 7, setup to 0x80  (Clear MAC register 0x68 index to 0x0)
-                 write MAC register 0x68 index 0-7 (write 8次,index 0-3 => nanosec; index 4-7 => sec 詳細的每個byte請參考data sheet)
+                 write MAC register 0x68 index 0-t7 (write 8次,index 0-3 => nanosec; index 4-7 => sec 詳細的每個byte請參考data sheet)
                  Write MAC register 0x61 bit 6,5 (bit 6, 0: add, 1: subtract)
 
 
@@ -95,8 +95,8 @@ PTP 1588 driver 注意事項:
 
    =>在dm9051_loop_tx()中加入
 
-     db->ptp_tx_flags = skb_shinfo(skb)->tx_flags;
-	 if (db->ptp_tx_flags){
+db->ptp_tx_flags = skb_shinfo(skb)->tx_flags; 
+if (db->ptp_tx_flags){
 		  db->ptp_class = ptp_classify_raw(skb);
 		  db->ptp_hdr = ptp_parse_header(skb, db->ptp_class);
 		  db->ptp_msgtype = ptp_get_msgtype(db->ptp_hdr, db->ptp_class);
