@@ -95,3 +95,77 @@ ptp4l[9546.986]: __libc_start_main+0x98 [0x7f95ac7818]
 ptp4l[9546.986]: _start+0x30 [0x5570e73670]
 ptp4l[9546.986]: clock_synchronize(), master offset  -57717057 s2 freq -50000000 path delay 1305257522143270038
 ```
+
+## PTP4L clock_synnchronize()
+使用[[Print call stack in C]] 可以在 clock_synchronize() 印出 call stack, 此時 PTP4L 的輸出如下:
+```c
+/ssh:tom@pi488:/home/tom/work/linuxptp $ sudo ptp4l -m -H -i eth1 -s
+ptp4l[9535.712]: selected /dev/ptp0 as PTP clock
+ptp4l[9535.714]: port 1 (eth1): INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[9535.714]: port 0 (/var/run/ptp4l): INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[9535.714]: port 0 (/var/run/ptp4lro): INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[9536.453]: port 1 (eth1): new foreign master c0a2b6.fffe.a61312-1
+ptp4l[9540.853]: selected best master clock c0a2b6.fffe.a61312
+ptp4l[9540.853]: port 1 (eth1): LISTENING to UNCALIBRATED on RS_SLAVE
+ptp4l[9542.583]: clock_synchronize+0x37c [0x5570e79e90]
+ptp4l[9542.584]: port_synchronize+0x1b0 [0x5570e88af0]
+ptp4l[9542.584]: port_syfufsm+0x224 [0x5570e88f3c]
+ptp4l[9542.585]: process_follow_up+0xe8 [0x5570e8b8e8]
+ptp4l[9542.585]: bc_event+0xb08 [0x5570e8de54]
+ptp4l[9542.585]: port_event+0x24 [0x5570e8d344]
+ptp4l[9542.586]: clock_poll+0x198 [0x5570e794c8]
+ptp4l[9542.586]: main+0x81c [0x5570e73ff0]
+ptp4l[9542.586]: __libc_init_first+0x80 [0x7f95ac7740]
+ptp4l[9542.587]: __libc_start_main+0x98 [0x7f95ac7818]
+ptp4l[9542.587]: _start+0x30 [0x5570e73670]
+ptp4l[9542.587]: clock_synchronize(), master offset -434523474834872299 s0 freq -50000000 path delay 1305257522047863358
+ptp4l[9543.683]: clock_synchronize+0x37c [0x5570e79e90]
+ptp4l[9543.683]: port_synchronize+0x1b0 [0x5570e88af0]
+ptp4l[9543.684]: port_syfufsm+0x224 [0x5570e88f3c]
+ptp4l[9543.684]: process_follow_up+0xe8 [0x5570e8b8e8]
+ptp4l[9543.684]: bc_event+0xb08 [0x5570e8de54]
+ptp4l[9543.684]: port_event+0x24 [0x5570e8d344]
+ptp4l[9543.684]: clock_poll+0x198 [0x5570e794c8]
+ptp4l[9543.685]: main+0x81c [0x5570e73ff0]
+ptp4l[9543.685]: __libc_init_first+0x80 [0x7f95ac7740]
+ptp4l[9543.685]: __libc_start_main+0x98 [0x7f95ac7818]
+ptp4l[9543.685]: _start+0x30 [0x5570e73670]
+ptp4l[9543.685]: clock_synchronize(), master offset -434523474831285977 s1 freq -46247998 path delay 1305257522047863358
+ptp4l[9544.783]: clock_synchronize+0x37c [0x5570e79e90]
+ptp4l[9544.783]: port_synchronize+0x1b0 [0x5570e88af0]
+ptp4l[9544.784]: port_syfufsm+0x224 [0x5570e88f3c]
+ptp4l[9544.784]: process_follow_up+0xe8 [0x5570e8b8e8]
+ptp4l[9544.784]: bc_event+0xb08 [0x5570e8de54]
+ptp4l[9544.784]: port_event+0x24 [0x5570e8d344]
+ptp4l[9544.784]: clock_poll+0x198 [0x5570e794c8]
+ptp4l[9544.785]: main+0x81c [0x5570e73ff0]
+ptp4l[9544.785]: __libc_init_first+0x80 [0x7f95ac7740]
+ptp4l[9544.785]: __libc_start_main+0x98 [0x7f95ac7818]
+ptp4l[9544.785]: _start+0x30 [0x5570e73670]
+ptp4l[9544.785]: clock_synchronize(), master offset   21222222 s2 freq -25025776 path delay 1305257522047863358
+ptp4l[9544.785]: port 1 (eth1): UNCALIBRATED to SLAVE on MASTER_CLOCK_SELECTED
+ptp4l[9545.883]: clock_synchronize+0x37c [0x5570e79e90]
+ptp4l[9545.884]: port_synchronize+0x1b0 [0x5570e88af0]
+ptp4l[9545.884]: port_syfufsm+0x224 [0x5570e88f3c]
+ptp4l[9545.884]: process_follow_up+0xe8 [0x5570e8b8e8]
+ptp4l[9545.884]: bc_event+0xb08 [0x5570e8de54]
+ptp4l[9545.884]: port_event+0x24 [0x5570e8d344]
+ptp4l[9545.884]: clock_poll+0x198 [0x5570e794c8]
+ptp4l[9545.885]: main+0x81c [0x5570e73ff0]
+ptp4l[9545.885]: __libc_init_first+0x80 [0x7f95ac7740]
+ptp4l[9545.885]: __libc_start_main+0x98 [0x7f95ac7818]
+ptp4l[9545.885]: _start+0x30 [0x5570e73670]
+ptp4l[9545.885]: clock_synchronize(), master offset   27003558 s2 freq -12877774 path delay 1305257522047863358
+ptp4l[9546.983]: clock_synchronize+0x37c [0x5570e79e90]
+ptp4l[9546.984]: port_synchronize+0x1b0 [0x5570e88af0]
+ptp4l[9546.984]: port_syfufsm+0x224 [0x5570e88f3c]
+ptp4l[9546.984]: process_follow_up+0xe8 [0x5570e8b8e8]
+ptp4l[9546.985]: bc_event+0xb08 [0x5570e8de54]
+ptp4l[9546.985]: port_event+0x24 [0x5570e8d344]
+ptp4l[9546.985]: clock_poll+0x198 [0x5570e794c8]
+ptp4l[9546.985]: main+0x81c [0x5570e73ff0]
+ptp4l[9546.985]: __libc_init_first+0x80 [0x7f95ac7740]
+ptp4l[9546.986]: __libc_start_main+0x98 [0x7f95ac7818]
+ptp4l[9546.986]: _start+0x30 [0x5570e73670]
+ptp4l[9546.986]: clock_synchronize(), master offset  -57717057 s2 freq -50000000 path delay 1305257522143270038
+```

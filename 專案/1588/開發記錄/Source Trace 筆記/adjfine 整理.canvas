@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"6a06e230b78e79c7","type":"text","text":"什麼是 scaled ppm ?","x":-300,"y":-260,"width":250,"height":60},
+		{"id":"444ee38e84257cfd","type":"text","text":"爲什麼 diff_by_scaled_ppm()第一個參數用 800 Mega (定義爲 IGB_82500_BASE_PERIOD) ?","x":-420,"y":40,"width":370,"height":100},
+		{"id":"d9d7c084e2e44346","type":"file","file":"專案/1588/Study/Scaled ppm 參數的意義.md","x":180,"y":-380,"width":420,"height":300},
+		{"id":"6a3f3818d46a5702","x":180,"y":0,"width":640,"height":420,"type":"file","file":"專案/1588/開發記錄/Source Trace 筆記/爲什麼 diff by scaled ppm 使用 0x800000000 當參數.md"}
+	],
+	"edges":[
+		{"id":"bacbb22d98a9770f","fromNode":"6a06e230b78e79c7","fromSide":"right","toNode":"d9d7c084e2e44346","toSide":"left"},
+		{"id":"4731699f46da256e","fromNode":"444ee38e84257cfd","fromSide":"right","toNode":"6a3f3818d46a5702","toSide":"left"}
+	]
+}

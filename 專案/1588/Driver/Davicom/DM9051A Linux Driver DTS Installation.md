@@ -24,3 +24,69 @@ dtoverlay=your_overlay_name
 ```
 
 your_overlay_name 不需要加 .dtbo 後綴，Bootloader 會自動查找該名稱的 .dtbo 文件。
+
+##  DM9051_config.dts
+
+``` c
+// SPDX-license-Identifier: GPL-2.0-or-later
+/*
+ * Device tree overlay for the davicom dm9051 Ethernet Controller
+ *
+ * target: tag_spidevice --> spidev1
+ * target: tag_spi0 --> spi0
+ * target: tag_gpio --> gpio
+ *
+ */
+
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835";
+	// tested in Raspberry Pi Device
+
+	fragment@0 {
+		target = <&spi0>;
+		__overlay__ {
+			status = "okay";
+			#address-cells = <0x01>;
+			#size-cells = <0x00>;
+
+			netdev: dm9051@1 { /* device_spi */
+				compatible = "davicom,dm9051";
+				pinctrl-names = "default";
+				pinctrl-0 = <&intc>;
+				interrupt-parent = <&gpio>;
+				interrupts = <26 8>;
+				reg = <0x01>; /* CS1: rpi GPIO7 */
+				spi-max-frequency = <31200000>;
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <&gpio>;
+		__overlay__ {
+			intc: device_gpio { /* device_gpio */
+				brcm,pins = <26>;
+				brcm,function = <0>;
+				brcm,pull = <0>;
+				interrupt-controller;
+				#interrupt-cells = <2>;
+				#address-cells = <0x01>;
+			};
+		};
+	};
+
+	/* In Raspberry Pi OS, In config.txt, use overlay or by default. */
+	/* dtoverlay=dm9051_conf,speed=31200000,int=26 */
+	/* dtoverlay=dm9051_conf */
+
+	__overrides__ {
+		speed = <&netdev>, "spi-max-frequency:0";
+		int = <&netdev>,"interrupts:0",
+		      <&intc>, "brcm,pins:0";
+	};
+};
+```

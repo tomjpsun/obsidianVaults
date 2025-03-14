@@ -19,16 +19,7 @@ nvidia-docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm
 docker run --gpus all  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm -it -p 7777:8888 -v /home/tom/work/python_projects/LDL:/home/LDL nvcr.io/nvidia/tensorflow:21.07-tf2-py3 /bin/bash
 ```
 
-# matplot & numpy
-```bash ln:false
-pip install matplotlib==3.6
-pip install numpy==1.19.2
-```
 
-> [!NOTE] 這個 docker 的相容 NumPy 
-> docker 裏面是 Python 3.8 根據：
-> https://matplotlib.org/devdocs/devel/min_dep_policy.html
-> 
 # jupyter notebook
 docker 的 bash 裏面可以跑 notebook：
 
@@ -101,9 +92,37 @@ read_embeddings()
 
 [[主題記錄/System/Linux 系統設定/NVIDIA/attachments/20fb7b7e1fbe699476c346ac01807e68_MD5.jpeg|Open: Pasted image 20250209173903.png]]
 ![[主題記錄/System/Linux 系統設定/NVIDIA/attachments/20fb7b7e1fbe699476c346ac01807e68_MD5.jpeg]]
-### 6-1-autocomplete_embedding 降版本
+# 6-1-autocomplete_embedding 降版本
+
+一開始，以爲需要降 matplot 與 numpy 的版本， 這是降版本的方法：
+
+```bash ln:false
+pip install matplotlib==3.6
+pip install numpy==1.19.2
+```
+
+> [!NOTE] 這個 docker 的相容 NumPy 
+> docker 裏面是 Python 3.8 根據：
+> https://matplotlib.org/devdocs/devel/min_dep_policy.html
+> 
+
 
 實際發現經過以上 docker 後，不需要降版本就可以執行：
 [[主題記錄/System/Linux 系統設定/NVIDIA/attachments/280b09927cf25580602f1c66cb034e03_MD5.jpeg|Open: Pasted image 20250209224542.png]]
 ![[主題記錄/System/Linux 系統設定/NVIDIA/attachments/280b09927cf25580602f1c66cb034e03_MD5.jpeg]]
+
+# 7-2 完全沒有 warning 的版本
+
+原本的 docker image tag `21.07-tf2-py3` 會抱怨錯誤：
+```c
+tensorflow/stream_executor/cuda/cuda_driver.cc:271] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+```
+但是也還可以執行。
+
+nvidia 的 docker image tag `21.03-tf2-py3`是完全沒有抱怨錯誤的版本：
+```c
+docker run --gpus all  --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 --rm -it -p 7777:8888 -v /home/tom/work/python_projects/LDL:/home/LDL nvcr.io/nvidia/tensorflow:21.03-tf2-py3 /bin/bash
+```
+
+但是 GPU 仍然沒有被使用，因爲執行 _nvtop_ 看不到變化，還不知道原因
 

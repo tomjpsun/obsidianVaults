@@ -37,6 +37,12 @@ https://docs.nvidia.com/deeplearning/frameworks/support-matrix/index.html
 繼續對到 **TensorFlow** 版本, 就是 container 裏面可以跑 **TensorFlow 2.13.0** 的程式。
 
 
+
+
+# 版本列表
+這裏可以查詢 docker image 搭配的所有軟體版本：
+https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/index.html
+
 > [!NOTE] 結論
 >用這個 matrix 可以找到相容 driver 的 container 版本。
 

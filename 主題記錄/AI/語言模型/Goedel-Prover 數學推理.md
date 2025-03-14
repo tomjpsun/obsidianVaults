@@ -1,0 +1,10 @@
+##### 超越DeepSeek Prover, 普林斯頓大學研究團隊形式推理的突破
+
+我們介紹了Goedel-Prover，這是一個開源的大型語言模型（LLM），在自動形式證明生成數學問題方面達到了最先進的性能。該領域的主要挑戰是正式化的數學陳述和證明稀缺，我們通過以下方式來解決這個問題。我們訓練了陳述形式化器，將來自Numina的自然語言數學問題翻譯成正式語言（Lean 4），並創建了一個包含164萬個正式陳述的數據集。LLM用於檢查這些正式陳述是否準確保留了原始自然語言問題的內容。然後，我們通過訓練一系列證明者，逐步構建一個大型的正式證明數據集。每個證明者能夠證明許多前一個證明者無法證明的陳述，這些新的證明被添加到下一個證明者的訓練集中。最終證明者在整體證明生成方面超越了所有現有的開源模型。在miniF2F基準上，它達到了57.6%的成功率（Pass@32），比之前最佳的開源模型高出7.6%。在PutnamBench上，Goedel-Prover成功解決了7個問題（Pass@512），在排行榜上排名第一。此外，它為Lean Workbook問題生成了29.7K個正式證明，幾乎是早期工作的15.7K的兩倍。
+
+[](https://l.facebook.com/l.php?u=https%3A%2F%2Farxiv.org%2Fabs%2F2502.07640v1%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR2YXRE_twsX1tHHMzjGHmZGVpm_Nv8KAjSX1iZ5IAWBH_Dw507ijyWmacM_aem_QxRmX6GwkA-C5dTfC6Oi7w&h=AT1oFyadIZbbAcUpMEW52dKZZTj-5S7G2c0i8SzY3R24Y7VBPs1KfFbLpYcWf_iEiFHLWYSGQ1CxrfdMQegxyM2n04rJJs1SW3wtlLwa615cNohmkCrKZQ1sAdOM&__tn__=-UK-R&c[0]=AT3vaxYRZenl8rcNs9jtiErF1VGfCIH_Cr8tMZDop6SnE8Y4oecGGnVZ0JOuOUXCRwocWV2EzrwUrfLyxNByTgRK0XOcrkQ_rPVU49tlGsIOfsX77D8ys80yvlNrkIUzRqSX2L0NkBj5MAEgxQUsMdwu0IOvzmZAyVm_2IfnU8ts89GSIOE5PnJ2l6GncVEbdgH-TBaylFFD2O_ATbz2UarKmf4jwHEokwI-uPAFmr7-i9J213yRLEuFylQ)[https://arxiv.org/abs/2502.07640v1](https://arxiv.org/abs/2502.07640v1?fbclid=IwZXh0bgNhZW0CMTAAAR2A7L-Vve-MZxfAtyGOLH7bTnYlcDFy1LYUsfcAuA-eqOVKqgTFMQ94gV4_aem_ApvXZqIhZo6dN5n1ja415A)
+
+Goedel-Prover，這是一個基於大型語言模型（LLM）的開源自動定理證明工具。文章闡述了 LLM 在數學問題推理方面的能力，並指出訓練 LLM 進行正式推理所面臨的數據稀缺挑戰。為了解決這個問題，研究人員通過自動形式化大量非正式數學問題來合成一個大型多樣化數據集。Goedel-Prover 在多個基準測試中顯示出卓越的表現，尤其是在整體證明生成方面。
+
+https://github.com/Goedel-LM/Goedel-Prover
+
