@@ -1,4 +1,4 @@
-![[Pasted image 20240920115823.png]]
+![[attachments/Pasted image 20240920115823.png]]
 
 這段文字解釋了 IEEE 1588 規範中的 **PTP Node**（PTP 節點）及其內部的 **PTP Instances**（PTP 實例），以下是詳細的解釋：
 

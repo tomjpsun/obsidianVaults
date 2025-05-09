@@ -205,3 +205,77 @@ Log from ==wireshark== :
 | 86  | DELAY_REQ  | 0x01           |
 | 96  | DELAY_RESP | 0x09           |
 
+## 如何知道 driver 目前是 /dev/ptpx ?
+
+ethtool -T eth1
+```
+tom@rpi4:~ $ ethtool -T eth1
+Time stamping parameters for eth1:
+Capabilities:
+	hardware-transmit
+	software-transmit
+	hardware-receive
+	software-receive
+	software-system-clock
+	hardware-raw-clock
+PTP Hardware Clock: 0
+Hardware Transmit Timestamp Modes:
+	off
+	on
+	onestep-sync
+Hardware Receive Filter Modes:
+	none
+	all
+```
+
+PTP Hardware Clock: 0 表示目前是 /dev/ptp0
+
+## 如何讓 ptp_9051_gettime() / ptp_9051_settime() 動作?
+
+```c
+
+//用 gettime() 讀取:
+tom@rpi4:~ $ sudo phc_ctl /dev/ptp0 get
+phc_ctl[2325.668]: clock time is 1745574025.738807442 or Fri Apr 25 17:40:25 2025
+
+// 設定系統時間到 chip
+tom@rpi4:~ $ sudo phc_ctl /dev/ptp0 set
+phc_ctl[2374.565]: set clock time to 1745574075.027246251 or Fri Apr 25 17:41:15 2025
+
+// 設定 1970-1-1 08:00:00 到 chip
+tom@rpi4:~ $ sudo phc_ctl /dev/ptp0 set 0
+phc_ctl[2400.900]: set clock time to 0.000000000 or Thu Jan  1 08:00:00 1970
+
+tom@rpi4:~ $ sudo phc_ctl /dev/ptp0 get
+phc_ctl[2404.493]: clock time is 3.592358487 or Thu Jan  1 08:00:03 1970
+
+// 還原系統時間, set 不加參數即可
+tom@rpi4:~ $ sudo phc_ctl /dev/ptp0 set
+phc_ctl[2534.180]: set clock time to 1745574234.643028445 or Fri Apr 25 17:43:54 2025
+
+// 確定完成
+tom@rpi4:~ $ sudo phc_ctl /dev/ptp0 get
+phc_ctl[2537.885]: clock time is 1745574238.347172279 or Fri Apr 25 17:43:58 2025
+
+```
+# PMC
+sudo ./ptp_collector -u -f ./configs/ptp_collector.json
+
+sudo pmc -u -i eth1 'GET TIME_STATUS_NP'
+
+# ptp_collector
+ptp_collector 可以使用 （確認 pmc 打開 port 是 /var/run/ptp4l 即可）
+`sudo ./ptp_collector -u -f ./configs/ptp_collector.json`
+然後 ptp_collector.json 內容，原本 interface_name 拿掉， 有 uds_address 即可。如下：
+```
+   "ptp": {                                                                    
+        "config_path": "/home/tom/work/richard_ptp/linuxptp/configs/ptp4l_slave.conf",    
+        "uds_address": "/var/run/ptp4l",                                       
+        "remote_address": "",                                                  
+        "transport_type": "UDS",                                               
+        "boundary_hops": 1,                                                    
+        "domain_number": 0,                                                    
+        "transport_specific": 0,                                               
+        "allow_unauth": 0                                                      
+    },     
+```                      
